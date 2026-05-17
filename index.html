@@ -1,541 +1,1439 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reserva Varde Goa — A Private Jungle Valley Estate</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#0B1410; --ink-2:#10201A; --moss:#1C3026;
-  --ivory:#F1EBDD; --ivory-dim:#C9C2B0; --gold:#BFA065;
-  --gold-soft:#9C8550; --bark:#2C2117; --stone:#7E7A6C;
-  --hair:rgba(191,160,101,.28); --hair-soft:rgba(241,235,221,.10);
-  --maxw:1240px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  background:var(--ink);color:var(--ivory);
-  font-family:'Jost',sans-serif;font-weight:300;
-  font-size:18px;line-height:1.75;letter-spacing:.01em;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
-}
-h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.08;letter-spacing:.005em}
-a{color:inherit;text-decoration:none}
-img,svg{display:block;max-width:100%}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px}
-.eyebrow{
-  font-family:'Jost',sans-serif;font-weight:400;font-size:12px;
-  letter-spacing:.30em;text-transform:uppercase;color:var(--gold);
-}
-.lead{color:var(--ivory-dim);max-width:62ch;font-weight:300}
-.rule{height:1px;background:var(--hair);border:0}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva Varde Goa | Premium Eco-Jungle Villa Estate</title>
+    <meta name="description" content="A private 1,000-acre eco-jungle wellness valley in Goa by Bluechip Global Agro. Own one acre of Goa's living forest.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-forest-green: #1A2F25;
+            --color-forest-dark: #0f1c16;
+            --color-ivory: #F8F6F0;
+            --color-muted-gold: #C2A878;
+            --color-gold-hover: #d4b886;
+            --color-laterite-red: #8B3A33;
+            --color-warm-stone: #A9A59C;
+            --color-mist-grey: #E2E0D9;
+            --color-dark-grey: #1a1a1a;
+            
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            
+            --spacing-section: 160px;
+            --container-width: 1400px;
+            --grid-border: 1px solid rgba(169, 165, 156, 0.2);
+            --gold-border: 1px solid rgba(194, 168, 120, 0.4);
+            
+            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-/* ---------- NAV ---------- */
-nav{
-  position:fixed;inset:0 0 auto 0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:26px 40px;transition:background .6s ease,padding .6s ease,border-color .6s ease;
-  border-bottom:1px solid transparent;
-}
-nav.scrolled{
-  background:rgba(11,20,16,.86);backdrop-filter:blur(14px);
-  padding:16px 40px;border-color:var(--hair-soft);
-}
-.brand{font-family:'Cormorant Garamond',serif;font-size:21px;letter-spacing:.34em;text-transform:uppercase;color:var(--ivory)}
-.brand small{display:block;font-family:'Jost';font-size:9.5px;letter-spacing:.42em;color:var(--gold-soft);margin-top:4px;font-weight:400}
-.navlinks{display:flex;gap:38px;align-items:center}
-.navlinks a{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory-dim);font-weight:400;transition:color .4s}
-.navlinks a:hover{color:var(--gold)}
-.navcta{
-  border:1px solid var(--hair);color:var(--ivory);
-  padding:11px 22px;font-size:11.5px;letter-spacing:.20em;text-transform:uppercase;
-  transition:background .5s,color .5s,border-color .5s;
-}
-.navcta:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-.navtoggle{display:none;background:none;border:0;color:var(--ivory);font-size:22px;cursor:pointer}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* ---------- HERO ---------- */
-.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
-.hero-scene{position:absolute;inset:0;z-index:0}
-.hero-scene svg{width:100%;height:100%;object-fit:cover}
-.hero-grad{
-  position:absolute;inset:0;z-index:1;
-  background:
-    radial-gradient(120% 90% at 20% 10%,rgba(11,20,16,.25),transparent 55%),
-    linear-gradient(180deg,rgba(11,20,16,.55) 0%,rgba(11,20,16,.20) 40%,rgba(11,20,16,.88) 100%);
-}
-.hero-inner{position:relative;z-index:2;width:100%;padding-bottom:9vh}
-.hero h1{font-size:clamp(48px,7.4vw,108px);max-width:15ch;font-weight:300}
-.hero h1 em{font-style:italic;color:var(--gold)}
-.hero .sub{margin-top:30px;font-size:clamp(17px,1.5vw,21px);color:var(--ivory-dim);max-width:46ch;font-weight:300}
-.hero-cta{display:flex;gap:18px;margin-top:46px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;gap:12px;
-  font-size:12.5px;letter-spacing:.20em;text-transform:uppercase;font-weight:400;
-  padding:17px 34px;transition:all .55s cubic-bezier(.2,.7,.2,1);
-}
-.btn-gold{background:var(--gold);color:var(--ink)}
-.btn-gold:hover{background:var(--ivory)}
-.btn-ghost{border:1px solid var(--hair);color:var(--ivory)}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.scrollhint{
-  position:absolute;left:40px;bottom:34px;z-index:3;
-  font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--stone);
-  display:flex;align-items:center;gap:14px;
-}
-.scrollhint::before{content:"";width:46px;height:1px;background:var(--gold-soft)}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* ---------- SECTIONS ---------- */
-section.band{padding:clamp(96px,13vw,180px) 0;position:relative}
-.band.alt{background:var(--ink-2)}
-.band.moss{background:var(--moss)}
-.sec-head{max-width:62ch;margin-bottom:64px}
-.sec-head h2{font-size:clamp(34px,4.6vw,58px);margin-top:18px}
-.sec-head h2 em{font-style:italic;color:var(--gold)}
-.sec-head p{margin-top:24px}
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-ivory);
+            color: var(--color-forest-green);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
-.split.narrow{grid-template-columns:1.05fr .95fr}
-.figure{position:relative;border:1px solid var(--hair-soft)}
-.figure svg{width:100%;height:auto;display:block}
-.figcap{position:absolute;left:22px;bottom:18px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ivory-dim)}
+        ::selection {
+            background: var(--color-muted-gold);
+            color: var(--color-forest-dark);
+        }
 
-/* snapshot ledger */
-.ledger{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hair)}
-.ledger div{padding:42px 30px;border-bottom:1px solid var(--hair);border-right:1px solid var(--hair)}
-.ledger div:nth-child(3n){border-right:0}
-.ledger .num{font-family:'Cormorant Garamond';font-size:clamp(40px,4.4vw,62px);color:var(--ivory)}
-.ledger .lab{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-top:10px}
+        /* Typography Hierarchy */
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            line-height: 1.1;
+        }
 
-/* cards */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-.card{border:1px solid var(--hair-soft);padding:0;transition:border-color .6s;background:rgba(255,255,255,.012)}
-.card:hover{border-color:var(--hair)}
-.card .cardtop svg{width:100%;height:170px;object-fit:cover;display:block}
-.card .cardbody{padding:34px 32px 38px}
-.card h3{font-size:27px;margin-bottom:6px}
-.card .meta{font-size:11.5px;letter-spacing:.20em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
-.card p{font-size:15.5px;color:var(--ivory-dim);line-height:1.7}
+        h1 { font-size: clamp(3.5rem, 7vw, 7rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2.8rem, 4.5vw, 4.5rem); letter-spacing: -0.01em; }
+        h3 { font-size: clamp(2rem, 3vw, 3rem); }
 
-/* feature list */
-.flist{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--hair)}
-.flist div{padding:30px 4px;border-bottom:1px solid var(--hair-soft);display:flex;gap:20px;align-items:baseline}
-.flist .ix{font-family:'Cormorant Garamond';font-size:18px;color:var(--gold);min-width:34px}
-.flist .ft{font-size:16px;color:var(--ivory)}
-.flist .fd{font-size:14px;color:var(--stone);margin-top:3px}
+        p {
+            font-size: 1.05rem;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            color: rgba(26, 47, 37, 0.85);
+        }
 
-/* founder strip */
-.founder{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.fcount{font-family:'Cormorant Garamond';font-size:clamp(60px,9vw,140px);line-height:1;color:var(--gold)}
-.fbar{height:1px;background:var(--hair-soft);margin:26px 0;position:relative}
-.fbar i{position:absolute;left:0;top:0;height:1px;width:14%;background:var(--gold)}
+        .text-small {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 500;
+        }
 
-/* legal checklist */
-.checks{columns:2;column-gap:64px}
-.checks li{list-style:none;padding:13px 0;border-bottom:1px solid var(--hair-soft);font-size:15px;color:var(--ivory-dim);break-inside:avoid;display:flex;gap:14px;align-items:baseline}
-.checks li::before{content:"—";color:var(--gold)}
+        .serif-italic {
+            font-family: var(--font-serif);
+            font-style: italic;
+            letter-spacing: 0.05em;
+        }
 
-/* form */
-.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px 36px}
-.field{display:flex;flex-direction:column;gap:10px}
-.field.full{grid-column:1/-1}
-label{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
-input,select,textarea{
-  background:transparent;border:0;border-bottom:1px solid var(--hair-soft);
-  color:var(--ivory);font-family:'Jost';font-size:16px;font-weight:300;
-  padding:12px 2px;outline:none;transition:border-color .5s;
-}
-input:focus,select:focus,textarea:focus{border-color:var(--gold)}
-select option{background:var(--ink-2);color:var(--ivory)}
-textarea{resize:vertical;min-height:90px}
-.consent{display:flex;gap:14px;align-items:flex-start;font-size:13.5px;color:var(--stone);grid-column:1/-1}
-.consent input{width:16px;height:16px;accent-color:var(--gold);flex:none;margin-top:3px}
-.formnote{font-size:12.5px;color:var(--stone);grid-column:1/-1;margin-top:4px}
-.ok{grid-column:1/-1;border:1px solid var(--hair);padding:22px;color:var(--gold);font-size:14px;letter-spacing:.06em;display:none}
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 5%;
+        }
 
-/* footer */
-footer{background:var(--ink-2);border-top:1px solid var(--hair-soft);padding:80px 0 50px}
-.fcols{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:60px;margin-bottom:60px}
-footer .brand{font-size:24px}
-.fcols p{font-size:14px;color:var(--stone);max-width:40ch;margin-top:20px}
-.fcols h4{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-family:'Jost';font-weight:400;margin-bottom:20px}
-.fcols a{display:block;font-size:14px;color:var(--ivory-dim);padding:7px 0;transition:color .4s}
-.fcols a:hover{color:var(--gold)}
-.disclaimer{
-  border:1px solid var(--hair-soft);padding:28px 32px;
-  font-size:12.5px;line-height:1.85;color:var(--stone);max-width:100%;
-}
-.disclaimer b{color:var(--ivory-dim);font-weight:400}
-.copyr{margin-top:40px;font-size:12px;color:var(--stone);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+        section {
+            padding: var(--spacing-section) 0;
+            position: relative;
+        }
 
-/* reveal */
-.rv{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1.1s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
-.d1{transition-delay:.10s}.d2{transition-delay:.20s}.d3{transition-delay:.30s}.d4{transition-delay:.40s}
+        /* Premium Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: var(--transition-smooth);
+            border-bottom: 1px solid transparent;
+        }
 
-@media(max-width:980px){
-  .navlinks{display:none}.navtoggle{display:block}
-  .split,.founder{grid-template-columns:1fr;gap:48px}
-  .cards{grid-template-columns:1fr}
-  .ledger{grid-template-columns:1fr 1fr}.ledger div:nth-child(3n){border-right:1px solid var(--hair)}
-  .flist,.formgrid{grid-template-columns:1fr}.fcols{grid-template-columns:1fr}
-  .checks{columns:1}.wrap{padding:0 24px}nav{padding:18px 24px}
-  .scrollhint{display:none}
-}
-</style>
+        nav.scrolled {
+            background-color: rgba(15, 28, 22, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 1.5rem 5%;
+            border-bottom: 1px solid rgba(194, 168, 120, 0.15);
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--color-ivory);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-ivory);
+            text-decoration: none;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            position: relative;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-muted-gold);
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .mobile-menu-btn span {
+            width: 30px;
+            height: 1px;
+            background-color: var(--color-ivory);
+            transition: var(--transition-smooth);
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--color-forest-dark);
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu a {
+            color: var(--color-ivory);
+            text-decoration: none;
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .mobile-menu.active a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .mobile-menu.active a:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu.active a:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu.active a:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-menu.active a:nth-child(4) { transition-delay: 0.4s; }
+
+        /* Luxury CTA Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 3rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: color 0.4s ease, border-color 0.4s ease;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: var(--color-muted-gold);
+            z-index: -1;
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-primary {
+            border-color: var(--color-muted-gold);
+            color: var(--color-ivory);
+            background-color: rgba(15, 28, 22, 0.4);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-primary:hover {
+            color: var(--color-forest-dark);
+        }
+        
+        .btn-primary:hover::before {
+            width: 100%;
+        }
+
+        .btn-outline {
+            border-color: rgba(248, 246, 240, 0.5);
+            color: var(--color-ivory);
+        }
+        
+        .btn-outline::before {
+            background-color: var(--color-ivory);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--color-ivory);
+            color: var(--color-forest-dark);
+        }
+        
+        .btn-outline:hover::before {
+            width: 100%;
+        }
+
+        .btn-outline-dark {
+            border-color: var(--color-forest-green);
+            color: var(--color-forest-green);
+        }
+        
+        .btn-outline-dark::before {
+            background-color: var(--color-forest-green);
+        }
+
+        .btn-outline-dark:hover {
+            color: var(--color-ivory);
+        }
+        
+        .btn-outline-dark:hover::before {
+            width: 100%;
+        }
+
+        /* Hero Section with Cinematic Zoom */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: var(--color-ivory);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/hero.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            animation: cinematicZoom 20s infinite alternate linear;
+        }
+
+        @keyframes cinematicZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(15,28,22,0.4) 0%, rgba(15,28,22,0.7) 100%);
+            z-index: 1;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 40%, rgba(15,28,22,0.6) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-marker {
+            margin-bottom: 3rem;
+            color: var(--color-muted-gold);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .hero-marker::before, .hero-marker::after {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background-color: var(--color-muted-gold);
+            opacity: 0.5;
+        }
+
+        .hero h1 {
+            margin-bottom: 2rem;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 1200px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            color: rgba(248, 246, 240, 0.9);
+            font-weight: 400;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 2rem;
+        }
+
+        /* Gold Line Divider */
+        .gold-divider {
+            width: 1px;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--color-muted-gold), transparent);
+            margin: 0 auto;
+            opacity: 0.5;
+        }
+
+        /* Snapshot Grid */
+        .snapshot {
+            background-color: var(--color-forest-dark);
+            color: var(--color-ivory);
+            padding: 0;
+            border-top: 1px solid rgba(194, 168, 120, 0.1);
+        }
+
+        .snapshot-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .snapshot-item {
+            padding: 5rem 2.5rem;
+            border-right: 1px solid rgba(194, 168, 120, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+            transition: background-color 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .snapshot-item:hover {
+            background-color: rgba(255,255,255,0.02);
+        }
+        
+        .snapshot-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--color-muted-gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .snapshot-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .snapshot-item:last-child {
+            border-right: none;
+        }
+
+        .snapshot-marker {
+            color: var(--color-muted-gold);
+            opacity: 0.7;
+        }
+
+        .snapshot-value {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            margin-top: 3rem;
+            line-height: 1.2;
+        }
+
+        /* Vision Section */
+        .vision {
+            text-align: center;
+            padding: 200px 0;
+            background-color: var(--color-mist-grey);
+            position: relative;
+        }
+        
+        .vision::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 100px;
+            background-color: rgba(169, 165, 156, 0.3);
+        }
+
+        .vision h2 {
+            max-width: 1000px;
+            margin: 0 auto;
+            color: var(--color-forest-dark);
+            line-height: 1.2;
+        }
+
+        .vision-marker {
+            display: inline-block;
+            margin-bottom: 4rem;
+            color: var(--color-warm-stone);
+            letter-spacing: 0.3em;
+        }
+
+        /* One Acre Estate */
+        .estate {
+            background-color: var(--color-ivory);
+        }
+
+        .split-layout {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 8rem;
+            align-items: center;
+        }
+
+        .estate-content {
+            padding-right: 2rem;
+        }
+
+        .estate-list {
+            margin-top: 4rem;
+            list-style: none;
+        }
+
+        .estate-list li {
+            padding: 1.8rem 0;
+            border-bottom: var(--grid-border);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .estate-list li::before {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--color-muted-gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .estate-list li:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .estate-list li span {
+            color: var(--color-muted-gold);
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.3rem;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 800px;
+        }
+        
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: -40px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--color-muted-gold);
+            z-index: 0;
+            transition: var(--transition-smooth);
+        }
+        
+        .image-container:hover::before {
+            top: 20px;
+            left: -20px;
+        }
+
+        .image-container img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: grayscale(15%) sepia(5%);
+            transition: filter 0.8s ease;
+        }
+        
+        .image-container:hover img {
+            filter: grayscale(0%) sepia(0%);
+        }
+
+        /* Villa Concepts */
+        .villas {
+            background-color: var(--color-forest-dark);
+            color: var(--color-ivory);
+            padding: 200px 0;
+            border-top: 1px solid rgba(194, 168, 120, 0.15);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 6rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(194, 168, 120, 0.2);
+        }
+
+        .villa-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+        }
+
+        .villa-card {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .villa-image-wrapper {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .villa-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(194, 168, 120, 0.1);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+
+        .villa-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.1);
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+        }
+
+        .villa-card:hover img {
+            transform: scale(1.05);
+            filter: brightness(1) contrast(1);
+        }
+        
+        .villa-card:hover .villa-image-wrapper::after {
+            opacity: 1;
+        }
+
+        .villa-card h3 {
+            margin-bottom: 1rem;
+            color: var(--color-ivory);
+            transition: color 0.4s ease;
+        }
+        
+        .villa-card:hover h3 {
+            color: var(--color-muted-gold);
+        }
+
+        /* Wellness Valley */
+        .wellness {
+            background-color: var(--color-ivory);
+            padding: 0;
+        }
+
+        .wellness-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 900px;
+        }
+
+        .wellness-image {
+            background-image: url('images/wellness.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .wellness-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, var(--color-ivory));
+        }
+
+        .wellness-content {
+            padding: 10rem 8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .wellness-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .tag {
+            padding: 0.8rem 2rem;
+            border: 1px solid var(--color-warm-stone);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+        
+        .tag:hover {
+            border-color: var(--color-forest-green);
+            background-color: var(--color-forest-green);
+            color: var(--color-ivory);
+        }
+
+        /* Founder Circle */
+        .founder-circle {
+            background-color: var(--color-forest-dark);
+            color: var(--color-ivory);
+            text-align: center;
+            position: relative;
+            padding: 200px 0;
+            overflow: hidden;
+        }
+        
+        .founder-circle::before, .founder-circle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .founder-circle::before {
+            width: 800px;
+            height: 800px;
+            border: 1px solid rgba(194, 168, 120, 0.05);
+            animation: pulseCircle 10s infinite alternate;
+        }
+        
+        .founder-circle::after {
+            width: 1200px;
+            height: 1200px;
+            border: 1px solid rgba(194, 168, 120, 0.02);
+            animation: pulseCircle 15s infinite alternate-reverse;
+        }
+        
+        @keyframes pulseCircle {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            100% { transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        .founder-icon {
+            font-size: 3rem;
+            color: var(--color-muted-gold);
+            margin-bottom: 3rem;
+            text-shadow: 0 0 30px rgba(194, 168, 120, 0.3);
+        }
+
+        .founder-features {
+            display: flex;
+            justify-content: center;
+            gap: 6rem;
+            margin: 6rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .founder-feature {
+            text-align: center;
+            max-width: 280px;
+        }
+
+        .founder-feature h4 {
+            color: var(--color-muted-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        /* Investor Trust */
+        .trust {
+            background-color: var(--color-mist-grey);
+            padding: 160px 0;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+
+        .trust-item {
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--color-warm-stone);
+            transition: border-color 0.4s ease;
+            position: relative;
+        }
+        
+        .trust-item::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: var(--color-forest-green);
+            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .trust-item:hover::before {
+            width: 100%;
+        }
+
+        .trust-item h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+            color: var(--color-forest-dark);
+        }
+
+        /* Private Proposal Form */
+        .proposal {
+            background-color: var(--color-ivory);
+            padding: 180px 0;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 5rem;
+        }
+        
+        .form-full {
+            grid-column: span 2;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .input-group input, 
+        .input-group select,
+        .input-group textarea {
+            width: 100%;
+            padding: 1.5rem 0 0.5rem 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(169, 165, 156, 0.5);
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            color: var(--color-forest-dark);
+            outline: none;
+            border-radius: 0;
+            appearance: none;
+            transition: border-color 0.4s ease;
+        }
+        
+        .input-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+            border-bottom-color: var(--color-forest-dark);
+        }
+
+        .input-group label {
+            position: absolute;
+            top: 1rem;
+            left: 0;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-warm-stone);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label,
+        .input-group select:focus ~ label,
+        .input-group select:valid ~ label,
+        .input-group textarea:focus ~ label,
+        .input-group textarea:valid ~ label {
+            top: -0.8rem;
+            font-size: 0.6rem;
+            color: var(--color-muted-gold);
+            letter-spacing: 0.2em;
+        }
+        
+        /* Custom Select Arrow */
+        .select-wrapper {
+            position: relative;
+        }
+        
+        .select-wrapper::after {
+            content: '▼';
+            font-size: 0.5rem;
+            color: var(--color-warm-stone);
+            position: absolute;
+            right: 0;
+            top: 2rem;
+            pointer-events: none;
+        }
+
+        .form-submit {
+            margin-top: 5rem;
+            text-align: center;
+        }
+
+        /* Footer & Legal */
+        footer {
+            background-color: var(--color-forest-dark);
+            color: var(--color-warm-stone);
+            padding: 6rem 0 3rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 90%;
+            height: 1px;
+            background-color: rgba(194, 168, 120, 0.2);
+        }
+
+        .legal-disclaimer {
+            font-size: 0.65rem;
+            line-height: 1.8;
+            margin-bottom: 5rem;
+            padding: 3rem;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(169, 165, 156, 0.1);
+            text-align: justify;
+            letter-spacing: 0.05em;
+            color: rgba(169, 165, 156, 0.7);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand h4 {
+            color: var(--color-ivory);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1em;
+            font-size: 1.2rem;
+        }
+
+        /* Sophisticated Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .split-layout { gap: 4rem; }
+            .wellness-content { padding: 6rem 4rem; }
+            .snapshot-grid { grid-template-columns: repeat(3, 1fr); }
+            .snapshot-item:nth-child(3) { border-right: none; }
+            .snapshot-item:nth-child(4), .snapshot-item:nth-child(5) { border-top: 1px solid rgba(194, 168, 120, 0.1); }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: flex; }
+            
+            .hero h1 { font-size: clamp(3rem, 6vw, 5rem); }
+            .hero-ctas { flex-direction: column; width: 100%; max-width: 300px; gap: 1rem; }
+            .hero-ctas .btn { width: 100%; }
+            
+            .split-layout, .wellness-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .wellness-image { height: 500px; }
+            .wellness-image::after { display: none; }
+            
+            .image-container { height: 500px; }
+            .image-container::before { display: none; }
+            
+            .villa-grid { grid-template-columns: repeat(2, 1fr); }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+            .founder-features { gap: 3rem; flex-wrap: wrap; }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 100px 0; }
+            .snapshot-grid { grid-template-columns: 1fr 1fr; }
+            .snapshot-item:nth-child(even) { border-right: none; }
+            .snapshot-item:nth-child(3) { border-right: 1px solid rgba(194, 168, 120, 0.1); }
+            
+            .villa-grid { grid-template-columns: 1fr; }
+            .trust-grid { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .form-full { grid-column: span 1; }
+            
+            .founder-features { flex-direction: column; align-items: center; }
+            .wellness-content { padding: 4rem 2rem; }
+            
+            .footer-bottom { flex-direction: column; gap: 2rem; text-align: center; }
+            .legal-disclaimer { padding: 1.5rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .snapshot-grid { grid-template-columns: 1fr; }
+            .snapshot-item { border-right: none !important; border-bottom: 1px solid rgba(194, 168, 120, 0.1); min-height: 200px; padding: 3rem 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-<nav id="nav">
-  <a href="#home" class="brand">Reserva Varde<small>Goa · Bluechip Global Agro</small></a>
-  <div class="navlinks">
-    <a href="#vision">The Vision</a>
-    <a href="#estate">One Acre</a>
-    <a href="#villas">Villas</a>
-    <a href="#wellness">Wellness</a>
-    <a href="#founder">Founder Circle</a>
-    <a href="#legal">Due Diligence</a>
-    <a href="#proposal" class="navcta">Request Proposal</a>
-  </div>
-  <button class="navtoggle" onclick="document.querySelector('.navlinks').style.display = document.querySelector('.navlinks').style.display==='flex'?'none':'flex'">≡</button>
-</nav>
-
-<!-- ================= HERO ================= -->
-<header class="hero" id="home">
-  <div class="hero-scene">
-    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#16271E"/><stop offset="0.55" stop-color="#10201A"/><stop offset="1" stop-color="#0B1410"/>
-        </linearGradient>
-        <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#1C3026" stop-opacity="0"/><stop offset="1" stop-color="#1C3026" stop-opacity="0.5"/>
-        </linearGradient>
-        <radialGradient id="sun" cx="0.7" cy="0.26" r="0.5">
-          <stop offset="0" stop-color="#BFA065" stop-opacity="0.32"/><stop offset="1" stop-color="#BFA065" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <rect width="1440" height="900" fill="url(#sky)"/>
-      <rect width="1440" height="900" fill="url(#sun)"/>
-      <path d="M0 560 C 240 500 380 540 600 510 C 820 480 1020 530 1440 480 L1440 900 L0 900Z" fill="#15261D"/>
-      <path d="M0 640 C 260 600 460 630 720 600 C 980 570 1180 610 1440 580 L1440 900 L0 900Z" fill="#13231B"/>
-      <path d="M0 720 C 300 690 520 720 800 690 C 1080 660 1260 695 1440 680 L1440 900 L0 900Z" fill="#101D16"/>
-      <g opacity="0.5" fill="#0E1A14">
-        <path d="M120 720 l14 -150 14 150Z"/><path d="M180 730 l12 -120 12 120Z"/>
-        <path d="M1280 700 l16 -170 16 170Z"/><path d="M1340 715 l13 -130 13 130Z"/>
-        <path d="M620 700 l15 -160 15 160Z"/><path d="M690 712 l11 -120 11 120Z"/>
-      </g>
-      <rect width="1440" height="900" fill="url(#mist)"/>
-    </svg>
-  </div>
-  <div class="hero-grad"></div>
-  <div class="hero-inner">
-    <div class="wrap">
-      <p class="eyebrow rv in">A Private 1,000-Acre Eco-Jungle Valley · Goa</p>
-      <h1 class="rv in d1">Own One Acre of<br>Goa’s <em>Living Forest</em></h1>
-      <p class="sub rv in d2">A private jungle valley estate of wellness, privacy and legacy — conceived and stewarded by Bluechip Global Agro.</p>
-      <div class="hero-cta rv in d3">
-        <a href="#proposal" class="btn btn-gold">Request Private Proposal</a>
-        <a href="#founder" class="btn btn-ghost">Book a Founder Circle Call</a>
-      </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#vision" class="menu-link">Vision</a>
+        <a href="#estate" class="menu-link">The Estate</a>
+        <a href="#wellness" class="menu-link">Wellness</a>
+        <a href="#founder" class="menu-link">Founder Circle</a>
     </div>
-  </div>
-  <div class="scrollhint">Scroll to enter the valley</div>
-</header>
 
-<!-- ================= SNAPSHOT ================= -->
-<section class="band" id="snapshot">
-  <div class="wrap">
-    <div class="ledger rv">
-      <div><div class="num">1,000</div><div class="lab">Acres of Valley</div></div>
-      <div><div class="num">1</div><div class="lab">Acre Per Estate</div></div>
-      <div><div class="num">~1,000</div><div class="lab">Private Estates</div></div>
-      <div><div class="num">3</div><div class="lab">Villa Concepts</div></div>
-      <div><div class="num">1</div><div class="lab">Herbal Wellness Valley</div></div>
-      <div><div class="num">50</div><div class="lab">Founder Circle Estates</div></div>
-    </div>
-    <p class="formnote rv d1" style="margin-top:26px">A conceptual eco-estate model — every figure indicative and subject to survey, contours and statutory approvals.</p>
-  </div>
-</section>
-
-<!-- ================= VISION ================= -->
-<section class="band alt" id="vision">
-  <div class="wrap">
-    <div class="split narrow">
-      <div class="rv">
-        <p class="eyebrow">The Vision</p>
-        <h2 style="font-size:clamp(34px,4.6vw,58px);margin-top:18px">Not a plotted scheme.<br>A <em>managed forest estate.</em></h2>
-        <p class="lead" style="margin-top:26px">Reserva Varde Goa is not a villa project and not a layout of plots. It is a single living valley — conserved, low-density and stewarded — where each owner holds one acre of forest within a community designed around privacy, wellness and the long horizon.</p>
-        <p class="lead" style="margin-top:20px">Conservation comes first. Built footprint is deliberately small. The land remains the asset.</p>
-      </div>
-      <div class="figure rv d2">
-        <svg viewBox="0 0 640 520" xmlns="http://www.w3.org/2000/svg">
-          <rect width="640" height="520" fill="#13231B"/>
-          <g stroke="#BFA065" stroke-opacity="0.22" fill="none">
-            <path d="M40 460 C 160 400 220 430 320 380 C 420 330 520 370 600 320"/>
-            <path d="M40 410 C 160 350 220 380 320 330 C 420 280 520 320 600 270"/>
-            <path d="M40 360 C 160 300 220 330 320 280 C 420 230 520 270 600 220"/>
-          </g>
-          <circle cx="430" cy="200" r="58" fill="none" stroke="#BFA065" stroke-opacity="0.5"/>
-          <circle cx="430" cy="200" r="3" fill="#BFA065"/>
-          <text x="430" y="285" fill="#C9C2B0" font-family="Jost" font-size="13" letter-spacing="3" text-anchor="middle">CENTRAL WELLNESS CORE</text>
-          <g fill="#1C3026"><circle cx="150" cy="430" r="40"/><circle cx="240" cy="450" r="30"/><circle cx="540" cy="410" r="44"/></g>
-        </svg>
-        <span class="figcap">Indicative valley structure · conceptual</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= WHY GOA ================= -->
-<section class="band" id="whygoa">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">Why Goa</p>
-      <h2>The scarcity of large, <em>nature-rich</em> land</h2>
-      <p class="lead">India’s premier leisure geography, with sustained HNI and NRI second-home demand — and a vanishing supply of intact valley land at scale.</p>
-    </div>
-    <div class="flist rv d1">
-      <div><span class="ix">01</span><div><div class="ft">Premier leisure destination</div><div class="fd">India’s most established luxury second-home market.</div></div></div>
-      <div><span class="ix">02</span><div><div class="ft">HNI &amp; NRI demand</div><div class="fd">Deep, durable demand for titled nature assets.</div></div></div>
-      <div><span class="ix">03</span><div><div class="ft">Large parcel scarcity</div><div class="fd">Intact, nature-rich valleys at scale are nearly gone.</div></div></div>
-      <div><span class="ix">04</span><div><div class="ft">Global wellness appeal</div><div class="fd">A natural home for Ayurveda and slow living.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ONE ACRE ESTATE ================= -->
-<section class="band alt" id="estate">
-  <div class="wrap">
-    <div class="split">
-      <div class="figure rv">
-        <svg viewBox="0 0 620 560" xmlns="http://www.w3.org/2000/svg">
-          <rect width="620" height="560" fill="#10201A"/>
-          <rect x="40" y="40" width="540" height="480" fill="none" stroke="#BFA065" stroke-opacity="0.35"/>
-          <rect x="210" y="200" width="200" height="150" fill="#1C3026" stroke="#BFA065" stroke-opacity="0.5"/>
-          <text x="310" y="280" fill="#C9C2B0" font-family="Jost" font-size="12" letter-spacing="2" text-anchor="middle">VILLA FOOTPRINT</text>
-          <g fill="#1C3026" opacity="0.85">
-            <circle cx="100" cy="110" r="22"/><circle cx="150" cy="95" r="16"/><circle cx="520" cy="120" r="24"/>
-            <circle cx="95" cy="450" r="20"/><circle cx="520" cy="440" r="26"/><circle cx="300" cy="460" r="18"/>
-          </g>
-          <text x="120" y="170" fill="#7E7A6C" font-family="Jost" font-size="11" letter-spacing="2">HERBAL GARDEN</text>
-          <text x="400" y="430" fill="#7E7A6C" font-family="Jost" font-size="11" letter-spacing="2">ORGANIC PATCH</text>
-          <text x="60" y="510" fill="#7E7A6C" font-family="Jost" font-size="11" letter-spacing="2">PLANTATION BUFFER</text>
-        </svg>
-        <span class="figcap">One-acre estate · conceptual layout</span>
-      </div>
-      <div class="rv d2">
-        <p class="eyebrow">The One-Acre Estate</p>
-        <h2 style="font-size:clamp(32px,4.4vw,54px);margin-top:18px">An acre composed with <em>intention</em></h2>
-        <p class="lead" style="margin:24px 0 30px">Every estate is a single acre — a villa held within its own herbal garden, organic food garden, fruit grove and a managed plantation buffer that preserves privacy and the forest line.</p>
-        <div class="flist" style="border-top:1px solid var(--hair)">
-          <div><span class="ix">·</span><div class="ft">Villa footprint &amp; private deck</div></div>
-          <div><span class="ix">·</span><div class="ft">Herbal &amp; Ayurvedic garden</div></div>
-          <div><span class="ix">·</span><div class="ft">Organic vegetable patch</div></div>
-          <div><span class="ix">·</span><div class="ft">Fruit-tree grove</div></div>
-          <div><span class="ix">·</span><div class="ft">Rain-water harvesting · solar option</div></div>
-          <div><span class="ix">·</span><div class="ft">Managed plantation buffer</div></div>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">Reserva Varde</a>
+        <div class="nav-links">
+            <a href="#vision">Vision</a>
+            <a href="#estate">The Estate</a>
+            <a href="#wellness">Wellness</a>
+            <a href="#founder">Founder Circle</a>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= VILLAS ================= -->
-<section class="band" id="villas">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">Villa Concepts</p>
-      <h2>Three architectures, <em>one valley</em></h2>
-      <p class="lead">Each villa is conceived for indoor–outdoor living in natural materials, sited lightly within its acre.</p>
-    </div>
-    <div class="cards">
-      <div class="card rv d1">
-        <div class="cardtop"><svg viewBox="0 0 400 200"><rect width="400" height="200" fill="#13231B"/><path d="M70 140 L200 70 L330 140Z" fill="none" stroke="#BFA065" stroke-opacity="0.5"/><rect x="120" y="140" width="160" height="40" fill="#1C3026"/></svg></div>
-        <div class="cardbody">
-          <div class="meta">Entry Luxury · 1,200–2,000 sq ft</div>
-          <h3>Forest Cottage Villa</h3>
-          <p>A tropical cottage of deep verandahs and natural materials, settled quietly into the canopy.</p>
+        <div class="mobile-menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-      </div>
-      <div class="card rv d2">
-        <div class="cardtop"><svg viewBox="0 0 400 200"><rect width="400" height="200" fill="#15261D"/><rect x="90" y="80" width="220" height="100" fill="none" stroke="#BFA065" stroke-opacity="0.5"/><line x1="200" y1="80" x2="200" y2="180" stroke="#BFA065" stroke-opacity="0.3"/></svg></div>
-        <div class="cardbody">
-          <div class="meta">Family Scale · 2,500–4,000 sq ft</div>
-          <h3>Jungle Valley Villa</h3>
-          <p>A family-scale valley home of large glazing and seamless indoor–outdoor living.</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <div class="text-small hero-marker reveal">RVG — 01</div>
+            <h1 class="reveal reveal-delay-1">Own One Acre of Goa’s Living Forest</h1>
+            <p class="reveal reveal-delay-2">A private 1,000-acre eco-jungle wellness valley by Bluechip Global Agro.</p>
+            <div class="hero-ctas reveal reveal-delay-3">
+                <a href="#proposal" class="btn btn-primary">Request Private Proposal</a>
+                <a href="#founder" class="btn btn-outline">Apply for Founder Circle</a>
+            </div>
         </div>
-      </div>
-      <div class="card rv d3">
-        <div class="cardtop"><svg viewBox="0 0 400 200"><rect width="400" height="200" fill="#172A20"/><rect x="70" y="70" width="260" height="110" fill="none" stroke="#BFA065" stroke-opacity="0.55"/><circle cx="300" cy="150" r="16" fill="#1C3026" stroke="#BFA065" stroke-opacity="0.4"/></svg></div>
-        <div class="cardbody">
-          <div class="meta">Signature · 4,500–7,000+ sq ft</div>
-          <h3>Premium Wellness Villa</h3>
-          <p>A signature architect residence with private spa, plunge pool and yoga deck.</p>
+    </section>
+
+    <!-- Snapshot Section -->
+    <section class="snapshot">
+        <div class="container" style="max-width: 100%; padding: 0;">
+            <div class="snapshot-grid">
+                <div class="snapshot-item reveal">
+                    <div class="text-small snapshot-marker">[ 01 — Scale ]</div>
+                    <div class="snapshot-value">1,000<br><span class="text-small serif-italic" style="color:var(--color-warm-stone)">Acres</span></div>
+                </div>
+                <div class="snapshot-item reveal reveal-delay-1">
+                    <div class="text-small snapshot-marker">[ 02 — Density ]</div>
+                    <div class="snapshot-value">1 Acre<br><span class="text-small serif-italic" style="color:var(--color-warm-stone)">Per Estate</span></div>
+                </div>
+                <div class="snapshot-item reveal reveal-delay-2">
+                    <div class="text-small snapshot-marker">[ 03 — Architecture ]</div>
+                    <div class="snapshot-value">Eco-Jungle<br><span class="text-small serif-italic" style="color:var(--color-warm-stone)">Villas</span></div>
+                </div>
+                <div class="snapshot-item reveal reveal-delay-3">
+                    <div class="text-small snapshot-marker">[ 04 — Amenities ]</div>
+                    <div class="snapshot-value">Herbal<br><span class="text-small serif-italic" style="color:var(--color-warm-stone)">Wellness Valley</span></div>
+                </div>
+                <div class="snapshot-item reveal reveal-delay-4">
+                    <div class="text-small snapshot-marker">[ 05 — Access ]</div>
+                    <div class="snapshot-value">Founder<br><span class="text-small serif-italic" style="color:var(--color-warm-stone)">Circle Launch</span></div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <p style="margin-top:46px" class="rv"><a href="#proposal" class="btn btn-ghost">Request the Design Catalogue</a></p>
-  </div>
-</section>
+    </section>
 
-<!-- ================= WELLNESS ================= -->
-<section class="band moss" id="wellness">
-  <div class="wrap">
-    <div class="split narrow">
-      <div class="rv">
-        <p class="eyebrow">The Herbal Wellness Valley</p>
-        <h2 style="font-size:clamp(32px,4.4vw,54px);margin-top:18px">A valley that <em>heals</em></h2>
-        <p class="lead" style="margin:24px 0 18px">At the heart of the estate lies a wellness valley — an Ayurveda village, forest-bathing trails, yoga and meditation decks, a herbal tea garden and an organic café. Not a clinic; a way of living.</p>
-      </div>
-      <div class="rv d2">
-        <div class="flist" style="border-top:1px solid var(--hair)">
-          <div><span class="ix">·</span><div class="ft">Ayurveda village &amp; natural healing</div></div>
-          <div><span class="ix">·</span><div class="ft">Forest-bathing &amp; herbal trails</div></div>
-          <div><span class="ix">·</span><div class="ft">Yoga &amp; meditation decks</div></div>
-          <div><span class="ix">·</span><div class="ft">Herbal tea garden</div></div>
-          <div><span class="ix">·</span><div class="ft">Organic café &amp; clean food</div></div>
-          <div><span class="ix">·</span><div class="ft">Signature retreat programmes</div></div>
+    <!-- Vision Section -->
+    <section id="vision" class="vision">
+        <div class="container">
+            <span class="text-small vision-marker reveal">The Philosophy</span>
+            <h2 class="reveal reveal-delay-1">Not a plotted scheme.<br>A managed private jungle valley estate.</h2>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ================= OWNERSHIP LOGIC ================= -->
-<section class="band" id="investors">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">Ownership Logic · For HNIs, NRIs &amp; Family Offices</p>
-      <h2>A land-backed asset, <em>lived fully</em></h2>
-      <p class="lead">Ownership is composed of use, stewardship and a long horizon — never a promise of return.</p>
-    </div>
-    <div class="flist rv d1">
-      <div><span class="ix">01</span><div><div class="ft">Lifestyle use</div><div class="fd">A private forest retreat for the family.</div></div></div>
-      <div><span class="ix">02</span><div><div class="ft">Optional rental pool</div><div class="fd">Estate-managed, entirely at the owner’s discretion.</div></div></div>
-      <div><span class="ix">03</span><div><div class="ft">Agro &amp; herbal yield</div><div class="fd">A working herbal and organic ecosystem.</div></div></div>
-      <div><span class="ix">04</span><div><div class="ft">Long-horizon land asset</div><div class="fd">A titled, multi-generational holding.</div></div></div>
-    </div>
-    <p class="formnote rv" style="margin-top:24px">Nothing herein constitutes an offer, an assurance of approvals, or a guaranteed return.</p>
-  </div>
-</section>
+    <!-- One Acre Estate Section -->
+    <section id="estate" class="estate">
+        <div class="container split-layout">
+            <div class="estate-content">
+                <span class="text-small reveal" style="color: var(--color-muted-gold); display: block; margin-bottom: 2rem;">[ The Canvas ]</span>
+                <h2 class="reveal reveal-delay-1">One Acre Estate</h2>
+                <p class="reveal reveal-delay-2" style="margin-top: 2rem;">The luxury of immeasurable space. Each one-acre parcel is meticulously surveyed to preserve the natural topography, existing tree canopy, and ecological balance of the valley. A sanctuary designed for absolute privacy.</p>
+                
+                <ul class="estate-list">
+                    <li class="reveal reveal-delay-1"><span>✦</span> Bespoke Eco-Villa</li>
+                    <li class="reveal reveal-delay-2"><span>✦</span> Private Herbal & Organic Garden</li>
+                    <li class="reveal reveal-delay-3"><span>✦</span> Endemic Fruit Trees</li>
+                    <li class="reveal reveal-delay-4"><span>✦</span> Cantilevered Private Deck</li>
+                    <li class="reveal reveal-delay-4"><span>✦</span> Protected Forest Buffer</li>
+                </ul>
+            </div>
+            <div class="image-container reveal reveal-delay-2">
+                <img src="images/villa.png" alt="One Acre Estate Concept">
+            </div>
+        </div>
+    </section>
 
-<!-- ================= FOUNDER CIRCLE ================= -->
-<section class="band alt" id="founder">
-  <div class="wrap">
-    <div class="founder">
-      <div class="rv">
-        <p class="eyebrow">By Private Invitation</p>
-        <h2 style="font-size:clamp(34px,4.8vw,60px);margin-top:18px">The <em>Founder Circle</em></h2>
-        <p class="lead" style="margin:24px 0 0">The first fifty estates are offered privately — with priority allocation, founder pricing, a private documentation pack and a founder experience weekend within the valley.</p>
-        <p style="margin-top:36px"><a href="#proposal" class="btn btn-gold">Apply for Founder Circle Access</a></p>
-      </div>
-      <div class="rv d2">
-        <div class="fcount">07 / 50</div>
-        <div class="fbar"><i></i></div>
-        <p class="formnote">Indicative allocation. Founder Circle estates are limited and offered at the company’s discretion.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Villa Concepts -->
+    <section class="villas">
+        <div class="container">
+            <div class="section-header reveal">
+                <div>
+                    <span class="text-small" style="color: var(--color-muted-gold); display: block; margin-bottom: 1.5rem;">[ Architecture ]</span>
+                    <h2>Villa Concepts</h2>
+                </div>
+                <div class="text-small" style="color: var(--color-warm-stone);">Subject to specific topography</div>
+            </div>
+            
+            <div class="villa-grid">
+                <div class="villa-card reveal reveal-delay-1">
+                    <div class="villa-image-wrapper">
+                        <!-- Placeholder, normally unique images go here -->
+                        <img src="images/villa.png" alt="Forest Cottage Villa">
+                    </div>
+                    <h3>Forest Cottage Villa</h3>
+                    <p class="text-small" style="color: var(--color-warm-stone);">Intimate · Canopy View</p>
+                </div>
+                <div class="villa-card reveal reveal-delay-2">
+                    <div class="villa-image-wrapper">
+                        <img src="images/villa.png" alt="Jungle Valley Villa">
+                    </div>
+                    <h3>Jungle Valley Villa</h3>
+                    <p class="text-small" style="color: var(--color-warm-stone);">Expansive · Ridge Alignment</p>
+                </div>
+                <div class="villa-card reveal reveal-delay-3">
+                    <div class="villa-image-wrapper">
+                        <img src="images/wellness.png" alt="Premium Wellness Villa">
+                    </div>
+                    <h3>Premium Wellness Villa</h3>
+                    <p class="text-small" style="color: var(--color-warm-stone);">Sanctuary · Integrated Spa</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= LEGAL ================= -->
-<section class="band" id="legal">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">Legal &amp; Due Diligence</p>
-      <h2>Transparency is the <em>first amenity</em></h2>
-      <p class="lead">Every estate progresses through a documentation-led framework. We publish the checklist rather than conceal it.</p>
-    </div>
-    <ul class="checks rv d1">
-      <li>Title deed</li><li>Ownership chain</li><li>Form I &amp; XIV</li><li>Mutation records</li>
-      <li>Survey plan</li><li>DSLR-certified plan</li><li>Encumbrance certificate</li><li>Zoning certificate</li>
-      <li>Regional Plan classification</li><li>TCP approval</li><li>Land conversion</li><li>Panchayat construction licence</li>
-      <li>Forest status</li><li>ESZ / sanctuary proximity</li><li>Road access legality</li><li>Waterbody buffers</li>
-      <li>Environmental permissions</li><li>Goa RERA applicability</li><li>Subdivision / layout approval</li><li>Sale deed / agreement structure</li>
-    </ul>
-  </div>
-</section>
+    <!-- Wellness Valley -->
+    <section id="wellness" class="wellness">
+        <div class="wellness-grid">
+            <div class="wellness-image reveal"></div>
+            <div class="wellness-content">
+                <span class="text-small reveal" style="color: var(--color-muted-gold); display: block; margin-bottom: 2rem;">[ The Sanctuary ]</span>
+                <h2 class="reveal reveal-delay-1">Herbal Wellness Valley</h2>
+                <p class="reveal reveal-delay-2" style="margin-top: 2rem; max-width: 500px;">A dedicated zone designed for holistic rejuvenation, seamlessly integrated into the forest floor. Built on the principles of ancient healing, elevated by modern architectural discipline.</p>
+                
+                <div class="wellness-tags reveal reveal-delay-3">
+                    <span class="tag">Ayurveda Village</span>
+                    <span class="tag">Yoga Decks</span>
+                    <span class="tag">Herbal Trails</span>
+                    <span class="tag">Forest Bathing</span>
+                    <span class="tag">Organic Café</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= PROPOSAL FORM ================= -->
-<section class="band moss" id="proposal">
-  <div class="wrap">
-    <div class="sec-head rv" style="margin-bottom:48px">
-      <p class="eyebrow">Private Enquiry</p>
-      <h2>Request a <em>confidential proposal</em></h2>
-      <p class="lead">A private advisor will respond with documentation and, where appropriate, a Founder Circle invitation.</p>
-    </div>
-    <form class="formgrid rv d1" id="leadform" onsubmit="return submitLead(event)">
-      <div class="field"><label>Full Name</label><input required name="full_name"></div>
-      <div class="field"><label>Phone</label><input required name="phone"></div>
-      <div class="field"><label>WhatsApp Number</label><input name="whatsapp"></div>
-      <div class="field"><label>Email</label><input type="email" required name="email"></div>
-      <div class="field"><label>City</label><input name="city"></div>
-      <div class="field"><label>Country</label><input name="country"></div>
-      <div class="field"><label>Buyer Type</label>
-        <select name="buyer_type"><option>HNI Buyer</option><option>NRI Buyer</option><option>Family Office</option><option>Hospitality Investor</option><option>Wellness Buyer</option><option>Channel Partner</option></select>
-      </div>
-      <div class="field"><label>Budget Range</label>
-        <select name="budget_range"><option>₹75L – ₹1.5 Cr</option><option>₹1.5 Cr – ₹3 Cr</option><option>₹3 Cr – ₹5 Cr+</option><option>₹5 Cr+</option></select>
-      </div>
-      <div class="field"><label>Interest Type</label>
-        <select name="interest_type"><option>Lifestyle</option><option>Investment</option><option>Wellness</option><option>Rental Income</option><option>Founder Circle</option><option>Site Visit</option></select>
-      </div>
-      <div class="field"><label>Preferred Contact</label>
-        <select name="contact_pref"><option>Phone</option><option>WhatsApp</option><option>Email</option></select>
-      </div>
-      <div class="field full"><label>Message</label><textarea name="message" placeholder="Tell us a little about what you are seeking."></textarea></div>
-      <label class="consent"><input type="checkbox" required>I consent to being contacted by Reserva Varde Goa regarding this enquiry and understand this is a conceptual eco-estate model subject to statutory approvals.</label>
-      <div class="ok" id="ok">Thank you. Your enquiry has been received — a private advisor will be in touch shortly.</div>
-      <div class="field full" style="margin-top:6px"><button class="btn btn-gold" type="submit" style="justify-content:center">Submit Confidential Enquiry</button></div>
-      <p class="formnote">On the live platform this writes directly into the CRM <code>leads</code> table via Supabase, with the public insert policy defined in <code>01_schema.sql</code>.</p>
-    </form>
-  </div>
-</section>
+    <!-- Founder Circle -->
+    <section id="founder" class="founder-circle">
+        <div class="container">
+            <div class="founder-icon reveal">✦</div>
+            <h2 class="reveal reveal-delay-1">Founder Circle</h2>
+            <p class="reveal reveal-delay-2" style="max-width: 700px; margin: 2rem auto 0; color: rgba(248, 246, 240, 0.8);">An exclusive invitation to participate in the genesis of Reserva Varde Goa. Reserved for visionaries who understand the intrinsic value of conservation luxury.</p>
+            
+            <div class="founder-features">
+                <div class="founder-feature reveal reveal-delay-1">
+                    <h4>First 50 Allocations</h4>
+                    <p class="text-small" style="color: var(--color-warm-stone); line-height: 1.6;">Priority selection of the most coveted topographic parcels.</p>
+                </div>
+                <div class="founder-feature reveal reveal-delay-2">
+                    <h4>Private Documentation</h4>
+                    <p class="text-small" style="color: var(--color-warm-stone); line-height: 1.6;">Comprehensive dossier, masterplan access, and legal framework review.</p>
+                </div>
+                <div class="founder-feature reveal reveal-delay-3">
+                    <h4>Site Visit Experience</h4>
+                    <p class="text-small" style="color: var(--color-warm-stone); line-height: 1.6;">Curated survey of the land, guided by the master planning team.</p>
+                </div>
+            </div>
+            
+            <a href="#proposal" class="btn btn-outline reveal reveal-delay-4">Apply for Allocation</a>
+        </div>
+    </section>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="wrap">
-    <div class="fcols">
-      <div>
-        <a href="#home" class="brand">Reserva Varde<small>Goa · Bluechip Global Agro</small></a>
-        <p>A private 1,000-acre eco-jungle wellness valley — conserved, low-density and documentation-led.</p>
-      </div>
-      <div>
-        <h4>Estate</h4>
-        <a href="#vision">The Vision</a><a href="#estate">One-Acre Estate</a><a href="#villas">Villas</a><a href="#wellness">Wellness Valley</a>
-      </div>
-      <div>
-        <h4>Engage</h4>
-        <a href="#founder">Founder Circle</a><a href="#legal">Due Diligence</a><a href="#proposal">Request Proposal</a><a href="#investors">For Investors</a>
-      </div>
-    </div>
-    <div class="disclaimer">
-      <b>Compliance.</b> Reserva Varde Goa is a conceptual eco-estate model. All development, villa construction, land subdivision, sale, resort operation and eco-tourism activity is subject to title verification, zoning, TCP approval, land conversion, environmental / forest / ESZ verification, Goa RERA applicability and legal due diligence. Nothing on this website constitutes an offer, approval assurance, or guaranteed return.
-    </div>
-    <div class="copyr">
-      <span>© 2026 Bluechip Global Agro. All rights reserved.</span>
-      <span>Reserva Varde Goa · Private Jungle Valley Estate</span>
-    </div>
-  </div>
-</footer>
+    <!-- Investor Trust -->
+    <section class="trust">
+        <div class="container">
+            <span class="text-small reveal" style="color: var(--color-muted-gold); display: block; margin-bottom: 2rem;">[ The Asset ]</span>
+            <h2 class="reveal reveal-delay-1">Investor Trust</h2>
+            
+            <div class="trust-grid">
+                <div class="trust-item reveal reveal-delay-1">
+                    <h4>Land-Backed Lifestyle Asset</h4>
+                    <p class="text-small" style="color: var(--color-forest-green); opacity: 0.7; line-height: 1.6;">Tangible ownership rooted in Goa's earth.</p>
+                </div>
+                <div class="trust-item reveal reveal-delay-2">
+                    <h4>Managed Estate</h4>
+                    <p class="text-small" style="color: var(--color-forest-green); opacity: 0.7; line-height: 1.6;">Professional stewardship of all common areas and infrastructure.</p>
+                </div>
+                <div class="trust-item reveal reveal-delay-3">
+                    <h4>Phased Development</h4>
+                    <p class="text-small" style="color: var(--color-forest-green); opacity: 0.7; line-height: 1.6;">Disciplined execution ensuring quality and compliance at every stage.</p>
+                </div>
+                <div class="trust-item reveal reveal-delay-4">
+                    <h4>Recurring Operating Model</h4>
+                    <p class="text-small" style="color: var(--color-forest-green); opacity: 0.7; line-height: 1.6;">Sustainable framework for long-term estate viability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.16});
-document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));
-function submitLead(e){
-  e.preventDefault();
-  document.getElementById('ok').style.display='block';
-  e.target.querySelector('button').textContent='Enquiry Received';
-  document.getElementById('ok').scrollIntoView({behavior:'smooth',block:'center'});
-  return false;
-}
-</script>
+    <!-- Private Proposal Form -->
+    <section id="proposal" class="proposal">
+        <div class="container form-container">
+            <div class="text-center reveal" style="text-align: center; margin-bottom: 5rem;">
+                <span class="text-small" style="color: var(--color-muted-gold); display: block; margin-bottom: 1.5rem;">[ Connect ]</span>
+                <h2>Request Private Proposal</h2>
+            </div>
+            
+            <form action="#" method="POST" class="reveal reveal-delay-2">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <input type="text" id="fullName" required>
+                        <label for="fullName">Full Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="phone" required>
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="whatsapp" required>
+                        <label for="whatsapp">WhatsApp Number</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="city" required>
+                        <label for="city">City</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="country" required>
+                        <label for="country">Country</label>
+                    </div>
+                    <div class="input-group select-wrapper">
+                        <select id="buyerType" required>
+                            <option value="" disabled selected></option>
+                            <option value="individual">Individual Investor</option>
+                            <option value="corporate">Corporate Entity</option>
+                            <option value="family_office">Family Office</option>
+                        </select>
+                        <label for="buyerType">Buyer Type</label>
+                    </div>
+                    <div class="input-group select-wrapper">
+                        <select id="budget" required>
+                            <option value="" disabled selected></option>
+                            <option value="tier1">₹5 Cr - ₹10 Cr</option>
+                            <option value="tier2">₹10 Cr - ₹20 Cr</option>
+                            <option value="tier3">₹20 Cr+</option>
+                        </select>
+                        <label for="budget">Budget Range</label>
+                    </div>
+                    <div class="input-group select-wrapper form-full">
+                        <select id="interest" required>
+                            <option value="" disabled selected></option>
+                            <option value="founder">Founder Circle Application</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="visit">Schedule Site Visit</option>
+                        </select>
+                        <label for="interest">Interest Type</label>
+                    </div>
+                    <div class="input-group form-full">
+                        <textarea id="message" required></textarea>
+                        <label for="message">Message / Specific Requirements</label>
+                    </div>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-outline-dark">Submit Confidential Inquiry</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="legal-disclaimer reveal">
+                Reserva Varde Goa is a conceptual eco-estate model. All development, villa construction, land subdivision, sale, resort operation and eco-tourism activity is subject to title verification, zoning, TCP approval, land conversion, environmental / forest / ESZ verification, Goa RERA applicability and legal due diligence. Nothing on this website constitutes an offer, approval assurance, or guaranteed return.
+            </div>
+            
+            <div class="footer-bottom reveal reveal-delay-2">
+                <div class="footer-brand">
+                    <h4>Bluechip Global Agro</h4>
+                    <p class="text-small" style="color: var(--color-warm-stone);">Estate Developers & Stewards</p>
+                </div>
+                <div class="footer-links" style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; justify-content: center;">
+                    <a href="crm.html" class="text-small" style="color: var(--color-warm-stone); text-decoration: none; opacity: 0.5; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">Internal CRM Preview</a>
+                    <p class="text-small" style="color: var(--color-warm-stone);">&copy; 2026 Reserva Varde Goa. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for staggered reveal animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(element => {
+            revealObserver.observe(element);
+        });
+    </script>
 </body>
 </html>

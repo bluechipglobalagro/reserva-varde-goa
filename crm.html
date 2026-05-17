@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva Varde Goa | Internal CRM</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0b140f;
+            --bg-card: #15241b;
+            --text-main: #F8F6F0;
+            --text-muted: #A9A59C;
+            --accent-gold: #C2A878;
+            --border-color: rgba(194, 168, 120, 0.15);
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            display: flex;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: var(--bg-card);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .brand {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 3rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .nav-list a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 0.8rem 1rem;
+            display: block;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .nav-list a:hover, .nav-list a.active {
+            color: var(--text-main);
+            background-color: rgba(194, 168, 120, 0.05);
+            border-left: 2px solid var(--accent-gold);
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 2.5rem 4rem;
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header h1 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-dark);
+            font-weight: 600;
+        }
+
+        /* Cards Layout */
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(194, 168, 120, 0.4);
+        }
+
+        .kpi-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-value {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--text-main);
+        }
+
+        .kpi-value.gold {
+            color: var(--accent-gold);
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: rgba(255,255,255,0.1);
+            margin-top: 1rem;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--accent-gold);
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Table */
+        .table-container {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            margin-bottom: 4rem;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        td {
+            font-size: 0.9rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1px solid var(--text-muted);
+        }
+
+        .status-badge.active {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .status-badge.success {
+            border-color: #4CAF50;
+            color: #4CAF50;
+        }
+
+        /* Legal Tracker */
+        .tracker-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .tracker-steps::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: var(--border-color);
+            z-index: 1;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--bg-dark);
+            border: 2px solid var(--border-color);
+        }
+
+        .step.completed .step-dot {
+            background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .step.active .step-dot {
+            border-color: var(--accent-gold);
+        }
+
+        .step-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            text-align: center;
+            width: 100px;
+        }
+        
+        .step.completed .step-label {
+            color: var(--text-main);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar { transform: translateX(-100%); z-index: 1000; transition: transform 0.3s ease; }
+            .main-content { margin-left: 0; padding: 1.5rem; }
+            .kpi-grid { grid-template-columns: 1fr; }
+            .tracker-steps { flex-direction: column; align-items: flex-start; gap: 2rem; }
+            .tracker-steps::before { width: 1px; height: 100%; top: 0; left: 9px; right: auto; }
+            .step { flex-direction: row; width: 100%; }
+            .step-label { text-align: left; width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="brand">RVG CRM</div>
+        <ul class="nav-list">
+            <li><a href="#" class="active">Executive Dashboard</a></li>
+            <li><a href="#">Lead Pipeline</a></li>
+            <li><a href="#">Site Visits</a></li>
+            <li><a href="#">Unit Inventory</a></li>
+            <li><a href="#">Legal & Compliance</a></li>
+            <li><a href="#">Finance Tracking</a></li>
+            <li><a href="#">Comms Templates</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>Bluechip Global Agro</p>
+            <p style="margin-top: 0.5rem; opacity: 0.5;">v2.0 Private Beta</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <p class="text-small" style="color: var(--text-muted); margin-bottom: 0.5rem;">Reserva Varde Goa</p>
+                <h1>Command Center</h1>
+            </div>
+            <div class="user-profile">
+                <span class="text-small" style="color: var(--text-muted);">Welcome, Director</span>
+                <div class="avatar">D</div>
+            </div>
+        </header>
+
+        <!-- KPI Cards -->
+        <div class="section-title">Executive Overview</div>
+        <div class="kpi-grid">
+            <div class="card">
+                <div class="kpi-label">Total Leads</div>
+                <div class="kpi-value">142</div>
+            </div>
+            <div class="card">
+                <div class="kpi-label">Founder Circle Leads</div>
+                <div class="kpi-value gold">68</div>
+            </div>
+            <div class="card">
+                <div class="kpi-label">HNI / NRI Split</div>
+                <div class="kpi-value" style="font-size: 1.8rem;">65% / 35%</div>
+            </div>
+            <div class="card">
+                <div class="kpi-label">Site Visits Scheduled</div>
+                <div class="kpi-value">12</div>
+            </div>
+            <div class="card">
+                <div class="kpi-label">Proposals Sent</div>
+                <div class="kpi-value">34</div>
+            </div>
+            <div class="card">
+                <div class="kpi-label">Booking Stage</div>
+                <div class="kpi-value">8</div>
+            </div>
+            <div class="card">
+                <div class="kpi-label">Pipeline Value (est)</div>
+                <div class="kpi-value">₹240 Cr</div>
+            </div>
+            <div class="card">
+                <div class="kpi-label">Conversion Rate</div>
+                <div class="kpi-value">11%</div>
+            </div>
+        </div>
+
+        <!-- Two Column Section -->
+        <div class="grid-2">
+            <!-- Founder Circle Progress -->
+            <div>
+                <div class="section-title">Founder Circle Allocation</div>
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                        <span class="kpi-value gold">12<span style="font-size: 1rem; color: var(--text-muted); font-family: var(--font-sans);"> / 50</span></span>
+                        <span class="kpi-label">Allocated</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="founderProgress"></div>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1.5rem;">24% of Founder Circle inventory booked. 8 contracts pending signature.</p>
+                </div>
+            </div>
+
+            <!-- Unit Inventory Summary -->
+            <div>
+                <div class="section-title">Unit Inventory (1,000 Acres)</div>
+                <div class="card" style="display: flex; gap: 2rem;">
+                    <div style="flex: 1;">
+                        <div class="kpi-label">Available</div>
+                        <div class="kpi-value">850</div>
+                    </div>
+                    <div style="flex: 1;">
+                        <div class="kpi-label">On Hold</div>
+                        <div class="kpi-value">14</div>
+                    </div>
+                    <div style="flex: 1;">
+                        <div class="kpi-label">Reserved</div>
+                        <div class="kpi-value gold">18</div>
+                    </div>
+                    <div style="flex: 1;">
+                        <div class="kpi-label">Booked</div>
+                        <div class="kpi-value">12</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lead Pipeline Table -->
+        <div class="section-title">Active Lead Pipeline</div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Prospect Name</th>
+                        <th>Type</th>
+                        <th>Location</th>
+                        <th>Interest</th>
+                        <th>Stage</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rajeev S.</td>
+                        <td>HNI (Individual)</td>
+                        <td>Mumbai</td>
+                        <td>Founder Circle</td>
+                        <td><span class="status-badge active">Proposal Sent</span></td>
+                        <td><a href="#" style="color: var(--accent-gold); text-decoration: none; font-size: 0.8rem;">View Profile</a></td>
+                    </tr>
+                    <tr>
+                        <td>Priya & Anil M.</td>
+                        <td>NRI (Family Office)</td>
+                        <td>Dubai</td>
+                        <td>Wellness Villa</td>
+                        <td><span class="status-badge">Site Visit Scheduled</span></td>
+                        <td><a href="#" style="color: var(--accent-gold); text-decoration: none; font-size: 0.8rem;">View Profile</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vikram C.</td>
+                        <td>Corporate</td>
+                        <td>Bengaluru</td>
+                        <td>General Inquiry</td>
+                        <td><span class="status-badge">Lead Qualification</span></td>
+                        <td><a href="#" style="color: var(--accent-gold); text-decoration: none; font-size: 0.8rem;">View Profile</a></td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Anita K.</td>
+                        <td>HNI (Individual)</td>
+                        <td>Delhi</td>
+                        <td>Founder Circle</td>
+                        <td><span class="status-badge success">Booking Confirmed</span></td>
+                        <td><a href="#" style="color: var(--accent-gold); text-decoration: none; font-size: 0.8rem;">View Profile</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Legal Status Tracker -->
+        <div class="section-title">Legal & Compliance Status</div>
+        <div class="card" style="margin-bottom: 4rem;">
+            <div class="tracker-steps">
+                <div class="step completed">
+                    <div class="step-dot"></div>
+                    <div class="step-label">Title<br>Verification</div>
+                </div>
+                <div class="step completed">
+                    <div class="step-dot"></div>
+                    <div class="step-label">Form I & XIV<br>Update</div>
+                </div>
+                <div class="step active">
+                    <div class="step-dot"></div>
+                    <div class="step-label">Zoning<br>Clearance</div>
+                </div>
+                <div class="step">
+                    <div class="step-dot"></div>
+                    <div class="step-label">TCP<br>Approval</div>
+                </div>
+                <div class="step">
+                    <div class="step-dot"></div>
+                    <div class="step-label">Land<br>Conversion</div>
+                </div>
+                <div class="step">
+                    <div class="step-dot"></div>
+                    <div class="step-label">Forest / ESZ<br>NOC</div>
+                </div>
+                <div class="step">
+                    <div class="step-dot"></div>
+                    <div class="step-label">Goa RERA<br>Registration</div>
+                </div>
+                <div class="step">
+                    <div class="step-dot"></div>
+                    <div class="step-label">Final<br>Subdivision</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Finance Tracker & Comms Grid -->
+        <div class="grid-2">
+            <div>
+                <div class="section-title">Finance Tracker</div>
+                <div class="table-container" style="margin-bottom: 0;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th style="text-align: right;">Amount (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="color: var(--text-muted);">Total Deal Value (Booked)</td>
+                                <td style="text-align: right; font-family: var(--font-serif); font-size: 1.2rem;">64,00,00,000</td>
+                            </tr>
+                            <tr>
+                                <td style="color: var(--text-muted);">Amount Received</td>
+                                <td style="text-align: right; font-family: var(--font-serif); font-size: 1.2rem; color: #4CAF50;">12,50,00,000</td>
+                            </tr>
+                            <tr>
+                                <td style="color: var(--text-muted);">Amount Pending</td>
+                                <td style="text-align: right; font-family: var(--font-serif); font-size: 1.2rem;">51,50,00,000</td>
+                            </tr>
+                            <tr>
+                                <td style="color: var(--text-muted);">Next Tranche Due</td>
+                                <td style="text-align: right; font-family: var(--font-serif); font-size: 1.2rem; color: var(--accent-gold);">15 Oct 2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title">Communication Templates</div>
+                <div class="card" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <a href="#" style="display: block; padding: 1rem; border: 1px solid var(--border-color); color: var(--text-main); text-decoration: none; display: flex; justify-content: space-between;">
+                        <span>Founder Circle Invitation</span>
+                        <span style="color: var(--accent-gold);">Copy &rarr;</span>
+                    </a>
+                    <a href="#" style="display: block; padding: 1rem; border: 1px solid var(--border-color); color: var(--text-main); text-decoration: none; display: flex; justify-content: space-between;">
+                        <span>Site Survey Briefing (NRI)</span>
+                        <span style="color: var(--accent-gold);">Copy &rarr;</span>
+                    </a>
+                    <a href="#" style="display: block; padding: 1rem; border: 1px solid var(--border-color); color: var(--text-main); text-decoration: none; display: flex; justify-content: space-between;">
+                        <span>Legal Due Diligence Pack</span>
+                        <span style="color: var(--accent-gold);">Copy &rarr;</span>
+                    </a>
+                    <a href="#" style="display: block; padding: 1rem; border: 1px solid var(--border-color); color: var(--text-main); text-decoration: none; display: flex; justify-content: space-between;">
+                        <span>Payment Milestone Reminder</span>
+                        <span style="color: var(--accent-gold);">Copy &rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Animate progress bar on load
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.getElementById('founderProgress').style.width = '24%';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
