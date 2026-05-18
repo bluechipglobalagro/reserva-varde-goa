@@ -1062,6 +1062,198 @@
             .snapshot-item { border-right: none !important; border-bottom: 1px solid rgba(194, 168, 120, 0.1); min-height: 200px; padding: 3rem 2rem; }
             .hero h1 { font-size: 2.5rem; }
         }
+        /* ===== Masterplan Zones Carousel ===== */
+        .masterplan { background-color: var(--color-ivory); }
+
+        .mp-carousel {
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        .mp-track { position: relative; min-height: 620px; }
+
+        .mp-slide {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: 53fr 47fr;
+            background-color: #fff;
+            border: 1px solid rgba(169, 165, 156, 0.25);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px -40px rgba(15, 28, 22, 0.25);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mp-slide.is-active { opacity: 1; visibility: visible; }
+
+        .mp-visual {
+            position: relative;
+            min-height: 620px;
+            /* Premium forest-gradient fallback — shows if image missing */
+            background:
+                radial-gradient(circle at 70% 25%, rgba(194,168,120,0.18), transparent 55%),
+                linear-gradient(150deg, var(--color-forest-green) 0%, var(--color-forest-dark) 70%);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mp-visual-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.78) contrast(1.05);
+        }
+
+        .mp-overlay-label {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            padding: 0.6rem 1.4rem;
+            background: rgba(15, 28, 22, 0.55);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(194, 168, 120, 0.5);
+            color: var(--color-ivory);
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            font-weight: 500;
+            z-index: 2;
+        }
+
+        .mp-content {
+            padding: 5rem 4.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mp-zone-tag {
+            color: var(--color-muted-gold);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            font-weight: 500;
+            margin-bottom: 1.8rem;
+        }
+
+        .mp-content h3 {
+            color: var(--color-forest-dark);
+            margin-bottom: 1.8rem;
+        }
+
+        .mp-content p {
+            color: rgba(26, 47, 37, 0.78);
+            margin-bottom: 2.8rem;
+            max-width: 440px;
+        }
+
+        .mp-stats { list-style: none; margin-bottom: 3rem; }
+
+        .mp-stats li {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 1.1rem 0;
+            border-bottom: 1px solid rgba(169, 165, 156, 0.25);
+            font-size: 0.95rem;
+        }
+
+        .mp-stats li span:first-child {
+            color: var(--color-warm-stone);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.68rem;
+            font-weight: 500;
+            align-self: center;
+        }
+
+        .mp-stats li span:last-child {
+            color: var(--color-forest-dark);
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            text-align: right;
+        }
+
+        .mp-content .btn { align-self: flex-start; }
+
+        .mp-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .mp-arrow {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            border: 1px solid var(--color-warm-stone);
+            background: transparent;
+            color: var(--color-forest-dark);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mp-arrow:hover {
+            background: var(--color-forest-green);
+            border-color: var(--color-forest-green);
+            color: var(--color-ivory);
+        }
+
+        .mp-counter {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--color-forest-dark);
+            min-width: 70px;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+
+        .mp-counter i {
+            color: var(--color-muted-gold);
+            font-style: normal;
+            margin: 0 0.4rem;
+        }
+
+        .mp-disclaimer {
+            font-size: 0.65rem;
+            line-height: 1.8;
+            color: rgba(26, 47, 37, 0.5);
+            letter-spacing: 0.04em;
+            text-align: center;
+            max-width: 880px;
+            margin: 4rem auto 0;
+        }
+
+        @media (max-width: 992px) {
+            .mp-slide { grid-template-columns: 1fr; position: relative; }
+            .mp-track { min-height: 0; }
+            .mp-slide:not(.is-active) { display: none; }
+            .mp-slide.is-active { display: grid; }
+            .mp-visual { min-height: 320px; }
+            .mp-content { padding: 3.5rem 2.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .mp-content { padding: 3rem 1.8rem; }
+            .mp-content .btn { align-self: stretch; width: 100%; }
+            .mp-controls { gap: 1.5rem; }
+            .mp-overlay-label { top: 1.2rem; left: 1.2rem; }
+            .masterplan .section-header { flex-direction: column; align-items: flex-start; gap: 2rem; }
+            .masterplan .section-header > div:last-child { text-align: left !important; max-width: 100% !important; }
+        }
+
     </style>
 </head>
 <body>
@@ -1159,6 +1351,41 @@
             <div class="image-container reveal reveal-delay-2">
                 <img src="villa.png" alt="One Acre Estate Concept">
             </div>
+        </div>
+    </section>
+<!-- ============================================================
+     MASTERPLAN ZONES CAROUSEL  — paste this whole block
+     directly AFTER the closing </section> of the
+     "One Acre Estate Section" and BEFORE the
+     "<!-- Villa Concepts -->" comment.
+     ============================================================ -->
+    <section id="masterplan" class="masterplan">
+        <div class="container">
+            <div class="section-header reveal" style="border-bottom-color: rgba(169,165,156,0.2);">
+                <div>
+                    <span class="text-small" style="color: var(--color-muted-gold); display:block; margin-bottom:1.5rem;">[ The Land ]</span>
+                    <h2 style="color: var(--color-forest-dark);">Explore the Private<br>Jungle Valley Masterplan</h2>
+                </div>
+                <div class="text-small" style="color: var(--color-warm-stone); max-width: 360px; text-align: right;">
+                    Seven curated estate zones designed around privacy, wellness, conservation, water, and long-term land-backed value.
+                </div>
+            </div>
+
+            <div class="mp-carousel reveal reveal-delay-1" id="mpCarousel">
+                <div class="mp-track" id="mpTrack">
+                    <!-- Slides injected by JS from the data array below -->
+                </div>
+
+                <div class="mp-controls">
+                    <button class="mp-arrow" id="mpPrev" aria-label="Previous zone">&#8592;</button>
+                    <div class="mp-counter"><span id="mpCurrent">1</span> <i>/</i> <span id="mpTotal">7</span></div>
+                    <button class="mp-arrow" id="mpNext" aria-label="Next zone">&#8594;</button>
+                </div>
+            </div>
+
+            <p class="mp-disclaimer reveal reveal-delay-2">
+                All masterplan zone visuals are conceptual artist impressions for communication purposes only. Final layout, development scope, villa design, infrastructure, sale structure, and land use are subject to survey, title verification, zoning, TCP approval, land conversion, environmental / forest / ESZ verification, Goa RERA applicability, and legal due diligence.
+            </p>
         </div>
     </section>
 
@@ -1434,6 +1661,105 @@
         document.querySelectorAll('.reveal').forEach(element => {
             revealObserver.observe(element);
         });
+        /* ===== Masterplan Zones Carousel ===== */
+        (function () {
+            var zones = [
+                {
+                    img: 'hero.png',
+                    title: 'Founder Forest Estates',
+                    desc: 'The first private allocation zone for Founder Circle buyers, designed around one-acre forest estates with low-density access, natural buffers, and premium valley positioning.',
+                    stats: [['Estate Type', '1 Acre Private Estates'], ['Priority', 'Founder Circle'], ['Positioning', 'Limited Allocation']]
+                },
+                {
+                    img: 'wellness.png',
+                    title: 'Herbal Wellness Valley',
+                    desc: 'A dedicated wellness landscape with medicinal gardens, Ayurveda-inspired trails, herbal tea pavilions, yoga decks, and natural healing experiences.',
+                    stats: [['Core Theme', 'Herbal Wellness'], ['Experience', 'Ayurveda + Forest Bathing'], ['Buyer Appeal', 'Wellness Families']]
+                },
+                {
+                    img: 'villa.png',
+                    title: 'Jungle Valley Villa Cluster',
+                    desc: 'Premium eco-jungle villas positioned along natural ridges and clearings, designed to preserve privacy while creating a resort-grade forest living experience.',
+                    stats: [['Villa Options', 'Cottage, Valley, Wellness'], ['Design', 'Nature-First'], ['Appeal', 'HNI / NRI Buyers']]
+                },
+                {
+                    img: 'wellness.png',
+                    title: 'Ayurveda Village & Retreat Core',
+                    desc: 'A central wellness destination with spa suites, consultation pavilions, retreat programming, organic dining, and private owner experiences.',
+                    stats: [['Use', 'Wellness Retreat'], ['Revenue Layer', 'Hospitality'], ['Experience', 'Resort-Grade']]
+                },
+                {
+                    img: 'hero.png',
+                    title: 'Waterbody & Rainforest Decks',
+                    desc: 'Water-positive estate zones with rainwater lakes, check dams, forest decks, meditation points, and valley-view relaxation spaces.',
+                    stats: [['Theme', 'Water + Silence'], ['Use', 'Relaxation Decks'], ['Infrastructure', 'Rainwater Systems']]
+                },
+                {
+                    img: 'villa.png',
+                    title: 'Organic Farm & Fruit Orchard Belt',
+                    desc: 'Managed organic gardens, fruit tree belts, spice gardens, herbal plantations, and farm-to-table production zones supporting the estate lifestyle.',
+                    stats: [['Theme', 'Organic Living'], ['Produce', 'Herbs, Fruits, Spices'], ['Model', 'Managed Agro-Lifestyle']]
+                },
+                {
+                    img: 'hero.png',
+                    title: 'Conservation & Nature Trail Zone',
+                    desc: 'Protected forest corridors, walking trails, birdwatching decks, biodiversity buffers, and low-impact eco-tourism experiences.',
+                    stats: [['Theme', 'Conservation'], ['Movement', 'Walking + Electric Buggy'], ['Experience', 'Nature Trails']]
+                }
+            ];
+
+            var track = document.getElementById('mpTrack');
+            if (!track) return;
+            var current = 0, total = zones.length, timer = null;
+
+            function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+            zones.forEach(function (z, i) {
+                var stats = z.stats.map(function (s) {
+                    return '<li><span>' + esc(s[0]) + '</span><span>' + esc(s[1]) + '</span></li>';
+                }).join('');
+                var slide = document.createElement('div');
+                slide.className = 'mp-slide' + (i === 0 ? ' is-active' : '');
+                slide.innerHTML =
+                    '<div class="mp-visual">' +
+                        '<span class="mp-overlay-label">Conceptual Zone Preview</span>' +
+                        '<img class="mp-visual-img" src="' + esc(z.img) + '" alt="' + esc(z.title) + '" ' +
+                        'onerror="this.style.display=\'none\'">' +
+                    '</div>' +
+                    '<div class="mp-content">' +
+                        '<div class="mp-zone-tag">Zone ' + (i + 1) + ' &nbsp;&mdash;&nbsp; Reserva Varde Goa</div>' +
+                        '<h3>' + esc(z.title) + '</h3>' +
+                        '<p>' + esc(z.desc) + '</p>' +
+                        '<ul class="mp-stats">' + stats + '</ul>' +
+                        '<a href="#proposal" class="btn btn-outline-dark">View Details</a>' +
+                    '</div>';
+                track.appendChild(slide);
+            });
+
+            var slides = track.querySelectorAll('.mp-slide');
+            var curEl = document.getElementById('mpCurrent');
+            document.getElementById('mpTotal').textContent = total;
+
+            function show(n) {
+                current = (n + total) % total;
+                slides.forEach(function (s, i) { s.classList.toggle('is-active', i === current); });
+                curEl.textContent = current + 1;
+            }
+            function next() { show(current + 1); }
+            function prev() { show(current - 1); }
+
+            document.getElementById('mpNext').addEventListener('click', function () { next(); reset(); });
+            document.getElementById('mpPrev').addEventListener('click', function () { prev(); reset(); });
+
+            function start() { timer = setInterval(next, 6000); }
+            function reset() { clearInterval(timer); start(); }
+            start();
+
+            var carousel = document.getElementById('mpCarousel');
+            carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
+            carousel.addEventListener('mouseleave', function () { start(); });
+        })();
+
     </script>
 </body>
 </html>
