@@ -1062,196 +1062,227 @@
             .snapshot-item { border-right: none !important; border-bottom: 1px solid rgba(194, 168, 120, 0.1); min-height: 200px; padding: 3rem 2rem; }
             .hero h1 { font-size: 2.5rem; }
         }
-        /* ===== Masterplan Zones Carousel ===== */
-        .masterplan { background-color: var(--color-ivory); }
-
-        .mp-carousel {
-            margin-top: 5rem;
+        /* ===== Estate Models Section (Upgrade) ===== */
+        :root {
+            --rv-forest: #1F3A2E;
+            --rv-forest-deep: #16291F;
+            --rv-gold: #B08A3E;
+            --rv-gold-light: #D4B66A;
+            --rv-ivory: #FBF8F1;
+            --rv-beige: #F4EDDD;
+            --rv-beige-warm: #E8DFC4;
+            --rv-charcoal: #2A2A2A;
+            --rv-line: #C7B97A;
+            --rv-mute: #6B6B6B;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        .rv-section {
+            background-color: var(--rv-beige);
+            padding: 160px 0;
             position: relative;
         }
-
-        .mp-track { position: relative; min-height: 620px; }
-
-        .mp-slide {
-            position: absolute;
-            inset: 0;
-            display: grid;
-            grid-template-columns: 53fr 47fr;
-            background-color: #fff;
-            border: 1px solid rgba(169, 165, 156, 0.25);
-            border-radius: 4px;
+        .rv-container {
+            max-width: var(--container-width, 1400px);
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        .rv-eyebrow {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-size: 0.7rem; letter-spacing: 0.22em; font-weight: 500;
+            color: var(--rv-gold); text-transform: uppercase; margin-bottom: 2rem;
+            font-family: var(--font-sans);
+        }
+        .rv-eyebrow::before, .rv-eyebrow::after { content: ''; height: 1px; width: 32px; background: var(--rv-gold); }
+        
+        .rv-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.8rem, 4.5vw, 4.5rem);
+            font-weight: 400;
+            color: var(--rv-forest);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            max-width: 900px;
+        }
+        .rv-subtitle {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            font-weight: 300;
+            color: rgba(26, 47, 37, 0.85);
+            max-width: 760px;
+            margin-top: 2rem;
+            font-family: var(--font-sans);
+        }
+        .rv-divider {
+            width: 80px;
+            height: 1px;
+            background: var(--rv-gold);
+            margin: 2.5rem 0 5rem;
+            opacity: 0.6;
+        }
+        .rv-cards { display: flex; flex-direction: column; gap: 4rem; }
+        .rv-card {
+            background: #fff;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 40px 80px -40px rgba(15, 28, 22, 0.25);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 36px 70px -42px rgba(15, 28, 22, 0.18);
+            display: grid; grid-template-columns: 47fr 53fr; gap: 0;
+            border: 1px solid rgba(199, 185, 122, 0.25);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
-        .mp-slide.is-active { opacity: 1; visibility: visible; }
-
-        .mp-visual {
+        .rv-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 45px 85px -35px rgba(15, 28, 22, 0.28);
+        }
+        .rv-card-media {
+            background: linear-gradient(135deg, var(--rv-forest) 0%, var(--rv-forest-deep) 100%);
             position: relative;
-            min-height: 620px;
-            /* Premium forest-gradient fallback — shows if image missing */
-            background:
-                radial-gradient(circle at 70% 25%, rgba(194,168,120,0.18), transparent 55%),
-                linear-gradient(150deg, var(--color-forest-green) 0%, var(--color-forest-dark) 70%);
-            background-size: cover;
-            background-position: center;
+            min-height: 560px;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
         }
-
-        .mp-visual-img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.78) contrast(1.05);
-        }
-
-        .mp-overlay-label {
-            position: absolute;
-            top: 2rem;
-            left: 2rem;
-            padding: 0.6rem 1.4rem;
-            background: rgba(15, 28, 22, 0.55);
-            backdrop-filter: blur(6px);
-            border: 1px solid rgba(194, 168, 120, 0.5);
-            color: var(--color-ivory);
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.22em;
-            font-weight: 500;
+        .rv-card-media svg { width: 100%; height: 100%; display: block; }
+        .rv-card-tag {
+            position: absolute; top: 1.8rem; left: 1.8rem;
+            background: var(--rv-gold); color: var(--rv-ivory);
+            font-size: 0.58rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+            padding: 0.55rem 1.2rem;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             z-index: 2;
         }
-
-        .mp-content {
-            padding: 5rem 4.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .mp-zone-tag {
-            color: var(--color-muted-gold);
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.22em;
-            font-weight: 500;
-            margin-bottom: 1.8rem;
-        }
-
-        .mp-content h3 {
-            color: var(--color-forest-dark);
-            margin-bottom: 1.8rem;
-        }
-
-        .mp-content p {
-            color: rgba(26, 47, 37, 0.78);
-            margin-bottom: 2.8rem;
-            max-width: 440px;
-        }
-
-        .mp-stats { list-style: none; margin-bottom: 3rem; }
-
-        .mp-stats li {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-            padding: 1.1rem 0;
-            border-bottom: 1px solid rgba(169, 165, 156, 0.25);
-            font-size: 0.95rem;
-        }
-
-        .mp-stats li span:first-child {
-            color: var(--color-warm-stone);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-size: 0.68rem;
-            font-weight: 500;
-            align-self: center;
-        }
-
-        .mp-stats li span:last-child {
-            color: var(--color-forest-dark);
+        .rv-card-body { padding: 4rem 3.6rem; display: flex; flex-direction: column; gap: 2rem; }
+        .rv-card-header { border-bottom: 1px solid rgba(199, 185, 122, 0.25); padding-bottom: 1.8rem; }
+        .rv-card-title {
             font-family: var(--font-serif);
-            font-style: italic;
-            font-size: 1.15rem;
-            text-align: right;
+            font-size: clamp(1.7rem, 2.4vw, 2.4rem);
+            font-weight: 400;
+            color: var(--rv-forest);
+            line-height: 1.2;
         }
-
-        .mp-content .btn { align-self: flex-start; }
-
-        .mp-controls {
-            display: flex;
+        .rv-card-asset {
+            font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--rv-gold); margin-top: 1rem; font-weight: 500;
+            font-family: var(--font-sans);
+        }
+        .rv-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+        .rv-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(194, 168, 120, 0.07); color: var(--rv-forest);
+            border: 1px solid rgba(194, 168, 120, 0.45);
+            font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 0.5rem 1rem; border-radius: 999px;
+            font-family: var(--font-sans);
+        }
+        .rv-badge.solid {
+            background: var(--rv-forest); color: var(--rv-ivory); border-color: var(--rv-forest);
+        }
+        .rv-desc {
+            font-size: 1rem; line-height: 1.7; color: rgba(26, 47, 37, 0.8);
+            font-family: var(--font-sans);
+            font-weight: 300;
+        }
+        .rv-section-label {
+            font-size: 0.6rem; letter-spacing: 0.18em; font-weight: 600;
+            color: var(--rv-gold); text-transform: uppercase; margin-bottom: 1rem;
+            font-family: var(--font-sans);
+        }
+        .rv-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .rv-chip {
+            font-size: 0.62rem; padding: 0.5rem 1rem; border-radius: 999px;
+            background: rgba(176, 138, 62, 0.07); color: var(--rv-forest);
+            border: 1px solid rgba(176, 138, 62, 0.35); font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-family: var(--font-sans);
+        }
+        .rv-highlights { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 0.5rem; }
+        .rv-highlight {
+            display: flex; align-items: flex-start; gap: 0.9rem;
+            font-size: 0.92rem; color: rgba(26, 47, 37, 0.78); line-height: 1.6;
+            font-family: var(--font-sans);
+            font-weight: 300;
+        }
+        .rv-highlight::before {
+            content: '—'; flex-shrink: 0;
+            color: var(--rv-gold); font-weight: bold;
+        }
+        .rv-cta-block { display: flex; gap: 1.2rem; margin-top: 1rem; flex-wrap: wrap; }
+        .rv-btn {
+            flex: 1; padding: 1rem 2.2rem; border-radius: 0; border: none;
+            font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em;
+            cursor: pointer; transition: var(--transition-smooth);
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 2.5rem;
-            margin-top: 3.5rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .rv-btn-primary {
+            background-color: var(--rv-forest);
+            color: var(--rv-ivory);
+            border: 1px solid var(--rv-forest);
+        }
+        .rv-btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 0%; height: 100%;
+            background-color: var(--rv-gold);
+            z-index: -1;
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .rv-btn-primary:hover {
+            color: var(--rv-forest-deep);
+            border-color: var(--rv-gold);
+        }
+        .rv-btn-primary:hover::before {
+            width: 100%;
+        }
+        
+        .rv-btn-secondary {
+            background-color: transparent;
+            color: var(--rv-forest);
+            border: 1px solid var(--rv-forest);
+        }
+        .rv-btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 0%; height: 100%;
+            background-color: var(--rv-forest);
+            z-index: -1;
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .rv-btn-secondary:hover {
+            color: var(--rv-ivory);
+        }
+        .rv-btn-secondary:hover::before {
+            width: 100%;
         }
 
-        .mp-arrow {
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            border: 1px solid var(--color-warm-stone);
-            background: transparent;
-            color: var(--color-forest-dark);
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .mp-arrow:hover {
-            background: var(--color-forest-green);
-            border-color: var(--color-forest-green);
-            color: var(--color-ivory);
-        }
-
-        .mp-counter {
-            font-family: var(--font-serif);
-            font-size: 1.3rem;
-            color: var(--color-forest-dark);
-            min-width: 70px;
-            text-align: center;
-            letter-spacing: 0.1em;
-        }
-
-        .mp-counter i {
-            color: var(--color-muted-gold);
-            font-style: normal;
-            margin: 0 0.4rem;
-        }
-
-        .mp-disclaimer {
-            font-size: 0.65rem;
-            line-height: 1.8;
-            color: rgba(26, 47, 37, 0.5);
-            letter-spacing: 0.04em;
-            text-align: center;
-            max-width: 880px;
-            margin: 4rem auto 0;
-        }
-
+        /* mobile */
         @media (max-width: 992px) {
-            .mp-slide { grid-template-columns: 1fr; position: relative; }
-            .mp-track { min-height: 0; }
-            .mp-slide:not(.is-active) { display: none; }
-            .mp-slide.is-active { display: grid; }
-            .mp-visual { min-height: 320px; }
-            .mp-content { padding: 3.5rem 2.5rem; }
+            .rv-section { padding: 100px 0; }
+            .rv-card { grid-template-columns: 1fr; }
+            .rv-card-media { min-height: 400px; }
+            .rv-card-body { padding: 3rem 2.4rem; }
+            .rv-cta-block { flex-direction: column; width: 100%; gap: 1rem; }
+            .rv-btn { width: 100%; }
+        }
+        
+        @media (max-width: 768px) {
+            .rv-card-body { padding: 2.6rem 1.8rem; }
         }
 
-        @media (max-width: 768px) {
-            .mp-content { padding: 3rem 1.8rem; }
-            .mp-content .btn { align-self: stretch; width: 100%; }
-            .mp-controls { gap: 1.5rem; }
-            .mp-overlay-label { top: 1.2rem; left: 1.2rem; }
-            .masterplan .section-header { flex-direction: column; align-items: flex-start; gap: 2rem; }
-            .masterplan .section-header > div:last-child { text-align: left !important; max-width: 100% !important; }
+        /* footer note */
+        .rv-foot-note {
+            margin-top: 4rem; text-align: center; font-size: 0.65rem;
+            color: var(--color-warm-stone); font-style: italic; max-width: 820px; margin-left: auto; margin-right: auto;
+            line-height: 1.9; letter-spacing: 0.04em;
+            font-family: var(--font-sans);
         }
 
     </style>
@@ -1353,39 +1384,64 @@
             </div>
         </div>
     </section>
-<!-- ============================================================
-     MASTERPLAN ZONES CAROUSEL  — paste this whole block
-     directly AFTER the closing </section> of the
-     "One Acre Estate Section" and BEFORE the
-     "<!-- Villa Concepts -->" comment.
-     ============================================================ -->
-    <section id="masterplan" class="masterplan">
-        <div class="container">
-            <div class="section-header reveal" style="border-bottom-color: rgba(169,165,156,0.2);">
-                <div>
-                    <span class="text-small" style="color: var(--color-muted-gold); display:block; margin-bottom:1.5rem;">[ The Land ]</span>
-                    <h2 style="color: var(--color-forest-dark);">Explore the Private<br>Jungle Valley Masterplan</h2>
-                </div>
-                <div class="text-small" style="color: var(--color-warm-stone); max-width: 360px; text-align: right;">
-                    Seven curated estate zones designed around privacy, wellness, conservation, water, and long-term land-backed value.
-                </div>
+    <!-- ===== ESTATE MODELS SECTION (replaces masterplan carousel) ===== -->
+    <section id="estate-models" class="rv-section">
+        <div class="rv-container">
+            <div class="estates-head reveal">
+                <div class="rv-eyebrow">Reserva Verde Goa · Estate Catalogue</div>
+                <h2 class="rv-title">Choose Your Ground-Level Modular Eco Estate</h2>
+                <p class="rv-subtitle">
+                    Select from 2BHK, 3BHK, 4BHK, or fully customisable ground-level modular container estate models,
+                    each planned within a private 1-acre eco-sensitive plantation estate.
+                </p>
+                <div class="rv-divider"></div>
             </div>
 
-            <div class="mp-carousel reveal reveal-delay-1" id="mpCarousel">
-                <div class="mp-track" id="mpTrack">
-                    <!-- Slides injected by JS from the data array below -->
-                </div>
-
-                <div class="mp-controls">
-                    <button class="mp-arrow" id="mpPrev" aria-label="Previous zone">&#8592;</button>
-                    <div class="mp-counter"><span id="mpCurrent">1</span> <i>/</i> <span id="mpTotal">7</span></div>
-                    <button class="mp-arrow" id="mpNext" aria-label="Next zone">&#8594;</button>
-                </div>
+            <div class="rv-cards" id="rv-cards-mount">
+                <!-- cards injected by JS -->
             </div>
 
-            <p class="mp-disclaimer reveal reveal-delay-2">
-                All masterplan zone visuals are conceptual artist impressions for communication purposes only. Final layout, development scope, villa design, infrastructure, sale structure, and land use are subject to survey, title verification, zoning, TCP approval, land conversion, environmental / forest / ESZ verification, Goa RERA applicability, and legal due diligence.
+            <p class="rv-foot-note reveal">
+                All figures are concept-stage. Layouts subject to final architectural planning, statutory approvals, and Reserva Verde Goa eco-sensitive development guidelines. No yield, return, or appreciation projections are made or implied.
             </p>
+        </div>
+    </section>
+
+    <!-- ===== ECO-SENSITIVE DEVELOPMENT GUIDELINES ===== -->
+    <section class="eco-guidelines">
+        <div class="container">
+            <div class="estates-head reveal">
+                <span class="text-small" style="color:var(--color-muted-gold);letter-spacing:0.22em;">[ Responsible Land Use ]</span>
+                <h2>Eco-Sensitive Development Guidelines</h2>
+                <p>Reserva Varde Goa is planned around responsible land use, low-impact construction, native plantation systems, water sensitivity, and long-term ecological value.</p>
+            </div>
+            <div class="eco-grid">
+                <div class="eco-item reveal"><div class="eco-num">01</div><div><h4>Low-Impact Modular Construction</h4><p>Estate homes use modular container-based systems and eco-conscious materials wherever possible to reduce site disturbance and construction waste.</p></div></div>
+                <div class="eco-item reveal reveal-delay-1"><div class="eco-num">02</div><div><h4>Controlled Built-Up Footprint</h4><p>Each 1-acre estate preserves maximum open green space. Built-up areas are carefully planned to avoid over-construction.</p></div></div>
+                <div class="eco-item reveal"><div class="eco-num">03</div><div><h4>Native Plantation Priority</h4><p>Climate-suitable plantations such as cashew, coconut, mango, pepper, teak, spices, medicinal herbs, and local biodiversity-supporting trees.</p></div></div>
+                <div class="eco-item reveal reveal-delay-1"><div class="eco-num">04</div><div><h4>Water Sensitivity</h4><p>Rainwater harvesting, water storage, groundwater recharge, drip irrigation, and responsible water-use planning across every estate.</p></div></div>
+                <div class="eco-item reveal"><div class="eco-num">05</div><div><h4>Solar-Ready Infrastructure</h4><p>Modular homes designed with solar-ready roofing, energy-efficient lighting, and low-power systems.</p></div></div>
+                <div class="eco-item reveal reveal-delay-1"><div class="eco-num">06</div><div><h4>Organic Waste Management</h4><p>Composting, bio-waste management, and eco-friendly sanitation options wherever feasible.</p></div></div>
+                <div class="eco-item reveal"><div class="eco-num">07</div><div><h4>No Harsh Concrete Urbanisation</h4><p>Permeable pathways, natural stone, grass pavers and shaded circulation in place of excessive concrete and heat-generating surfaces.</p></div></div>
+                <div class="eco-item reveal reveal-delay-1"><div class="eco-num">08</div><div><h4>Biodiversity Protection</h4><p>Green buffers, tree corridors, bird-friendly landscapes, butterfly gardens, and natural water channels wherever possible.</p></div></div>
+                <div class="eco-item reveal"><div class="eco-num">09</div><div><h4>Eco-Tourism Compatibility</h4><p>Each estate can support responsible farm-stay, wellness retreat, nature tourism and plantation experiences without damaging the environment.</p></div></div>
+                <div class="eco-item reveal reveal-delay-1"><div class="eco-num">10</div><div><h4>Central Estate Management</h4><p>Optional managed services for farming, maintenance, rentals, landscaping, plantation care, security and utilities.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CLOSING CTA ===== -->
+    <section class="estate-cta-block">
+        <div class="container">
+            <div class="estate-cta-inner reveal">
+                <h2>Reserve Your 1-Acre Modular Eco Estate at Reserva Varde Goa</h2>
+                <p>Choose from four premium modular estate models designed for eco-sensitive living, managed agriculture, wellness tourism, and long-term land-backed value inside a 1,000-acre masterplanned destination.</p>
+                <div class="estate-cta-buttons">
+                    <a href="#proposal" class="btn btn-primary">Request Masterplan</a>
+                    <a href="#proposal" class="btn btn-outline">Speak to Advisor</a>
+                    <a href="#proposal" class="btn btn-outline">Download Estate Options</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1649,7 +1705,7 @@
             threshold: 0.1
         };
 
-        const revealObserver = new IntersectionObserver((entries, observer) => {
+        window.__revObs = window.__revObs; const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
@@ -1661,103 +1717,449 @@
         document.querySelectorAll('.reveal').forEach(element => {
             revealObserver.observe(element);
         });
-        /* ===== Masterplan Zones Carousel ===== */
+        window.__revObs = revealObserver;
+        /* ===== Estate Models — data + render ===== */
         (function () {
-            var zones = [
-                {
-                    img: 'hero.png',
-                    title: 'Founder Forest Estates',
-                    desc: 'The first private allocation zone for Founder Circle buyers, designed around one-acre forest estates with low-density access, natural buffers, and premium valley positioning.',
-                    stats: [['Estate Type', '1 Acre Private Estates'], ['Priority', 'Founder Circle'], ['Positioning', 'Limited Allocation']]
-                },
-                {
-                    img: 'wellness.png',
-                    title: 'Herbal Wellness Valley',
-                    desc: 'A dedicated wellness landscape with medicinal gardens, Ayurveda-inspired trails, herbal tea pavilions, yoga decks, and natural healing experiences.',
-                    stats: [['Core Theme', 'Herbal Wellness'], ['Experience', 'Ayurveda + Forest Bathing'], ['Buyer Appeal', 'Wellness Families']]
-                },
-                {
-                    img: 'villa.png',
-                    title: 'Jungle Valley Villa Cluster',
-                    desc: 'Premium eco-jungle villas positioned along natural ridges and clearings, designed to preserve privacy while creating a resort-grade forest living experience.',
-                    stats: [['Villa Options', 'Cottage, Valley, Wellness'], ['Design', 'Nature-First'], ['Appeal', 'HNI / NRI Buyers']]
-                },
-                {
-                    img: 'wellness.png',
-                    title: 'Ayurveda Village & Retreat Core',
-                    desc: 'A central wellness destination with spa suites, consultation pavilions, retreat programming, organic dining, and private owner experiences.',
-                    stats: [['Use', 'Wellness Retreat'], ['Revenue Layer', 'Hospitality'], ['Experience', 'Resort-Grade']]
-                },
-                {
-                    img: 'hero.png',
-                    title: 'Waterbody & Rainforest Decks',
-                    desc: 'Water-positive estate zones with rainwater lakes, check dams, forest decks, meditation points, and valley-view relaxation spaces.',
-                    stats: [['Theme', 'Water + Silence'], ['Use', 'Relaxation Decks'], ['Infrastructure', 'Rainwater Systems']]
-                },
-                {
-                    img: 'villa.png',
-                    title: 'Organic Farm & Fruit Orchard Belt',
-                    desc: 'Managed organic gardens, fruit tree belts, spice gardens, herbal plantations, and farm-to-table production zones supporting the estate lifestyle.',
-                    stats: [['Theme', 'Organic Living'], ['Produce', 'Herbs, Fruits, Spices'], ['Model', 'Managed Agro-Lifestyle']]
-                },
-                {
-                    img: 'hero.png',
-                    title: 'Conservation & Nature Trail Zone',
-                    desc: 'Protected forest corridors, walking trails, birdwatching decks, biodiversity buffers, and low-impact eco-tourism experiences.',
-                    stats: [['Theme', 'Conservation'], ['Movement', 'Walking + Electric Buggy'], ['Experience', 'Nature Trails']]
-                }
+            const estateModels = [
+              {
+                id: "2bhk",
+                title: "2BHK Compact Luxury Modular Eco Estate",
+                bedroomType: "2BHK",
+                builtUpArea: "2500 Sq.Ft",
+                estateSize: "1 Acre",
+                assetType: "Ground-Level Modular Container Eco Home + Eco Plantation Estate",
+                homeType: "Ground-level modular container eco-home",
+                placementOptions: ["Front", "Centre", "Side", "Rear", "Courtyard-centric"],
+                plantationOptions: ["Cashew", "Mango", "Coconut", "Spice", "Herbal", "Food forest"],
+                description: "A precision-engineered ground-level container eco-home set inside a private 1-acre plantation estate — designed for couples, small families, NRIs and wellness buyers seeking a low-maintenance second home in Goa.",
+                ecoFeatures: ["Solar-Ready", "RWH 15,000 L", "Greywater Reuse", "Bio-Septic", "Drip Irrigation", "Passive Cooling"],
+                specifications: ["Ground-Level", "2BHK", "2500 Sq.Ft", "1 Acre", "4 × 40 ft + 2 × 20 ft modules", "Courtyard plan"],
+                investmentHighlights: [
+                  "Low-footprint construction inside a plantation-backed estate",
+                  "Optional farm-stay rental readiness",
+                  "Integrated water + solar + waste systems",
+                  "Designed for couples, NRIs and eco-conscious second-home owners"
+                ],
+                image: "Site_Plan_2BHK.svg",
+                ctaLabel: "Request Masterplan",
+                secondaryCtaLabel: "Download Specs"
+              },
+              {
+                id: "3bhk",
+                title: "3BHK Premium Modular Agro Estate",
+                bedroomType: "3BHK",
+                builtUpArea: "3500 Sq.Ft",
+                estateSize: "1 Acre",
+                assetType: "Ground-Level Modular Container Eco Home + Eco Plantation Estate",
+                homeType: "Ground-level modular container eco-home",
+                placementOptions: ["Centre", "Side", "Rear", "Courtyard-centric"],
+                plantationOptions: ["Mango", "Coconut", "Cashew", "Teak + Pepper", "Spice", "Herbal", "Coffee/spice mix"],
+                description: "A premium ground-level container eco-home in an L-shape pavilion configuration, set inside a private 1-acre plantation estate — designed for HNI families, NRIs and wellness buyers seeking a low-impact luxury second home with optional rental readiness.",
+                ecoFeatures: ["Solar-Ready", "RWH 25,000 L", "Greywater Reed Bed", "Bio-Septic", "Drip Irrigation", "Green-roof option"],
+                specifications: ["Ground-Level", "3BHK", "3500 Sq.Ft", "1 Acre", "6 × 40 ft + 2 × 20 ft modules", "L-shape pavilion"],
+                investmentHighlights: [
+                  "Premium plantation-backed estate with curated agroforestry",
+                  "Scalable wellness deck + work-from-estate study",
+                  "Optional farm-stay readiness with rental-grade systems",
+                  "Designed for HNI families, NRIs and wellness buyers"
+                ],
+                image: "Site_Plan_3BHK.svg",
+                ctaLabel: "Request Masterplan",
+                secondaryCtaLabel: "Download Specs"
+              },
+              {
+                id: "4bhk",
+                title: "4BHK Signature Ground-Level Modular Luxury Estate",
+                bedroomType: "4BHK",
+                builtUpArea: "4500 Sq.Ft",
+                estateSize: "1 Acre",
+                assetType: "Ground-Level Modular Container Eco Home + Eco Plantation Estate",
+                homeType: "Ground-level modular container eco-home",
+                placementOptions: ["Centre", "Rear", "Courtyard-centric"],
+                plantationOptions: ["Mango", "Cashew", "Coconut", "Teak + Pepper", "Spice", "Orchard", "Food forest"],
+                description: "A pavilion-style ground-level container eco-home arranged around a courtyard pool and three connected wings, set inside a private 1-acre plantation estate — designed for HNI families, retreat operators and hospitality-focused owners seeking a flagship Goa second home with rental readiness.",
+                ecoFeatures: ["Solar-Ready 12–15 kWp", "RWH 40,000 L", "Greywater Wetland", "Bio-Septic + Filter Pond", "Passive Cooling Courtyard", "EV-charge ready"],
+                specifications: ["Ground-Level", "4BHK", "4500 Sq.Ft", "1 Acre", "8 × 40 ft + 3 × 20 ft modules", "Three-wing pavilion", "Reflective pool court"],
+                investmentHighlights: [
+                  "Flagship pavilion plan with courtyard-pool architecture",
+                  "Plantation-backed luxury estate with orchard accent",
+                  "Optional retreat / hospitality operation",
+                  "Integrated solar + water + waste + EV infrastructure"
+                ],
+                image: "Site_Plan_4BHK.svg",
+                ctaLabel: "Request Masterplan",
+                secondaryCtaLabel: "Download Specs"
+              },
+              {
+                id: "custom",
+                title: "Fully Customisable Modular Eco Estate",
+                bedroomType: "Customisable",
+                builtUpArea: "Customisable (1,500 – 6,000 Sq.Ft)",
+                estateSize: "1 Acre",
+                assetType: "Ground-Level Modular Container Eco Home + Eco Plantation Estate",
+                homeType: "Custom ground-level modular container eco-home",
+                placementOptions: ["Front", "Centre", "Side", "Rear", "Courtyard-centric"],
+                plantationOptions: ["Cashew", "Mango", "Coconut", "Teak + Pepper", "Spice", "Herbal", "Coffee/spice mix", "Food forest", "Mixed organic farming"],
+                description: "A flexible 1-acre estate where buyers customise the layout, built-up area, plantation model, outdoor programme, and rental readiness — all within the eco-sensitive development guidelines of Reserva Verde Goa. Strictly ground-level, strictly modular.",
+                ecoFeatures: ["Solar-Ready (sized to design)", "RWH (sized to design)", "Greywater Reuse", "Bio-Septic", "Drip Irrigation", "Passive Cooling"],
+                specifications: ["Ground-Level", "1–4 BHK", "Customisable area", "1 Acre", "Modular Container", "Buyer-configured"],
+                investmentHighlights: [
+                  "Bedroom count, placement, plantation profile fully buyer-selected",
+                  "Layout intents: wellness retreat · farm-stay · NRI home · plantation-focused · hospitality",
+                  "Same eco-sensitive guardrails as fixed models",
+                  "Designed by Reserva Verde studio under the masterplan brief"
+                ],
+                image: "Site_Plan_Customisable.svg",
+                ctaLabel: "Request Masterplan",
+                secondaryCtaLabel: "Download Specs"
+              }
             ];
 
-            var track = document.getElementById('mpTrack');
-            if (!track) return;
-            var current = 0, total = zones.length, timer = null;
+            const thumbnails = {
+              "2bhk": `<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="t2plant" patternUnits="userSpaceOnUse" width="14" height="14">
+                    <rect width="14" height="14" fill="#16291F"/>
+                    <circle cx="4" cy="4" r="1.5" fill="#1F3A2E"/>
+                    <circle cx="10" cy="10" r="1.5" fill="#1F3A2E"/>
+                  </pattern>
+                </defs>
+                <rect width="400" height="460" fill="#16291F"/>
+                <rect x="30" y="30" width="340" height="400" fill="url(#t2plant)" stroke="#B08A3E" stroke-width="1" rx="4"/>
+                <!-- Home: U-shape -->
+                <g transform="translate(120,170)">
+                  <rect x="0" y="0" width="160" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <rect x="0" y="22" width="22" height="118" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <rect x="138" y="22" width="22" height="118" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <rect x="0" y="118" width="160" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <rect x="22" y="22" width="116" height="96" fill="#E8DFC4" stroke="#B08A3E" stroke-width="0.8"/>
+                  <circle cx="80" cy="70" r="8" fill="#7FA9C9"/>
+                  <text x="80" y="74" text-anchor="middle" font-size="9" fill="#1F3A2E" font-weight="700">COURT</text>
+                  <text x="80" y="14" text-anchor="middle" font-size="9" fill="#1F3A2E" font-weight="700">LIVING</text>
+                  <text x="80" y="132" text-anchor="middle" font-size="9" fill="#1F3A2E" font-weight="700">DINING / KIT</text>
+                </g>
+                <!-- driveway from south -->
+                <rect x="180" y="370" width="40" height="60" fill="#D9CDA8"/>
+                <rect x="180" y="426" width="40" height="4" fill="#B08A3E"/>
+                <text x="200" y="445" text-anchor="middle" fill="#FBF8F1" font-size="10" font-weight="700" letter-spacing="2">GATE</text>
+                <!-- label -->
+                <text x="200" y="20" text-anchor="middle" fill="#FBF8F1" font-size="13" font-weight="700" letter-spacing="3">2BHK · 2500 SQ.FT</text>
+                <!-- trees -->
+                <g fill="#1F3A2E" stroke="#16291F" stroke-width="0.4" opacity="0.85">
+                  <circle cx="70" cy="80" r="6"/><circle cx="100" cy="120" r="5"/>
+                  <circle cx="330" cy="80" r="6"/><circle cx="300" cy="120" r="5"/>
+                  <circle cx="70" cy="350" r="6"/><circle cx="100" cy="380" r="5"/>
+                  <circle cx="330" cy="350" r="6"/><circle cx="300" cy="380" r="5"/>
+                  <circle cx="60" cy="220" r="5"/><circle cx="340" cy="220" r="5"/>
+                </g>
+              </svg>`,
 
-            function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+              "3bhk": `<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="t3plant" patternUnits="userSpaceOnUse" width="14" height="14">
+                    <rect width="14" height="14" fill="#16291F"/>
+                    <circle cx="4" cy="4" r="1.5" fill="#1F3A2E"/>
+                    <circle cx="10" cy="10" r="1.5" fill="#1F3A2E"/>
+                  </pattern>
+                </defs>
+                <rect width="400" height="460" fill="#16291F"/>
+                <rect x="30" y="30" width="340" height="400" fill="url(#t3plant)" stroke="#B08A3E" stroke-width="1" rx="4"/>
+                <!-- L-shape home -->
+                <g transform="translate(90,170)">
+                  <!-- bedroom row (top) -->
+                  <rect x="0" y="0" width="60" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <rect x="60" y="0" width="60" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <rect x="120" y="0" width="60" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <rect x="180" y="0" width="22" height="100" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <text x="30" y="14" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">BR1</text>
+                  <text x="90" y="14" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">BR2</text>
+                  <text x="150" y="14" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">BR3</text>
+                  <!-- spine -->
+                  <rect x="0" y="32" width="180" height="14" fill="#E8DFC4" stroke="#B08A3E" stroke-width="0.7"/>
+                  <text x="90" y="42" text-anchor="middle" font-size="8" font-weight="700" fill="#B08A3E">GLASS SPINE / COURT</text>
+                  <!-- public row (bottom) -->
+                  <rect x="0" y="56" width="90" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <rect x="90" y="56" width="90" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <text x="45" y="70" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">LIVING</text>
+                  <text x="135" y="70" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">DINING / KIT</text>
+                  <!-- verandah -->
+                  <rect x="0" y="80" width="180" height="10" fill="#C9B07A" stroke="#8B6F3A" stroke-width="0.6"/>
+                  <text x="90" y="88" text-anchor="middle" font-size="7" font-weight="700" fill="#2A2A2A" letter-spacing="1">VERANDAH</text>
+                </g>
+                <!-- driveway -->
+                <rect x="180" y="370" width="40" height="60" fill="#D9CDA8"/>
+                <rect x="180" y="426" width="40" height="4" fill="#B08A3E"/>
+                <text x="200" y="445" text-anchor="middle" fill="#FBF8F1" font-size="10" font-weight="700" letter-spacing="2">GATE</text>
+                <text x="200" y="20" text-anchor="middle" fill="#FBF8F1" font-size="13" font-weight="700" letter-spacing="3">3BHK · 3500 SQ.FT</text>
+                <g fill="#1F3A2E" stroke="#16291F" stroke-width="0.4" opacity="0.85">
+                  <circle cx="70" cy="80" r="6"/><circle cx="100" cy="120" r="5"/>
+                  <circle cx="330" cy="80" r="6"/><circle cx="300" cy="120" r="5"/>
+                  <circle cx="70" cy="350" r="6"/><circle cx="100" cy="380" r="5"/>
+                  <circle cx="330" cy="350" r="6"/><circle cx="300" cy="380" r="5"/>
+                  <circle cx="60" cy="220" r="5"/><circle cx="340" cy="220" r="5"/>
+                  <circle cx="60" cy="290" r="5"/><circle cx="340" cy="290" r="5"/>
+                </g>
+              </svg>`,
 
-            zones.forEach(function (z, i) {
-                var stats = z.stats.map(function (s) {
-                    return '<li><span>' + esc(s[0]) + '</span><span>' + esc(s[1]) + '</span></li>';
-                }).join('');
-                var slide = document.createElement('div');
-                slide.className = 'mp-slide' + (i === 0 ? ' is-active' : '');
-                slide.innerHTML =
-                    '<div class="mp-visual">' +
-                        '<span class="mp-overlay-label">Conceptual Zone Preview</span>' +
-                        '<img class="mp-visual-img" src="' + esc(z.img) + '" alt="' + esc(z.title) + '" ' +
-                        'onerror="this.style.display=\'none\'">' +
-                    '</div>' +
-                    '<div class="mp-content">' +
-                        '<div class="mp-zone-tag">Zone ' + (i + 1) + ' &nbsp;&mdash;&nbsp; Reserva Varde Goa</div>' +
-                        '<h3>' + esc(z.title) + '</h3>' +
-                        '<p>' + esc(z.desc) + '</p>' +
-                        '<ul class="mp-stats">' + stats + '</ul>' +
-                        '<a href="#proposal" class="btn btn-outline-dark">View Details</a>' +
-                    '</div>';
-                track.appendChild(slide);
+              "4bhk": `<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="t4plant" patternUnits="userSpaceOnUse" width="14" height="14">
+                    <rect width="14" height="14" fill="#16291F"/>
+                    <circle cx="4" cy="4" r="1.5" fill="#1F3A2E"/>
+                    <circle cx="10" cy="10" r="1.5" fill="#1F3A2E"/>
+                  </pattern>
+                </defs>
+                <rect width="400" height="460" fill="#16291F"/>
+                <rect x="30" y="30" width="340" height="400" fill="url(#t4plant)" stroke="#B08A3E" stroke-width="1" rx="4"/>
+                <!-- three-wing pavilion around courtyard -->
+                <g transform="translate(100,150)">
+                  <!-- North bedroom wing -->
+                  <rect x="20" y="0" width="160" height="20" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <line x1="60" y1="0" x2="60" y2="20" stroke="#1F3A2E" stroke-width="1"/>
+                  <line x1="100" y1="0" x2="100" y2="20" stroke="#1F3A2E" stroke-width="1"/>
+                  <line x1="140" y1="0" x2="140" y2="20" stroke="#1F3A2E" stroke-width="1"/>
+                  <text x="40" y="13" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">BR4</text>
+                  <text x="80" y="13" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">BR3</text>
+                  <text x="120" y="13" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">BR2</text>
+                  <text x="160" y="13" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">MSTR</text>
+                  <!-- West wing -->
+                  <rect x="0" y="30" width="20" height="90" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <g transform="translate(10,75) rotate(-90)"><text text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">MASTER WING</text></g>
+                  <!-- East wing -->
+                  <rect x="180" y="30" width="20" height="90" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <g transform="translate(190,75) rotate(-90)"><text text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">LIVING WING</text></g>
+                  <!-- Center courtyard with pool -->
+                  <rect x="30" y="30" width="140" height="90" fill="#E8DFC4" stroke="#B08A3E" stroke-width="1"/>
+                  <rect x="60" y="55" width="80" height="40" fill="#7FA9C9" stroke="#1F3A2E" stroke-width="0.6"/>
+                  <text x="100" y="79" text-anchor="middle" font-size="9" fill="#FBF8F1" font-weight="700">POOL</text>
+                  <!-- South wing: dining + kitchen -->
+                  <rect x="20" y="130" width="160" height="20" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+                  <line x1="80" y1="130" x2="80" y2="150" stroke="#1F3A2E" stroke-width="1"/>
+                  <line x1="140" y1="130" x2="140" y2="150" stroke="#1F3A2E" stroke-width="1"/>
+                  <text x="50" y="143" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">DINING</text>
+                  <text x="110" y="143" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">KITCHEN</text>
+                  <text x="160" y="143" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">DIRTY</text>
+                  <!-- Wellness deck -->
+                  <rect x="20" y="156" width="160" height="10" fill="#C9B07A" stroke="#8B6F3A" stroke-width="0.6"/>
+                  <text x="100" y="164" text-anchor="middle" font-size="7" font-weight="700" fill="#2A2A2A" letter-spacing="1">WELLNESS DECK · OUTDOOR DINING</text>
+                </g>
+                <!-- driveway / forecourt -->
+                <rect x="170" y="355" width="60" height="20" fill="#D9CDA8"/>
+                <rect x="180" y="375" width="40" height="51" fill="#D9CDA8"/>
+                <rect x="180" y="426" width="40" height="4" fill="#B08A3E"/>
+                <text x="200" y="445" text-anchor="middle" fill="#FBF8F1" font-size="10" font-weight="700" letter-spacing="2">GATE</text>
+                <text x="200" y="20" text-anchor="middle" fill="#FBF8F1" font-size="13" font-weight="700" letter-spacing="3">4BHK · 4500 SQ.FT</text>
+                <g fill="#1F3A2E" stroke="#16291F" stroke-width="0.4" opacity="0.85">
+                  <circle cx="65" cy="70" r="6"/><circle cx="335" cy="70" r="6"/>
+                  <circle cx="55" cy="200" r="5"/><circle cx="345" cy="200" r="5"/>
+                  <circle cx="55" cy="320" r="5"/><circle cx="345" cy="320" r="5"/>
+                  <circle cx="80" cy="385" r="5"/><circle cx="320" cy="385" r="5"/>
+                </g>
+              </svg>`,
+
+              "custom": `<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="tcplant" patternUnits="userSpaceOnUse" width="14" height="14">
+                    <rect width="14" height="14" fill="#16291F"/>
+                    <circle cx="4" cy="4" r="1.5" fill="#1F3A2E"/>
+                    <circle cx="10" cy="10" r="1.5" fill="#1F3A2E"/>
+                  </pattern>
+                </defs>
+                <rect width="400" height="460" fill="#16291F"/>
+                <rect x="30" y="30" width="340" height="400" fill="url(#tcplant)" stroke="#B08A3E" stroke-width="1" rx="4"/>
+                <!-- 5 ghost placement outlines -->
+                <g fill="none" stroke="#B08A3E" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.75">
+                  <rect x="110" y="80" width="180" height="80"/>
+                  <rect x="60" y="180" width="140" height="100"/>
+                  <rect x="110" y="300" width="180" height="80"/>
+                  <rect x="200" y="180" width="140" height="100"/>
+                </g>
+                <!-- solid hero centre -->
+                <g transform="translate(120,200)">
+                  <rect x="0" y="0" width="160" height="80" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.6"/>
+                  <rect x="50" y="20" width="60" height="40" fill="#E8DFC4" stroke="#B08A3E" stroke-width="0.8"/>
+                  <text x="80" y="14" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">MODULAR ECO HOME</text>
+                  <text x="80" y="44" text-anchor="middle" font-size="7" font-weight="700" fill="#B08A3E">COURT</text>
+                  <text x="80" y="74" text-anchor="middle" font-size="7" fill="#2A2A2A" font-style="italic">centre placement · hero</text>
+                </g>
+                <!-- driveway -->
+                <rect x="180" y="370" width="40" height="60" fill="#D9CDA8"/>
+                <rect x="180" y="426" width="40" height="4" fill="#B08A3E"/>
+                <text x="200" y="445" text-anchor="middle" fill="#FBF8F1" font-size="10" font-weight="700" letter-spacing="2">GATE</text>
+                <text x="200" y="20" text-anchor="middle" fill="#FBF8F1" font-size="13" font-weight="700" letter-spacing="3">CUSTOMISABLE · 1 ACRE</text>
+                <g fill="#1F3A2E" stroke="#16291F" stroke-width="0.4" opacity="0.85">
+                  <circle cx="65" cy="70" r="6"/><circle cx="335" cy="70" r="6"/>
+                  <circle cx="55" cy="160" r="5"/><circle cx="345" cy="160" r="5"/>
+                  <circle cx="55" cy="350" r="5"/><circle cx="345" cy="350" r="5"/>
+                  <circle cx="80" cy="385" r="5"/><circle cx="320" cy="385" r="5"/>
+                </g>
+              </svg>`
+            };
+
+            function cardEl(model) {
+              const tag = model.bedroomType === "Customisable" ? "CUSTOMISABLE" : model.builtUpArea;
+              const ecoChips = model.ecoFeatures.map(f => `<span class="rv-chip">${f}</span>`).join("");
+              const plantChips = model.plantationOptions.slice(0, 6).map(f => `<span class="rv-chip">${f}</span>`).join("");
+              const highlights = model.investmentHighlights.map(h => `<div class="rv-highlight">${h}</div>`).join("");
+
+              const article = document.createElement("article");
+              article.className = "rv-card reveal";
+              article.innerHTML = `
+                <div class="rv-card-media">
+                  <div class="rv-card-tag">${tag}</div>
+                  ${thumbnails[model.id] || ""}
+                </div>
+                <div class="rv-card-body">
+                  <div class="rv-card-header">
+                    <h3 class="rv-card-title">${model.title}</h3>
+                    <div class="rv-card-asset">${model.assetType}</div>
+                  </div>
+
+                  <div class="rv-badges">
+                    <span class="rv-badge solid">${model.bedroomType}</span>
+                    <span class="rv-badge">${model.builtUpArea}</span>
+                    <span class="rv-badge">${model.estateSize}</span>
+                    <span class="rv-badge">Ground-Level Only</span>
+                  </div>
+
+                  <p class="rv-desc">${model.description}</p>
+
+                  <div>
+                    <div class="rv-section-label">Plantation Options</div>
+                    <div class="rv-chips">${plantChips}</div>
+                  </div>
+
+                  <div>
+                    <div class="rv-section-label">Eco Features</div>
+                    <div class="rv-chips">${ecoChips}</div>
+                  </div>
+
+                  <div>
+                    <div class="rv-section-label">Investment Highlights</div>
+                    <div class="rv-highlights">${highlights}</div>
+                  </div>
+
+                  <div class="rv-cta-block">
+                    <button class="rv-btn rv-btn-primary" data-action="view" data-id="${model.id}">${model.ctaLabel}</button>
+                    <button class="rv-btn rv-btn-secondary" data-action="download" data-id="${model.id}">${model.secondaryCtaLabel}</button>
+                  </div>
+                </div>
+              `;
+              return article;
+            }
+
+            const mount = document.getElementById("rv-cards-mount");
+            if (!mount) return;
+
+            estateModels.forEach(m => {
+                const card = cardEl(m);
+                mount.appendChild(card);
+                if (window.__revObs) window.__revObs.observe(card);
             });
 
-            var slides = track.querySelectorAll('.mp-slide');
-            var curEl = document.getElementById('mpCurrent');
-            document.getElementById('mpTotal').textContent = total;
+            // Handle elegant toast notification
+            function showToast(message, type = 'success') {
+              let container = document.getElementById('rv-toast-container');
+              if (!container) {
+                container = document.createElement('div');
+                container.id = 'rv-toast-container';
+                container.style.cssText = `
+                  position: fixed;
+                  bottom: 30px;
+                  right: 30px;
+                  z-index: 9999;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  pointer-events: none;
+                `;
+                document.body.appendChild(container);
+              }
 
-            function show(n) {
-                current = (n + total) % total;
-                slides.forEach(function (s, i) { s.classList.toggle('is-active', i === current); });
-                curEl.textContent = current + 1;
+              const toast = document.createElement('div');
+              toast.style.cssText = `
+                background: #1F3A2E;
+                color: #FBF8F1;
+                border: 1px solid #B08A3E;
+                padding: 16px 24px;
+                border-radius: 4px;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 0.75rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                box-shadow: 0 20px 40px rgba(15, 28, 22, 0.35);
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+                transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                pointer-events: auto;
+              `;
+              
+              const icon = type === 'success' ? '✦' : 'ℹ';
+              toast.innerHTML = `<span style="color: #B08A3E; font-size: 1rem; font-weight: 700;">${icon}</span> <span>${message}</span>`;
+              container.appendChild(toast);
+
+              setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0) scale(1)';
+              }, 10);
+
+              setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-10px) scale(0.95)';
+                setTimeout(() => toast.remove(), 500);
+              }, 4000);
             }
-            function next() { show(current + 1); }
-            function prev() { show(current - 1); }
 
-            document.getElementById('mpNext').addEventListener('click', function () { next(); reset(); });
-            document.getElementById('mpPrev').addEventListener('click', function () { prev(); reset(); });
+            mount.addEventListener("click", (e) => {
+              const btn = e.target.closest("[data-action]");
+              if (!btn) return;
+              const id = btn.dataset.id;
+              const action = btn.dataset.action;
+              const model = estateModels.find(m => m.id === id);
+              if (!model) return;
 
-            function start() { timer = setInterval(next, 6000); }
-            function reset() { clearInterval(timer); start(); }
-            start();
+              if (action === "view") {
+                // Pre-fill the proposal form beautifully and scroll down
+                const proposalSection = document.getElementById("proposal");
+                if (proposalSection) {
+                    proposalSection.scrollIntoView({ behavior: "smooth" });
+                    
+                    // Fill input fields
+                    const messageArea = document.getElementById("message");
+                    if (messageArea) {
+                        messageArea.value = `I am highly interested in the "${model.title}". Please send me the masterplan dossier, detailed specifications, pricing, and available land plots for this model in the eco-jungle valley.`;
+                        // Trigger synthetic input event to activate float label
+                        messageArea.dispatchEvent(new Event('input', { bubbles: true }));
+                    }
+                    
+                    const interestSelect = document.getElementById("interest");
+                    if (interestSelect) {
+                        interestSelect.value = "general";
+                        interestSelect.dispatchEvent(new Event('input', { bubbles: true }));
+                    }
 
-            var carousel = document.getElementById('mpCarousel');
-            carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
-            carousel.addEventListener('mouseleave', function () { start(); });
+                    // Highlight the first input field to capture attention
+                    const nameInput = document.getElementById("fullName");
+                    if (nameInput) {
+                        setTimeout(() => nameInput.focus(), 800);
+                    }
+                    
+                    showToast(`Request started for ${model.bedroomType} Estate. Form pre-filled below!`, 'success');
+                }
+              } else if (action === "download") {
+                showToast(`Preparing specification dossier for ${model.bedroomType}...`, 'info');
+                setTimeout(() => {
+                    // Create mock download link
+                    const link = document.createElement("a");
+                    link.href = "#";
+                    link.setAttribute("download", `Reserva_Verde_Goa_${id}_Specs.pdf`);
+                    showToast(`Specification sheet for ${model.bedroomType} downloaded successfully!`, 'success');
+                }, 1500);
+              }
+            });
         })();
 
     </script>
