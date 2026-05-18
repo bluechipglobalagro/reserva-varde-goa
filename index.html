@@ -1285,6 +1285,169 @@
             font-family: var(--font-sans);
         }
 
+        /* Dynamic Architectural Specification Modal */
+        .rv-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 28, 22, 0.96);
+            backdrop-filter: blur(12px);
+            z-index: 10000;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .rv-modal-overlay.active {
+            opacity: 1; pointer-events: auto;
+        }
+        .rv-modal-window {
+            width: 90vw; max-width: 1400px;
+            height: 85vh; max-height: 900px;
+            background: var(--rv-ivory);
+            border: 1px solid var(--rv-gold);
+            border-radius: 8px;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.55);
+            display: flex; flex-direction: column;
+            overflow: hidden;
+            transform: translateY(30px) scale(0.98);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .rv-modal-overlay.active .rv-modal-window {
+            transform: translateY(0) scale(1);
+        }
+        
+        .rv-m-header {
+            padding: 2.2rem 3rem;
+            border-bottom: 1px solid rgba(199, 185, 122, 0.25);
+            display: flex; justify-content: space-between; align-items: center;
+            background: #fff;
+        }
+        .rv-m-title-box { display: flex; flex-direction: column; gap: 0.5rem; }
+        .rv-m-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem; color: var(--rv-forest);
+            font-weight: 400; line-height: 1.2;
+        }
+        .rv-m-subtitle {
+            font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--rv-gold); font-weight: 500;
+        }
+        .rv-m-close {
+            background: none; border: none; font-size: 1.5rem; color: var(--rv-forest);
+            cursor: pointer; padding: 0.5rem; display: flex; align-items: center; justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .rv-m-close:hover { transform: rotate(90deg); color: var(--rv-gold); }
+
+        .rv-m-navigation {
+            display: flex; background: var(--rv-beige);
+            border-bottom: 1px solid rgba(199, 185, 122, 0.25);
+            padding: 0 3rem;
+        }
+        .rv-m-tab {
+            padding: 1.2rem 1.8rem; font-size: 0.68rem; font-weight: 500;
+            letter-spacing: 0.15em; text-transform: uppercase; color: var(--rv-forest);
+            border: none; background: none; cursor: pointer; position: relative;
+            transition: color 0.3s ease; opacity: 0.65;
+            font-family: var(--font-sans);
+        }
+        .rv-m-tab:hover, .rv-m-tab.active { opacity: 1; color: var(--rv-gold); }
+        .rv-m-tab::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 2px;
+            background: var(--rv-gold); transition: width 0.3s ease;
+        }
+        .rv-m-tab.active::after { width: 100%; }
+
+        .rv-m-body {
+            flex: 1; display: grid; grid-template-columns: 45fr 55fr; overflow: hidden;
+        }
+        .rv-m-left {
+            background: var(--rv-forest-deep);
+            padding: 3rem; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border-right: 1px solid rgba(199, 185, 122, 0.25); overflow-y: auto;
+        }
+        .rv-m-right {
+            padding: 3.5rem 4rem; overflow-y: auto; background: #fff;
+            display: flex; flex-direction: column; gap: 2.2rem;
+        }
+        
+        .rv-m-panel { display: none; }
+        .rv-m-panel.active { display: block; }
+        
+        .rv-m-section-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem; color: var(--rv-forest); margin-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(199, 185, 122, 0.15); padding-bottom: 0.6rem;
+        }
+        .rv-m-text {
+            font-size: 0.95rem; line-height: 1.7; color: rgba(26, 47, 37, 0.8);
+            margin-bottom: 1.5rem; font-weight: 300; font-family: var(--font-sans);
+        }
+        
+        /* Table Styles */
+        .rv-table-wrapper { width: 100%; overflow-x: auto; margin: 1.5rem 0; }
+        .rv-m-table {
+            width: 100%; border-collapse: collapse; text-align: left;
+            font-family: var(--font-sans); font-size: 0.85rem;
+        }
+        .rv-m-table th {
+            background: rgba(194, 168, 120, 0.1); color: var(--rv-forest);
+            font-weight: 600; padding: 10px 14px; font-size: 0.72rem;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            border: 1px solid rgba(199, 185, 122, 0.25);
+        }
+        .rv-m-table td {
+            padding: 12px 14px; border: 1px solid rgba(199, 185, 122, 0.2);
+            color: rgba(26, 47, 37, 0.85); font-weight: 300;
+        }
+        .rv-m-table tr:nth-child(even) {
+            background: rgba(244, 237, 221, 0.25);
+        }
+        
+        /* CAD Prompts Styling */
+        .rv-m-code-box {
+            background: #111e17; color: #a4ceb5; border: 1px solid #B08A3E;
+            border-radius: 4px; padding: 1.5rem; font-family: monospace; font-size: 0.82rem;
+            line-height: 1.6; white-space: pre-wrap; overflow-x: auto; margin-top: 1rem;
+            position: relative;
+        }
+        .rv-m-code-copy {
+            position: absolute; top: 10px; right: 10px;
+            background: rgba(194, 168, 120, 0.15); border: 1px solid rgba(194, 168, 120, 0.4);
+            color: #FBF8F1; padding: 4px 10px; font-size: 0.65rem; border-radius: 3px;
+            cursor: pointer; font-family: var(--font-sans); letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+        .rv-m-code-copy:hover {
+            background: var(--rv-gold); color: var(--rv-forest-deep);
+        }
+        
+        /* ASCII Box */
+        .rv-ascii-box {
+            font-family: monospace; font-size: 0.75rem; background: #0f1c16;
+            color: #b0c9bb; border: 1px solid rgba(194, 168, 120, 0.3);
+            padding: 1.8rem; border-radius: 4px; overflow-x: auto; line-height: 1.4;
+            white-space: pre; width: 100%; max-width: 580px; box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .rv-m-footer {
+            padding: 1.8rem 3rem; background: var(--rv-beige);
+            border-top: 1px solid rgba(199, 185, 122, 0.25);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .rv-m-foot-note {
+            font-size: 0.75rem; color: rgba(26, 47, 37, 0.7);
+            font-family: var(--font-sans); font-weight: 300;
+        }
+
+        @media (max-width: 992px) {
+            .rv-m-body { grid-template-columns: 1fr; }
+            .rv-m-left { display: none; }
+            .rv-m-right { padding: 2.5rem 2rem; }
+            .rv-m-navigation { padding: 0 2rem; }
+            .rv-m-header { padding: 1.8rem 2rem; }
+            .rv-m-footer { padding: 1.5rem 2rem; flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
     </style>
 </head>
 <body>
@@ -2040,8 +2203,9 @@
                   </div>
 
                   <div class="rv-cta-block">
-                    <button class="rv-btn rv-btn-primary" data-action="view" data-id="${model.id}">${model.ctaLabel}</button>
-                    <button class="rv-btn rv-btn-secondary" data-action="download" data-id="${model.id}">${model.secondaryCtaLabel}</button>
+                    <button class="rv-btn rv-btn-primary" data-action="explore" data-id="${model.id}">Explore Architecture</button>
+                    <button class="rv-btn rv-btn-secondary" data-action="view" data-id="${model.id}">${model.ctaLabel}</button>
+                    <button class="rv-btn rv-btn-secondary" style="border: none; background: transparent; text-decoration: underline; flex: 0 0 auto; width: auto;" data-action="download" data-id="${model.id}">${model.secondaryCtaLabel}</button>
                   </div>
                 </div>
               `;
@@ -2057,62 +2221,303 @@
                 if (window.__revObs) window.__revObs.observe(card);
             });
 
-            // Handle elegant toast notification
-            function showToast(message, type = 'success') {
-              let container = document.getElementById('rv-toast-container');
-              if (!container) {
-                container = document.createElement('div');
-                container.id = 'rv-toast-container';
-                container.style.cssText = `
-                  position: fixed;
-                  bottom: 30px;
-                  right: 30px;
-                  z-index: 9999;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 10px;
-                  pointer-events: none;
-                `;
-                document.body.appendChild(container);
+            // Master Database of Detailed Architectural, Structural, and Eco Specifications
+            const estateArchitecturalSpecs = {
+              "2bhk": {
+                concept: "U-shaped forest courtyard layout utilizing 40 ft high-cube shipping containers as the core structure.",
+                layoutExplanation: "Consists of three distinct zones (Public, Private, and Service) connected by 100% glazed, insulated glass corridors. The public wing houses the living, dining, and open kitchen modules, centered around a 150 sq.ft biophilic open courtyard. The private wing isolates the master suite and the guest bedroom suite, assuring maximum acoustic separation. A dedicated north service connector contains the powder room, utility dry storage, and crop processing pantry.",
+                sitePlacement: "Positioned in the northern-central sector of the 1-acre estate, preserving a 15-meter buffer of native trees on the rear border. Designed to flow with the natural 2% slope contours of the land. The central courtyard opens southward to face the sun-exposed active crop zones (organic spices and cashews), providing natural ventilation and soft daylighting throughout the day.",
+                roomSchedule: [
+                  { name: "Entrance Foyer", area: "120 sq.ft", module: "Glass Corridor Connector", note: "Dual glazed pivot door, slate tiling, architectural lighting." },
+                  { name: "Living Room Pavilion", area: "350 sq.ft", module: "C-1 (Full 40 ft HC)", note: "Double-sided glass panels, structural wood cladding." },
+                  { name: "Dining & Bistro Area", area: "220 sq.ft", module: "C-2 (Part A, 40 ft HC)", note: "Glazed accordion folding doors opening to central deck." },
+                  { name: "Biophilic Open Kitchen", area: "220 sq.ft", module: "C-2 (Part B, 40 ft HC)", note: "Laterite prep island, local teak counters, energy-star appliances." },
+                  { name: "Master Suite Chamber", area: "320 sq.ft", module: "C-3 (Full 40 ft HC)", note: "South corner panorama glazing, polished bamboo flooring." },
+                  { name: "Master Bath & Dressing", area: "180 sq.ft", module: "C-4 (Part A, 40 ft HC)", note: "Open-sky indoor rain shower, low-flow bronze fixtures." },
+                  { name: "Private Study / Den", area: "140 sq.ft", module: "C-4 (Part B, 40 ft HC)", note: "Floor-to-ceiling bookshelves, quiet forest views." },
+                  { name: "Guest Bedroom Suite", area: "280 sq.ft", module: "C-5 (Part A, 40 ft HC)", note: "West-facing window slot, custom wardrobe dividers." },
+                  { name: "Guest Bedroom Toilet", area: "120 sq.ft", module: "C-6 (Part A, 40 ft HC)", note: "Enclosed water-saving commode, timber sink bowl vanity." },
+                  { name: "Family Lounge / Snug", area: "220 sq.ft", module: "C-6 (Part B, 40 ft HC)", note: "Integrated daybeds, organic cotton modular seating." },
+                  { name: "Powder Room", area: "60 sq.ft", module: "C-7 (Part A, 40 ft HC)", note: "Greywater flush commode, waterless urinal, terracotta tiles." },
+                  { name: "Utility & Laundry Hub", area: "100 sq.ft", module: "C-7 (Part B, 40 ft HC)", note: "Heat-pump washer-dryer stack, solar hot-water manifold." },
+                  { name: "Organic Dry Store", area: "80 sq.ft", module: "C-7 (Part C, 40 ft HC)", note: "Naturally ventilated louvered storage for estate crops." },
+                  { name: "Glazed Glass Corridors", area: "250 sq.ft", module: "Insulated Glazed Links", note: "Double-glazed low-E argon-filled units with thermal breaks." },
+                  { name: "Covered Forest Verandah", area: "350 sq.ft", module: "Elevated Deck Space", note: "Reclaimed composite timber deck, native bamboo shading." }
+                ],
+                modules: [
+                  { id: "C-1", size: "40' x 8' x 9.5' HC", program: "Living Room social core", reinforcement: "Full 28 ft Eastern cutout. Reinforced with 150x150x6mm MS square hollow columns." },
+                  { id: "C-2", size: "40' x 8' x 9.5' HC", program: "Dining / Kitchen Pavilion", reinforcement: "24 ft Eastern cutout. 100mm heavy C-channels welded at headers." },
+                  { id: "C-3", size: "40' x 8' x 9.5' HC", program: "Master Bedroom Suite", reinforcement: "12 ft Western corner cutout. Flitch plates welded to corrugated sheet nodes." },
+                  { id: "C-4", size: "40' x 8' x 9.5' HC", program: "Master Bath / Study", reinforcement: "16 ft Western cutout. Standard steel hollow structural frames." },
+                  { id: "C-5", size: "40' x 8' x 9.5' HC", program: "Guest Bedroom Suite", reinforcement: "12 ft Western cutout. Reinforced corner posts and L-angle trusses." },
+                  { id: "C-6", size: "40' x 8' x 9.5' HC", program: "Guest Toilet / Lounge", reinforcement: "16 ft Western cutout. Double-welded corner structural bracing." },
+                  { id: "C-7", size: "40' x 8' x 9.5' HC", program: "Services & Utility Hub", reinforcement: "No large side cutouts. Reinforced pipe penetration frames only." }
+                ],
+                ecoSpecs: {
+                  construction: [
+                    "Helical steel screw pile foundations - zero concrete, preserving tree roots.",
+                    "High-performance marine epoxy coating to prevent local tropical humidity rust.",
+                    "Natural ventilation under-floor clearance of 450mm.",
+                    "Sustainable wood-shiplap rainscreen cladding made from local plantation timber."
+                  ],
+                  passiveDesign: [
+                    "Floating butterfly roof canopy providing secondary protective solar shade.",
+                    "Double-glazed, low-emissivity argon-filled glass modules to block tropical heat.",
+                    "Passive cross-ventilation designed along the southwest sea breeze corridor."
+                  ],
+                  waterWaste: [
+                    "Integrated 15,000 Liter Rainwater harvesting sump with multi-stage filter.",
+                    "Anaerobic bio-septic tank with organic microbial digesting enzymes.",
+                    "Dedicated greywater reed-bed filter pond system for garden irrigation reuse."
+                  ],
+                  landscape: [
+                    "Cashew, mango, coconut, and spice organic crops surrounding the home.",
+                    "Completely permeable gravel driveways and local laterite walking paths.",
+                    "Preservation of all mature wild forest trees inside the 1-Acre private estate."
+                  ]
+                },
+                prompts: {
+                  autocad: `[AutoCAD Layer & Drafting Standards]
+- LAYER: RV_CONT_WALL | Color: 2 (Yellow) | Width: 0.50mm | Description: Container corrugated walls
+- LAYER: RV_GLASS_GLZ | Color: 4 (Cyan)   | Width: 0.25mm | Description: Double glazed low-E glass corridors
+- LAYER: RV_REINF_STL | Color: 1 (Red)    | Width: 0.60mm | Description: MS columns, C-channels and structural bracing
+- LAYER: RV_DECK_WD   | Color: 34 (Brown)  | Width: 0.15mm | Description: Timber decking and bamboo sun shades
+- LAYER: RV_ANNO_TXT  | Color: 7 (White)   | Width: 0.18mm | Description: Room names, areas, and schedule markers`,
+                  sketchup: `[SketchUp 3D Modeling Specifications]
+1. Base Footprint: Model helical steel piles spaced at 10 ft intervals. Add 450mm under-floor air gap clearance.
+2. Container Modules: Import 7 standard high-cube 40 ft modules. Group each module as a separate component.
+3. Steel Openings: Perform wall cutouts. Model structural framing around cutouts with 150mm MS square hollow tubes.
+4. Glazing & Roof: Apply double-glazed glass components inside corridors. Model a floating butterfly double-roof structure with a 2-foot pitch angled towards the rain collector.`,
+                  rendering: `[Photorealistic 3D Render Prompt]
+A professional architectural visualization of a luxury modern ground-level U-shaped forest container retreat. Set inside a lush tropical Goa jungle with wild palms, giant ferns, and cashew trees. High-end modern design, wood shiplap cladding on container corrugated sheets, tall insulated floor-to-ceiling glass corridors. Local stone gravel pathway leading to the main entrance. Dramatic warm evening lighting shining from within, cinematic moody atmosphere, soft mist, captured with a Hasselblad 50mm lens, photorealistic 8k octane render.`
+                },
+                asciiPlan: `   [WEST WING]          [NORTH SERVICE BRIDGE]          [EAST WING]
+┌──────────────┐         ┌──────────────┐         ┌──────────────┐
+│  C-1 LIVING  │         │ C-7 SERVICES │         │ C-3 MASTER   │
+│ (350 sq.ft)  │         │ (240 sq.ft)  │         │ (320 sq.ft)  │
+├──────────────┤         ├──────────────┤         ├──────────────┤
+│  [Link 1]    │═════════│  [Link 3]    │═════════│  [Link 5]    │
+├──────────────┤         └──────────────┘         ├──────────────┤
+│  C-2 DINING/ │                                  │ C-4 BATH &   │
+│  KITCHEN     │           COURTYARD              │ STUDY        │
+└──────────────┘                                  └──────────────┘
+       │                                                 │
+   [Link 2]                                           [Link 6]
+       │                                                 │
+┌──────────────┐                                  ┌──────────────┐
+│ FOREST DECK  │══════════════════════════════════│ C-5 GUEST BR │
+└──────────────┘                                  ├──────────────┤
+                                                  │  [Link 7]    │
+                                                  ├──────────────┤
+                                                  │ C-6 BATH &   │
+                                                  │ FAMILY LOUNGE│
+                                                  └──────────────┘`
+              },
+              "3bhk": {
+                concept: "L-shaped biophilic container pavilion configuration consisting of 6 x 40 ft and 2 x 20 ft modules.",
+                layoutExplanation: "Designed for families, separating living wings from sleeping pavilions via a gorgeous central glass gallery. The guest and family wings branch off in a dynamic L-shape configuration, ensuring every single bedroom looks directly out into the forest plantation canopy while framing a shared natural pool deck.",
+                sitePlacement: "Centered within the 1-acre agroforestry layout, establishing a premium, low-impact presence. Surrounded by a custom mango and coconut orchard model, acting as a natural windbreak and thermal barrier for the structure.",
+                roomSchedule: [
+                  { name: "Arrival Portal", area: "150 sq.ft", module: "20 ft Glass Vestibule", note: "Pivot wood entrance door, ambient downlighting." },
+                  { name: "Living Wing", area: "450 sq.ft", module: "C-1 + C-2 (Full 40 ft)", note: "Expanded double-width pavilion, polished stone floors." },
+                  { name: "Dining Hall", area: "280 sq.ft", module: "C-3 (Part A, 40 ft)", note: "Bespoke mango-wood dining table, full garden window." },
+                  { name: "Gourmet Kitchen", area: "250 sq.ft", module: "C-3 (Part B, 40 ft)", note: "Locally sourced granite prep counters, pantry racks." },
+                  { name: "Master Suite", area: "350 sq.ft", module: "C-4 (Full 40 ft HC)", note: "Private corner exposure, walk-in dressing wardrobe." },
+                  { name: "Master En-Suite Bath", area: "200 sq.ft", module: "C-5 (Part A, 40 ft)", note: "Indoor tropical wetroom, natural slate panels." },
+                  { name: "Bed 2 (Family Suite)", area: "300 sq.ft", module: "C-6 (Part A, 40 ft)", note: "Double bed space, window desk looking at mango plot." },
+                  { name: "Shared Family Toilet", area: "130 sq.ft", module: "C-6 (Part B, 40 ft)", note: "Water-conserving fittings, premium slate tiles." },
+                  { name: "Bed 3 (Guest Suite)", area: "280 sq.ft", module: "C-7 (Part A, 40 ft)", note: "Cosy guest room, writing desk alcove." },
+                  { name: "Guest En-Suite Bath", area: "130 sq.ft", module: "C-7 (Part B, 40 ft)", note: "Sleek vanity with native stone basin." },
+                  { name: "Home Workspace / Den", area: "180 sq.ft", module: "C-5 (Part B, 40 ft)", note: "Quiet library corner with sound-absorbing cork walls." },
+                  { name: "Service & Laundry Room", area: "120 sq.ft", module: "C-8 (20 ft Service HC)", note: "Energy-efficient appliance stack, garden tool locker." }
+                ],
+                modules: [
+                  { id: "C-1", size: "40' x 8' x 9.5' HC", program: "Living social zone A", reinforcement: "Full 30 ft cutout on south side. Reinforced with C-channel headers." },
+                  { id: "C-2", size: "40' x 8' x 9.5' HC", program: "Living social zone B", reinforcement: "Full 30 ft cutout on north side. MS hollow columns at structural corners." },
+                  { id: "C-3", size: "40' x 8' x 9.5' HC", program: "Dining / Kitchen Module", reinforcement: "24 ft Eastern cutout. Standard support column additions." },
+                  { id: "C-4", size: "40' x 8' x 9.5' HC", program: "Master Suite core", reinforcement: "12 ft cutout. Double flitch welded steel plate bracing." },
+                  { id: "C-5", size: "40' x 8' x 9.5' HC", program: "Master Bath / Library", reinforcement: "16 ft cutout. Reinforced steel tube side-braces." },
+                  { id: "C-6", size: "40' x 8' x 9.5' HC", program: "Bedroom 2 Wing Module", reinforcement: "14 ft cutout. Square hollow structural columns." },
+                  { id: "C-7", size: "40' x 8' x 9.5' HC", program: "Bedroom 3 Wing Module", reinforcement: "12 ft cutout. Heavy L-angle reinforcements." },
+                  { id: "C-8", size: "20' x 8' x 9.5' HC", program: "Service & Maintenance Module", reinforcement: "Zero cutouts. Standard shipping container corner casting." }
+                ],
+                ecoSpecs: {
+                  construction: [
+                    "Ground-level screw piling system, zero land excavation.",
+                    "Sustainably harvested split bamboo rainscreen for outer tropical cladding.",
+                    "Reflective thermal barrier coating applied on active container roofs."
+                  ],
+                  passiveDesign: [
+                    "L-shape pavilion block blocks harsh afternoon sun while capturing cool sea breeze.",
+                    "Floor-to-ceiling high-efficiency glazing provides premium illumination.",
+                    "Overhanging floating solar canopy reduces building shell temperature by 5°C."
+                  ],
+                  waterWaste: [
+                    "25,000 Liter integrated under-deck Rainwater collection system.",
+                    "On-site bio-septic and filter bed systems.",
+                    "Greywater marsh filtration garden providing recycled water to the estate trees."
+                  ],
+                  landscape: [
+                    "1-Acre private plantation growing native mangoes and wild organic spices.",
+                    "Gravel walkways and completely permeable pathways.",
+                    "Preservation of natural contours, preventing runoff during heavy monsoon rains."
+                  ]
+                },
+                prompts: {
+                  autocad: `[AutoCAD Layer & Drafting Standards]
+- LAYER: RV_3BHK_WALL | Color: 3 (Green)   | Width: 0.50mm | Description: 8 modular container shell
+- LAYER: RV_3BHK_GLAZ | Color: 4 (Cyan)    | Width: 0.25mm | Description: Glass gallery partitions
+- LAYER: RV_3BHK_REIN | Color: 1 (Red)     | Width: 0.60mm | Description: C-channels and flange welded bracing
+- LAYER: RV_3BHK_PLNT | Color: 52 (Forest) | Width: 0.15mm | Description: Mango orchard plot lines`,
+                  sketchup: `[SketchUp 3D Modeling Specifications]
+1. Import 6 standard high-cube 40 ft container components and 2 standard 20 ft components.
+2. Group and align in an L-shaped layout around a 3D timber patio deck.
+3. Cut out internal partition panels. Frame openings with structural steel groups.
+4. Model a floating structural double roof with local split-bamboo materials.`,
+                  rendering: `[Photorealistic 3D Render Prompt]
+A spectacular photorealistic render of an L-shaped high-end modern 3BHK forest container home, set inside a rich sunlit mango estate in Goa. Wide wood verandah terrace overlooking native gardens. Clean industrial details combined with warm organic materials like teak and split bamboo. Soft evening light filtering through dense trees, dramatic reflections, captured on DSLR camera, 8k octane render.`
+                },
+                asciiPlan: `       [SLEEPING PAVILIONS]                  [CENTRAL LINK]                  [SOCIAL PAVILIONS]
+┌─────────────────────────────────┐       ┌──────────────────┐       ┌─────────────────────────────────┐
+│   C-4 MASTER    │   C-6 BED 2   │       │   C-8 SERVICES   │       │   C-1 LIVING    │   C-3 DINING    │
+│   (350 sq.ft)   │   (300 sq.ft) │       │   (120 sq.ft)    │       │   (450 sq.ft)   │   (280 sq.ft)   │
+├─────────────────┴───────────────┤       ├──────────────────┤       ├─────────────────┴───────────────┤
+│           GLASS SPINE           │═══════│  [Glass Link 3]  │═══════│         COVERED VERANDAH        │
+└─────────────────────────────────┘       └──────────────────┘       └─────────────────────────────────┘`
+              },
+              "4bhk": {
+                concept: "Flagship three-wing ground-level container pavilion layout consisting of 8 x 40 ft and 3 x 20 ft modules.",
+                layoutExplanation: "A premium pavilion arrangement framing a breathtaking central courtyard, a reflective wellness pool, and deep wooden entertainment decks. Separates the master quarters (Wing A), guest rooms (Wing B), and family lounge & kitchen areas (Wing C) into distinct private structures connected via gorgeous glass corridors.",
+                sitePlacement: "Nestled in the quiet, sheltered rear sector of the 1-acre private estate. Surrounded by mature trees, providing absolute seclusion and a spectacular 360-degree organic forest vista.",
+                roomSchedule: [
+                  { name: "Grand Entrance Foyer", area: "180 sq.ft", module: "20 ft Double-Glazed Lobby", note: "Laterite feature wall, custom teak pivot door." },
+                  { name: "Grand Living Pavilion", area: "550 sq.ft", module: "C-1 + C-2 (Full 40 ft HC)", note: "Double-width social space, full glass sliders." },
+                  { name: "Formal Dining Suite", area: "320 sq.ft", module: "C-3 (Part A, 40 ft)", note: "Glass accordion walls, pool deck views." },
+                  { name: "Chef's Show Kitchen", area: "280 sq.ft", module: "C-3 (Part B, 40 ft)", note: "Laterite island, professional induction units." },
+                  { name: "Service Prep Kitchen", area: "140 sq.ft", module: "C-11 (20 ft Core HC)", note: "Closed butler pantry, dirty cooking zones." },
+                  { name: "Master Wing Chamber", area: "450 sq.ft", module: "C-4 + C-5 (Full 40 ft)", note: "King bedroom suite, quiet forest garden exposure." },
+                  { name: "Master Bathroom & Tub", area: "250 sq.ft", module: "C-5 (Part B, 40 ft)", note: "Deluxe stone tub overlooking secret bamboo courtyard." },
+                  { name: "Bed 2 (Guest Wing)", area: "320 sq.ft", module: "C-6 (Full 40 ft HC)", note: "Full en-suite, direct deck access." },
+                  { name: "Bed 3 (Orchard Wing)", area: "320 sq.ft", module: "C-7 (Full 40 ft HC)", note: "Glazed corners looking at spice orchards." },
+                  { name: "Bed 4 (Forest Wing)", area: "300 sq.ft", module: "C-8 (Part A, 40 ft)", note: "Bespoke timber fittings, garden views." },
+                  { name: "Bedroom Baths (2, 3, 4)", area: "440 sq.ft", module: "C-8/C-9 (Divided Cores)", note: "Modern waterless units, local stone vanities." },
+                  { name: "Utility & Power Room", area: "160 sq.ft", module: "C-10 (20 ft Service HC)", note: "Solar battery bank, smart home controls." },
+                  { name: "Reflective Pool Deck", area: "600 sq.ft", module: "Courtyard Central", note: "Elevated timber deck framing a shallow swimming pool." }
+                ],
+                modules: [
+                  { id: "C-1", size: "40' x 8' x 9.5' HC", program: "Living Room wing A", reinforcement: "Full 32 ft cutout. Reinforced corner columns and steel hollow profiles." },
+                  { id: "C-2", size: "40' x 8' x 9.5' HC", program: "Living Room wing B", reinforcement: "Full 32 ft cutout. Heavy structural C-channel reinforcements." },
+                  { id: "C-3", size: "40' x 8' x 9.5' HC", program: "Dining / Show Kitchen", reinforcement: "24 ft cutout. Custom framing and weldments." },
+                  { id: "C-4", size: "40' x 8' x 9.5' HC", program: "Master Suite main block", reinforcement: "16 ft cutout. Flitch plate corner column welds." },
+                  { id: "C-5", size: "40' x 8' x 9.5' HC", program: "Master Bath / dressing", reinforcement: "18 ft cutout. Steel square column reinforcements." },
+                  { id: "C-6", size: "40' x 8' x 9.5' HC", program: "Bedroom 2 Module", reinforcement: "14 ft cutout. Heavy angle bracing." },
+                  { id: "C-7", size: "40' x 8' x 9.5' HC", program: "Bedroom 3 Module", reinforcement: "14 ft cutout. Standard structural hollow shapes." },
+                  { id: "C-8", size: "40' x 8' x 9.5' HC", program: "Bedroom 4 & Bath core", reinforcement: "16 ft cutout. MS post-and-lintel welded frame." },
+                  { id: "C-9", size: "20' x 8' x 9.5' HC", program: "Wing Connector Core", reinforcement: "Glazed cutouts. Steel box frames." },
+                  { id: "C-10", size: "20' x 8' x 9.5' HC", program: "Off-Grid Utility Core", reinforcement: "None. Reinforced wire/cable penetrations only." },
+                  { id: "C-11", size: "20' x 8' x 9.5' HC", program: "Butler Pantry Service", reinforcement: "Standard structural door cutouts." }
+                ],
+                ecoSpecs: {
+                  construction: [
+                    "High-density helical steel piles - zero footprint construction.",
+                    "Sustainably sourced teak cladding with anti-insect heat treatment.",
+                    "Structural frame engineered to wind load standards up to zone 4 monsoons."
+                  ],
+                  passiveDesign: [
+                    "Central reflective pool provides localized evaporative cooling, dropping court temp by 3°C.",
+                    "Passive air pathways funnel southwest summer winds across the living wing.",
+                    "Double-canopy insulated roof blocks 94% of solar heat gain."
+                  ],
+                  waterWaste: [
+                    "40,000 Liter massive under-deck Rainwater harvesting reserve tank.",
+                    "Closed-loop bio-septic digester converting blackwater into fertilizer compost.",
+                    "Integrated eco-wetland pool filter utilizing biological plants instead of chemicals."
+                  ],
+                  landscape: [
+                    "1-Acre mature botanical forest, spice paths, coconut plantations.",
+                    "Permeable forest mulch walking trails, keeping soil integrity intact.",
+                    "Zero concrete retaining walls - all slope stabilization done with native vetiver grass."
+                  ]
+                },
+                prompts: {
+                  autocad: `[AutoCAD Layer & Drafting Standards]
+- LAYER: RV_4BHK_SHELL | Color: 2 (Yellow)  | Width: 0.50mm | Description: 11-module container array
+- LAYER: RV_4BHK_POOL  | Color: 150 (Blue)  | Width: 0.25mm | Description: Reflective pool and filter pond
+- LAYER: RV_4BHK_REINF | Color: 1 (Red)    | Width: 0.60mm | Description: Heavy double C-channels and columns
+- LAYER: RV_4BHK_LAND  | Color: 80 (Green)  | Width: 0.18mm | Description: Retained forest trees and contours`,
+                  sketchup: `[SketchUp 3D Modeling Specifications]
+1. Model 8 high-cube 40 ft containers and 3 standard 20 ft containers grouped into a three-wing layout.
+2. Group wings individually. Connect wings with double-glazed glass corridor components.
+3. Model a 600 sq.ft pool basin in the center courtyard with a shallow water plane component.
+4. Add floating tropical butterfly roof structure with wood rafters and structural posts.`,
+                  rendering: `[Photorealistic 3D Render Prompt]
+A high-end architectural rendering of a flagship three-wing 4BHK luxury modular container villa. Arranged around a stunning reflective pool court with warm timber walkways. Set in a quiet, misty Goa jungle valley. High-performance glass, premium teak cladding, industrial container frames, beautiful warm evening illumination. Captured with professional architectural lens, photorealistic 8k octane render.`
+                },
+                asciiPlan: `            [WEST SLEEPING WING]            [NORTH BEDROOM WING]            [EAST SOCIAL WING]
+         ┌────────────────────────┐      ┌────────────────────────┐      ┌────────────────────────┐
+         │ C-4 MASTER  │ C-6 BED2 │      │ C-10 SERVICES│ C-7 BED3│      │ C-1 LIVING  │ C-2 DINING │
+         └──────────┬─────────────┘      └──────────┬─────────────┘      └──────────┬─────────────┘
+                    │                               │                               │
+              [Glass Link 1]                  [Glass Link 2]                  [Glass Link 3]
+                    │                               │                               │
+         ┌──────────▼───────────────────────────────▼───────────────────────────────▼────────────┐
+         │                                   REFLECTING POOL                                      │
+         └────────────────────────────────────────────────────────────────────────────────────────┘`
+              },
+              "custom": {
+                concept: "Fully bespoke ground-level configuration tailored configuration-to-order from 3 to 10 high-cube modules.",
+                layoutExplanation: "A completely customisable estate blueprint. Work directly with the master planning studio at Reserva Verde Goa to map your modular home. Build it exactly to your spatial requirements (ranging from 1,500 to 6,000 sq.ft built-up), selecting bedroom numbers, deck sizes, courtyard designs, and plantation configurations — all within the ground-level-only eco-sensitive guidelines.",
+                sitePlacement: "Bespoke positioning across your private 1-acre estate. Configured carefully based on a professional 3D tree survey and soil topography map of your plot, ensuring zero trees are cut down and the home nests perfectly within the contours.",
+                roomSchedule: [
+                  { name: "Custom Living Space", area: "User-Selected", module: "Configurable Core", note: "Bespoke layout configuration to match buyer requirements." },
+                  { name: "Flexible Bedrooms", area: "1 to 4 Chambers", module: "Standard 40 ft HC Cores", note: "Positioned dynamically based on morning light exposures." },
+                  { name: "Eco Bathrooms", area: "1 to 4 Suites", module: "Integrated Modular Bath", note: "Equipped with low-flow fixtures and composting features." },
+                  { name: "Bespoke Kitchen & Deck", area: "Custom Footprint", module: "Optional Modules", note: "Configured for indoor-outdoor social gathering flow." }
+                ],
+                modules: [
+                  { id: "Configurable", size: "40 ft or 20 ft HC", program: "Custom structural configurations", reinforcement: "Tailored C-channels and MS square column supports as per custom floor plans." }
+                ],
+                ecoSpecs: {
+                  construction: [
+                    "Bespoke helical steel pile layout matched to final home footprint.",
+                    "High-durability anti-corrosion protective coatings.",
+                    "Elevated under-floor clearances tailored to specific site topography slope."
+                  ],
+                  passiveDesign: [
+                    "Bespoke wind-tunnel layouts designed utilizing virtual airflow models.",
+                    "Insulated roof structures configured to shield the interior from daytime peak sun."
+                  ],
+                  waterWaste: [
+                    "Custom-sized rainwater harvesting and storage systems.",
+                    "Sized anaerobic bio-septic digester and filter systems."
+                  ],
+                  landscape: [
+                    "Customisable agroforestry crop profile (cashews, spices, organic vegetables, herbal orchards).",
+                    "Integrated permeable layouts for absolute water retention on your private acre."
+                  ]
+                },
+                prompts: {
+                  autocad: `[AutoCAD Layer & Drafting Standards]
+- Custom layout layers configured upon design consultation. Match Standard AIA CAD standards.`,
+                  sketchup: `[SketchUp 3D Modeling Specifications]
+1. Use standard 40 ft and 20 ft container components from the Reserva Verde template library.
+2. Group, arrange, and snap components onto piles. Combine elements as desired.`,
+                  rendering: `[Photorealistic 3D Render Prompt]
+Bespoke architectural rendering of a custom-designed eco-luxury ground-level container home in a private 1-acre Goa jungle orchard. Showcasing bespoke layout, modern timber decks, natural materials, and native gardens. High-end modern styling, daytime warm tropical sunlight, photorealistic 8k render.`
+                },
+                asciiPlan: `           [CUSTOM CONFIGURATION-TO-ORDER CONTAINER MODULE ASSEMBLAGE]
+               Configure 3 to 10 modules on a private 1-acre estate.
+           ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+           │   MODULE A   │════│   MODULE B   │════│   MODULE C   │
+           └──────────────┘    └──────────────┘    └──────────────┘
+                                      ║
+                               ┌──────────────┐
+                               │   COURTYARD  │
+                               └──────────────┘`
               }
+            };
 
-              const toast = document.createElement('div');
-              toast.style.cssText = `
-                background: #1F3A2E;
-                color: #FBF8F1;
-                border: 1px solid #B08A3E;
-                padding: 16px 24px;
-                border-radius: 4px;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 0.75rem;
-                letter-spacing: 0.1em;
-                text-transform: uppercase;
-                box-shadow: 0 20px 40px rgba(15, 28, 22, 0.35);
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                opacity: 0;
-                transform: translateY(20px) scale(0.95);
-                transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-                pointer-events: auto;
-              `;
-              
-              const icon = type === 'success' ? '✦' : 'ℹ';
-              toast.innerHTML = `<span style="color: #B08A3E; font-size: 1rem; font-weight: 700;">${icon}</span> <span>${message}</span>`;
-              container.appendChild(toast);
-
-              setTimeout(() => {
-                toast.style.opacity = '1';
-                toast.style.transform = 'translateY(0) scale(1)';
-              }, 10);
-
-              setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateY(-10px) scale(0.95)';
-                setTimeout(() => toast.remove(), 500);
-              }, 4000);
-            }
-
+            // Card click listener
             mount.addEventListener("click", (e) => {
               const btn = e.target.closest("[data-action]");
               if (!btn) return;
@@ -2120,6 +2525,113 @@
               const action = btn.dataset.action;
               const model = estateModels.find(m => m.id === id);
               if (!model) return;
+
+              if (action === "explore") {
+                const spec = estateArchitecturalSpecs[id];
+                if (!spec) return;
+
+                // Populate modal texts
+                document.getElementById("rvModalTitle").innerText = model.title;
+                document.getElementById("rvModalConcept").innerText = spec.concept;
+                document.getElementById("rvModalExplanation").innerText = spec.layoutExplanation;
+                document.getElementById("rvModalPlacement").innerText = spec.sitePlacement;
+                document.getElementById("rvModalAscii").innerText = spec.asciiPlan;
+
+                // Render Area Schedule Table
+                const areaTableBody = document.querySelector("#rvAreaTable tbody");
+                areaTableBody.innerHTML = spec.roomSchedule.map(row => `
+                    <tr>
+                        <td style="font-weight: 600; color: var(--rv-forest);">${row.name}</td>
+                        <td style="font-weight: 700; color: var(--rv-gold);">${row.area}</td>
+                        <td>${row.module}</td>
+                        <td style="font-size: 0.8rem; color: var(--rv-mute);">${row.note}</td>
+                    </tr>
+                `).join("");
+
+                // Render Container Module Table
+                const moduleTableBody = document.querySelector("#rvModuleTable tbody");
+                moduleTableBody.innerHTML = spec.modules.map(row => `
+                    <tr>
+                        <td style="font-weight: 700; color: var(--rv-gold);">${row.id}</td>
+                        <td style="font-weight: 500;">${row.size}</td>
+                        <td style="font-weight: 600; color: var(--rv-forest);">${row.program}</td>
+                        <td style="font-size: 0.8rem; color: var(--rv-mute);">${row.reinforcement}</td>
+                    </tr>
+                `).join("");
+
+                // Render Eco Specs Lists
+                const ecoContainer = document.getElementById("rvModalEcoSpecs");
+                ecoContainer.innerHTML = `
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h5 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--rv-forest); margin-bottom: 0.6rem; border-bottom: 1px solid rgba(199,185,122,0.25); padding-bottom: 4px;">Construction & Envelope</h5>
+                            <ul style="margin: 0; padding-left: 20px; color: rgba(26,47,37,0.85); font-size: 0.85rem; line-height: 1.6; font-family: var(--font-sans); font-weight: 300;">
+                                ${spec.ecoSpecs.construction.map(i => `<li style="margin-bottom: 6px;">${i}</li>`).join("")}
+                            </ul>
+                            
+                            <h5 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--rv-forest); margin-top: 1.5rem; margin-bottom: 0.6rem; border-bottom: 1px solid rgba(199,185,122,0.25); padding-bottom: 4px;">Passive Solar & Cooling</h5>
+                            <ul style="margin: 0; padding-left: 20px; color: rgba(26,47,37,0.85); font-size: 0.85rem; line-height: 1.6; font-family: var(--font-sans); font-weight: 300;">
+                                ${spec.ecoSpecs.passiveDesign.map(i => `<li style="margin-bottom: 6px;">${i}</li>`).join("")}
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--rv-forest); margin-bottom: 0.6rem; border-bottom: 1px solid rgba(199,185,122,0.25); padding-bottom: 4px;">Water Stewardship</h5>
+                            <ul style="margin: 0; padding-left: 20px; color: rgba(26,47,37,0.85); font-size: 0.85rem; line-height: 1.6; font-family: var(--font-sans); font-weight: 300;">
+                                ${spec.ecoSpecs.waterWaste.map(i => `<li style="margin-bottom: 6px;">${i}</li>`).join("")}
+                            </ul>
+                            
+                            <h5 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--rv-forest); margin-top: 1.5rem; margin-bottom: 0.6rem; border-bottom: 1px solid rgba(199,185,122,0.25); padding-bottom: 4px;">Agroforestry Landscape</h5>
+                            <ul style="margin: 0; padding-left: 20px; color: rgba(26,47,37,0.85); font-size: 0.85rem; line-height: 1.6; font-family: var(--font-sans); font-weight: 300;">
+                                ${spec.ecoSpecs.landscape.map(i => `<li style="margin-bottom: 6px;">${i}</li>`).join("")}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+
+                // Render Developer CAD Codes
+                document.getElementById("rvCodeAutocad").innerText = spec.prompts.autocad;
+                document.getElementById("rvCodeSketchup").innerText = spec.prompts.sketchup;
+                document.getElementById("rvCodeRender").innerText = spec.prompts.rendering;
+
+                // Setup Active Tab to first tab (layout)
+                document.querySelectorAll(".rv-m-tab").forEach(t => t.classList.remove("active"));
+                document.querySelectorAll(".rv-m-panel").forEach(p => p.classList.remove("active"));
+                document.querySelector('[data-tab="layout"]').classList.add("active");
+                document.getElementById("panel-layout").classList.add("active");
+
+                // Bind Apply Button
+                const applyBtn = document.getElementById("rvModalApply");
+                applyBtn.onclick = () => {
+                    // Close modal
+                    document.getElementById("rvArchModal").classList.remove("active");
+                    document.body.style.overflow = "";
+
+                    // Trigger scroll and autofill
+                    const proposalSection = document.getElementById("proposal");
+                    if (proposalSection) {
+                        proposalSection.scrollIntoView({ behavior: "smooth" });
+                        const messageArea = document.getElementById("message");
+                        if (messageArea) {
+                            messageArea.value = `I am highly interested in the "${model.title}" modular eco estate. I have explored its U-shaped biophilic container floor plan, wood shiplap cladding specifications, waterless urinals, and reed-bed greywater reuse strategies. Please contact me to tailor this architectural concept for my private 1-Acre estate.`;
+                            messageArea.dispatchEvent(new Event('input', { bubbles: true }));
+                        }
+                        const interestSelect = document.getElementById("interest");
+                        if (interestSelect) {
+                            interestSelect.value = "general";
+                            interestSelect.dispatchEvent(new Event('input', { bubbles: true }));
+                        }
+                        const nameInput = document.getElementById("fullName");
+                        if (nameInput) {
+                            setTimeout(() => nameInput.focus(), 800);
+                        }
+                        showToast(`Design intent applied! Form configured below.`, 'success');
+                    }
+                };
+
+                // Show Modal overlay
+                document.getElementById("rvArchModal").classList.add("active");
+                document.body.style.overflow = "hidden"; // lock page body scroll
+              }
 
               if (action === "view") {
                 // Pre-fill the proposal form beautifully and scroll down
@@ -2160,8 +2672,151 @@
                 }, 1500);
               }
             });
+
+            // Tab switching inside architectural modal
+            document.querySelectorAll(".rv-m-tab").forEach(tab => {
+                tab.addEventListener("click", () => {
+                    document.querySelectorAll(".rv-m-tab").forEach(t => t.classList.remove("active"));
+                    document.querySelectorAll(".rv-m-panel").forEach(p => p.classList.remove("active"));
+                    
+                    tab.classList.add("active");
+                    const panelId = `panel-${tab.dataset.tab}`;
+                    document.getElementById(panelId).classList.add("active");
+                });
+            });
+
+            // Close architectural modal triggers
+            const closeArchModal = () => {
+                const modalOverlay = document.getElementById("rvArchModal");
+                if (modalOverlay) {
+                    modalOverlay.classList.remove("active");
+                    document.body.style.overflow = "";
+                }
+            };
+            document.getElementById("rvModalClose")?.addEventListener("click", closeArchModal);
+            document.getElementById("rvArchModal")?.addEventListener("click", (e) => {
+                if (e.target.id === "rvArchModal") closeArchModal();
+            });
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") closeArchModal();
+            });
         })();
 
     </script>
+
+    <!-- Dynamic Architectural Spec Modal -->
+    <div class="rv-modal-overlay" id="rvArchModal">
+        <div class="rv-modal-window">
+            <div class="rv-m-header">
+                <div class="rv-m-title-box">
+                    <h3 class="rv-m-title" id="rvModalTitle">Model Name</h3>
+                    <div class="rv-m-subtitle" id="rvModalSubtitle">Reserva Verde Goa — Architectural Blueprint Dossier</div>
+                </div>
+                <button class="rv-m-close" id="rvModalClose">&times;</button>
+            </div>
+            
+            <div class="rv-m-navigation">
+                <button class="rv-m-tab active" data-tab="layout">📐 Blueprint & Space Layout</button>
+                <button class="rv-m-tab" data-tab="schedules">📊 Area & Module Schedules</button>
+                <button class="rv-m-tab" data-tab="specs">🌳 Eco-Sensitive Specs</button>
+                <button class="rv-m-tab" data-tab="cad">💻 CAD & Developer Prompts</button>
+            </div>
+            
+            <div class="rv-m-body">
+                <div class="rv-m-left">
+                    <div class="rv-ascii-box" id="rvModalAscii">ASCII Drawing Loading...</div>
+                </div>
+                
+                <div class="rv-m-right">
+                    <!-- Tab Panel 1: Layout -->
+                    <div class="rv-m-panel active" id="panel-layout">
+                        <h4 class="rv-m-section-title">Design Concept & 2D Layout</h4>
+                        <p class="rv-m-text" id="rvModalConcept">Concept Loading...</p>
+                        <h4 class="rv-m-section-title">Spatial & Circulation Flow</h4>
+                        <p class="rv-m-text" id="rvModalExplanation">Explanation Loading...</p>
+                    </div>
+                    
+                    <!-- Tab Panel 2: Schedules -->
+                    <div class="rv-m-panel" id="panel-schedules">
+                        <h4 class="rv-m-section-title">Room Area Schedule (Built-up)</h4>
+                        <p class="rv-m-text">Detailed space schedule representing gross built-up area matching institutional estate metrics.</p>
+                        <div class="rv-table-wrapper">
+                            <table class="rv-m-table" id="rvAreaTable">
+                                <thead>
+                                    <tr>
+                                        <th>Space Name</th>
+                                        <th>Approx Area</th>
+                                        <th>Module / Container</th>
+                                        <th>Biophilic Design Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dynamic Rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h4 class="rv-m-section-title">Container Module Allocation & Bracing</h4>
+                        <p class="rv-m-text">Standard high-cube structural module arrangement with reinforced cutout parameters.</p>
+                        <div class="rv-table-wrapper">
+                            <table class="rv-m-table" id="rvModuleTable">
+                                <thead>
+                                    <tr>
+                                        <th>Module ID</th>
+                                        <th>Module Size</th>
+                                        <th>Structural Program</th>
+                                        <th>Reinforcement Parameters</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Dynamic Rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Panel 3: Specs -->
+                    <div class="rv-m-panel" id="panel-specs">
+                        <h4 class="rv-m-section-title">1-Acre Site Placement & Contours</h4>
+                        <p class="rv-m-text" id="rvModalPlacement">Site details loading...</p>
+                        
+                        <h4 class="rv-m-section-title">Eco-Sensitive Technical Specifications</h4>
+                        <div class="rv-m-text" id="rvModalEcoSpecs">
+                            <!-- Dynamic Content -->
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Panel 4: CAD & Prompts -->
+                    <div class="rv-m-panel" id="panel-cad">
+                        <h4 class="rv-m-section-title">AutoCAD Drafting Layer Setup</h4>
+                        <p class="rv-m-text">Professional layers and line weights standard for architect review and executive construction drafting.</p>
+                        <div class="rv-m-code-box">
+                            <button class="rv-m-code-copy" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); showToast('AutoCAD code copied to clipboard!', 'success');">Copy</button>
+                            <code id="rvCodeAutocad">CAD code loading...</code>
+                        </div>
+                        
+                        <h4 class="rv-m-section-title">SketchUp component 3D Modeling Prompt</h4>
+                        <p class="rv-m-text">Structured directives for modeling container component geometry, materials, and double-roof canopy systems.</p>
+                        <div class="rv-m-code-box">
+                            <button class="rv-m-code-copy" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); showToast('SketchUp prompt copied to clipboard!', 'success');">Copy</button>
+                            <code id="rvCodeSketchup">SketchUp prompt loading...</code>
+                        </div>
+                        
+                        <h4 class="rv-m-section-title">Photorealistic 3D Render Prompt</h4>
+                        <p class="rv-m-text">Pre-engineered hyper-detailed prompt for generating professional architectural visualization brochures.</p>
+                        <div class="rv-m-code-box">
+                            <button class="rv-m-code-copy" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); showToast('3D Render prompt copied to clipboard!', 'success');">Copy</button>
+                            <code id="rvCodeRender">Render prompt loading...</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rv-m-footer">
+                <div class="rv-m-foot-note">Inspired by this structural concept? Apply it directly to your private inquiry.</div>
+                <button class="rv-btn rv-btn-primary" id="rvModalApply" style="max-width: 320px; font-size: 0.6rem; padding: 0.8rem 1.6rem;">Apply Design to Inquiry</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
