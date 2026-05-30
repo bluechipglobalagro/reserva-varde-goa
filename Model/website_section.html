@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reserva Verde Goa — Choose Your Ground-Level Modular Eco Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rv-forest: #1F3A2E;
+    --rv-forest-deep: #16291F;
+    --rv-gold: #B08A3E;
+    --rv-gold-light: #D4B66A;
+    --rv-ivory: #FBF8F1;
+    --rv-beige: #F4EDDD;
+    --rv-beige-warm: #E8DFC4;
+    --rv-charcoal: #2A2A2A;
+    --rv-line: #C7B97A;
+    --rv-mute: #6B6B6B;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); background: var(--rv-beige); color: var(--rv-charcoal); -webkit-font-smoothing: antialiased; }
+  .rv-section { background: var(--rv-beige); padding: 96px 24px 120px; }
+  .rv-container { max-width: 1280px; margin: 0 auto; }
+  .rv-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 12px; letter-spacing: 4px; font-weight: 600;
+    color: var(--rv-gold); text-transform: uppercase; margin-bottom: 16px;
+  }
+  .rv-eyebrow::before, .rv-eyebrow::after { content: ''; height: 1px; width: 32px; background: var(--rv-gold); }
+  .rv-title {
+    font-family: var(--serif); font-size: clamp(36px, 5vw, 56px); font-weight: 500;
+    color: var(--rv-forest); line-height: 1.1; letter-spacing: -0.5px; max-width: 900px;
+  }
+  .rv-subtitle {
+    font-size: 17px; line-height: 1.6; color: var(--rv-charcoal);
+    max-width: 760px; margin-top: 20px;
+  }
+  .rv-divider { width: 60px; height: 2px; background: var(--rv-gold); margin: 28px 0 56px; }
+  .rv-cards { display: flex; flex-direction: column; gap: 32px; }
+  .rv-card {
+    background: var(--rv-ivory);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -30px rgba(31, 58, 46, 0.18), 0 4px 14px -8px rgba(31, 58, 46, 0.12);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border: 1px solid rgba(199, 185, 122, 0.35);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .rv-card:hover { transform: translateY(-4px); box-shadow: 0 40px 80px -30px rgba(31, 58, 46, 0.25); }
+  .rv-card-media {
+    background: linear-gradient(135deg, var(--rv-forest) 0%, var(--rv-forest-deep) 100%);
+    position: relative;
+    min-height: 460px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .rv-card-media svg { width: 100%; height: 100%; display: block; }
+  .rv-card-tag {
+    position: absolute; top: 24px; left: 24px;
+    background: var(--rv-gold); color: var(--rv-ivory);
+    font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    padding: 8px 16px; border-radius: 999px;
+  }
+  .rv-card-body { padding: 44px 44px 36px; display: flex; flex-direction: column; gap: 18px; }
+  .rv-card-header { border-bottom: 1px solid rgba(199, 185, 122, 0.5); padding-bottom: 18px; }
+  .rv-card-title {
+    font-family: var(--serif); font-size: 32px; font-weight: 600;
+    color: var(--rv-forest); line-height: 1.15; letter-spacing: -0.3px;
+  }
+  .rv-card-asset {
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--rv-gold); margin-top: 8px; font-weight: 600;
+  }
+  .rv-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+  .rv-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--rv-beige); color: var(--rv-forest);
+    border: 1px solid var(--rv-line);
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.5px;
+    padding: 6px 12px; border-radius: 999px;
+  }
+  .rv-badge.solid { background: var(--rv-forest); color: var(--rv-ivory); border-color: var(--rv-forest); }
+  .rv-desc {
+    font-size: 14.5px; line-height: 1.65; color: var(--rv-charcoal);
+  }
+  .rv-section-label {
+    font-size: 10px; letter-spacing: 2.5px; font-weight: 700;
+    color: var(--rv-mute); text-transform: uppercase; margin-bottom: 8px;
+  }
+  .rv-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .rv-chip {
+    font-size: 11.5px; padding: 5px 11px; border-radius: 999px;
+    background: rgba(176, 138, 62, 0.1); color: var(--rv-forest);
+    border: 1px solid rgba(176, 138, 62, 0.3); font-weight: 500;
+  }
+  .rv-highlights { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+  .rv-highlight {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 13px; color: var(--rv-charcoal); line-height: 1.45;
+  }
+  .rv-highlight::before {
+    content: ''; flex-shrink: 0; margin-top: 5px;
+    width: 6px; height: 6px; background: var(--rv-gold); border-radius: 50%;
+  }
+  .rv-cta-block { display: flex; gap: 10px; margin-top: 8px; }
+  .rv-btn {
+    flex: 1; padding: 14px 22px; border-radius: 999px; border: none;
+    font-size: 13.5px; font-weight: 600; letter-spacing: 0.8px;
+    cursor: pointer; transition: all 0.25s ease;
+    font-family: var(--sans);
+  }
+  .rv-btn-primary { background: var(--rv-forest); color: var(--rv-ivory); }
+  .rv-btn-primary:hover { background: var(--rv-forest-deep); transform: translateY(-1px); }
+  .rv-btn-secondary {
+    background: transparent; color: var(--rv-forest);
+    border: 1.5px solid var(--rv-forest);
+  }
+  .rv-btn-secondary:hover { background: var(--rv-forest); color: var(--rv-ivory); }
+
+  /* mobile */
+  @media (max-width: 900px) {
+    .rv-section { padding: 64px 16px 80px; }
+    .rv-card { grid-template-columns: 1fr; }
+    .rv-card-media { min-height: 280px; }
+    .rv-card-body { padding: 32px 28px; }
+    .rv-card-title { font-size: 26px; }
+  }
+
+  /* footer note */
+  .rv-foot-note {
+    margin-top: 48px; text-align: center; font-size: 12px;
+    color: var(--rv-mute); font-style: italic; max-width: 720px; margin-left: auto; margin-right: auto;
+  }
+</style>
+</head>
+<body>
+
+<section class="rv-section" id="estate-models">
+  <div class="rv-container">
+    <div class="rv-eyebrow">Reserva Verde Goa · Estate Catalogue</div>
+    <h2 class="rv-title">Choose Your Ground-Level Modular Eco Estate</h2>
+    <p class="rv-subtitle">
+      Select from 2BHK, 3BHK, 4BHK, or fully customisable ground-level modular container estate models,
+      each planned within a private 1-acre eco-sensitive plantation estate.
+    </p>
+    <div class="rv-divider"></div>
+
+    <div class="rv-cards" id="rv-cards-mount">
+      <!-- cards injected by JS -->
+    </div>
+
+    <p class="rv-foot-note">
+      All figures are concept-stage. Layouts subject to final architectural planning, statutory approvals, and Reserva Verde Goa eco-sensitive development guidelines. No yield, return, or appreciation projections are made or implied.
+    </p>
+  </div>
+</section>
+
+<script>
+// ============================================================================
+// estateModels — reusable data array
+// ============================================================================
+const estateModels = [
+  {
+    id: "2bhk",
+    title: "2BHK Compact Luxury Modular Eco Estate",
+    bedroomType: "2BHK",
+    builtUpArea: "2500 Sq.Ft",
+    estateSize: "1 Acre",
+    assetType: "Ground-Level Modular Container Eco Home + Eco Plantation Estate",
+    homeType: "Ground-level modular container eco-home",
+    placementOptions: ["Front", "Centre", "Side", "Rear", "Courtyard-centric"],
+    plantationOptions: ["Cashew", "Mango", "Coconut", "Spice", "Herbal", "Food forest"],
+    description: "A precision-engineered ground-level container eco-home set inside a private 1-acre plantation estate — designed for couples, small families, NRIs and wellness buyers seeking a low-maintenance second home in Goa.",
+    ecoFeatures: ["Solar-Ready", "RWH 15,000 L", "Greywater Reuse", "Bio-Septic", "Drip Irrigation", "Passive Cooling"],
+    specifications: ["Ground-Level", "2BHK", "2500 Sq.Ft", "1 Acre", "4 × 40 ft + 2 × 20 ft modules", "Courtyard plan"],
+    investmentHighlights: [
+      "Low-footprint construction inside a plantation-backed estate",
+      "Optional farm-stay rental readiness",
+      "Integrated water + solar + waste systems",
+      "Designed for couples, NRIs and eco-conscious second-home owners"
+    ],
+    image: "Site_Plan_2BHK.svg",
+    ctaLabel: "View Details",
+    secondaryCtaLabel: "Download Specs"
+  },
+  {
+    id: "3bhk",
+    title: "3BHK Premium Modular Agro Estate",
+    bedroomType: "3BHK",
+    builtUpArea: "3500 Sq.Ft",
+    estateSize: "1 Acre",
+    assetType: "Ground-Level Modular Container Eco Home + Eco Plantation Estate",
+    homeType: "Ground-level modular container eco-home",
+    placementOptions: ["Centre", "Side", "Rear", "Courtyard-centric"],
+    plantationOptions: ["Mango", "Coconut", "Cashew", "Teak + Pepper", "Spice", "Herbal", "Coffee/spice mix"],
+    description: "A premium ground-level container eco-home in an L-shape pavilion configuration, set inside a private 1-acre plantation estate — designed for HNI families, NRIs and wellness buyers seeking a low-impact luxury second home with optional rental readiness.",
+    ecoFeatures: ["Solar-Ready", "RWH 25,000 L", "Greywater Reed Bed", "Bio-Septic", "Drip Irrigation", "Green-roof option"],
+    specifications: ["Ground-Level", "3BHK", "3500 Sq.Ft", "1 Acre", "6 × 40 ft + 2 × 20 ft modules", "L-shape pavilion"],
+    investmentHighlights: [
+      "Premium plantation-backed estate with curated agroforestry",
+      "Scalable wellness deck + work-from-estate study",
+      "Optional farm-stay readiness with rental-grade systems",
+      "Designed for HNI families, NRIs and wellness buyers"
+    ],
+    image: "Site_Plan_3BHK.svg",
+    ctaLabel: "View Details",
+    secondaryCtaLabel: "Download Specs"
+  },
+  {
+    id: "4bhk",
+    title: "4BHK Signature Ground-Level Modular Luxury Estate",
+    bedroomType: "4BHK",
+    builtUpArea: "4500 Sq.Ft",
+    estateSize: "1 Acre",
+    assetType: "Ground-Level Modular Container Eco Home + Eco Plantation Estate",
+    homeType: "Ground-level modular container eco-home",
+    placementOptions: ["Centre", "Rear", "Courtyard-centric"],
+    plantationOptions: ["Mango", "Cashew", "Coconut", "Teak + Pepper", "Spice", "Orchard", "Food forest"],
+    description: "A pavilion-style ground-level container eco-home arranged around a courtyard pool and three connected wings, set inside a private 1-acre plantation estate — designed for HNI families, retreat operators and hospitality-focused owners seeking a flagship Goa second home with rental readiness.",
+    ecoFeatures: ["Solar-Ready 12–15 kWp", "RWH 40,000 L", "Greywater Wetland", "Bio-Septic + Filter Pond", "Passive Cooling Courtyard", "EV-charge ready"],
+    specifications: ["Ground-Level", "4BHK", "4500 Sq.Ft", "1 Acre", "8 × 40 ft + 3 × 20 ft modules", "Three-wing pavilion", "Reflective pool court"],
+    investmentHighlights: [
+      "Flagship pavilion plan with courtyard-pool architecture",
+      "Plantation-backed luxury estate with orchard accent",
+      "Optional retreat / hospitality operation",
+      "Integrated solar + water + waste + EV infrastructure"
+    ],
+    image: "Site_Plan_4BHK.svg",
+    ctaLabel: "View Details",
+    secondaryCtaLabel: "Download Specs"
+  },
+  {
+    id: "custom",
+    title: "Fully Customisable Modular Eco Estate",
+    bedroomType: "Customisable",
+    builtUpArea: "Customisable (1,500 – 6,000 Sq.Ft)",
+    estateSize: "1 Acre",
+    assetType: "Ground-Level Modular Container Eco Home + Eco Plantation Estate",
+    homeType: "Custom ground-level modular container eco-home",
+    placementOptions: ["Front", "Centre", "Side", "Rear", "Courtyard-centric"],
+    plantationOptions: ["Cashew", "Mango", "Coconut", "Teak + Pepper", "Spice", "Herbal", "Coffee/spice mix", "Food forest", "Mixed organic farming"],
+    description: "A flexible 1-acre estate where buyers customise the layout, built-up area, plantation model, outdoor programme, and rental readiness — all within the eco-sensitive development guidelines of Reserva Verde Goa. Strictly ground-level, strictly modular.",
+    ecoFeatures: ["Solar-Ready (sized to design)", "RWH (sized to design)", "Greywater Reuse", "Bio-Septic", "Drip Irrigation", "Passive Cooling"],
+    specifications: ["Ground-Level", "1–4 BHK", "Customisable area", "1 Acre", "Modular Container", "Buyer-configured"],
+    investmentHighlights: [
+      "Bedroom count, placement, plantation profile fully buyer-selected",
+      "Layout intents: wellness retreat · farm-stay · NRI home · plantation-focused · hospitality",
+      "Same eco-sensitive guardrails as fixed models",
+      "Designed by Reserva Verde studio under the masterplan brief"
+    ],
+    image: "Site_Plan_Customisable.svg",
+    ctaLabel: "Request Masterplan",
+    secondaryCtaLabel: "View Details"
+  }
+];
+
+// ============================================================================
+// Inline SVG illustrations for self-contained card thumbnails (no external files needed)
+// ============================================================================
+const thumbnails = {
+  "2bhk": `<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="t2plant" patternUnits="userSpaceOnUse" width="14" height="14">
+        <rect width="14" height="14" fill="#2E5944"/>
+        <circle cx="4" cy="4" r="1.5" fill="#3F7257"/>
+        <circle cx="10" cy="10" r="1.5" fill="#3F7257"/>
+      </pattern>
+    </defs>
+    <rect width="400" height="460" fill="#1F3A2E"/>
+    <rect x="40" y="40" width="320" height="380" fill="url(#t2plant)" stroke="#B08A3E" stroke-width="1" rx="4"/>
+    <!-- Home: U-shape -->
+    <g transform="translate(120,170)">
+      <rect x="0" y="0" width="160" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <rect x="0" y="22" width="22" height="118" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <rect x="138" y="22" width="22" height="118" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <rect x="0" y="118" width="160" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <rect x="22" y="22" width="116" height="96" fill="#E8DFC4" stroke="#B08A3E" stroke-width="0.8"/>
+      <circle cx="80" cy="70" r="8" fill="#7FA9C9"/>
+      <text x="80" y="74" text-anchor="middle" font-size="9" fill="#1F3A2E" font-weight="700">COURT</text>
+      <text x="80" y="14" text-anchor="middle" font-size="9" fill="#1F3A2E" font-weight="700">LIVING</text>
+      <text x="80" y="132" text-anchor="middle" font-size="9" fill="#1F3A2E" font-weight="700">DINING / KIT</text>
+    </g>
+    <!-- driveway from south -->
+    <rect x="180" y="320" width="40" height="100" fill="#D9CDA8"/>
+    <rect x="180" y="416" width="40" height="8" fill="#B08A3E"/>
+    <text x="200" y="446" text-anchor="middle" fill="#FBF8F1" font-size="10" font-weight="700" letter-spacing="2">GATE</text>
+    <!-- label -->
+    <text x="200" y="30" text-anchor="middle" fill="#FBF8F1" font-size="13" font-weight="700" letter-spacing="3">2BHK · 2500 SQ.FT</text>
+    <!-- trees -->
+    <g fill="#3F7257" stroke="#16291F" stroke-width="0.4" opacity="0.85">
+      <circle cx="70" cy="80" r="6"/><circle cx="100" cy="120" r="5"/>
+      <circle cx="330" cy="80" r="6"/><circle cx="300" cy="120" r="5"/>
+      <circle cx="70" cy="350" r="6"/><circle cx="100" cy="380" r="5"/>
+      <circle cx="330" cy="350" r="6"/><circle cx="300" cy="380" r="5"/>
+      <circle cx="60" cy="220" r="5"/><circle cx="340" cy="220" r="5"/>
+    </g>
+  </svg>`,
+
+  "3bhk": `<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="t3plant" patternUnits="userSpaceOnUse" width="14" height="14">
+        <rect width="14" height="14" fill="#2E5944"/>
+        <circle cx="4" cy="4" r="1.5" fill="#3F7257"/>
+        <circle cx="10" cy="10" r="1.5" fill="#3F7257"/>
+      </pattern>
+    </defs>
+    <rect width="400" height="460" fill="#1F3A2E"/>
+    <rect x="40" y="40" width="320" height="380" fill="url(#t3plant)" stroke="#B08A3E" stroke-width="1" rx="4"/>
+    <!-- L-shape home -->
+    <g transform="translate(90,170)">
+      <!-- bedroom row (top) -->
+      <rect x="0" y="0" width="60" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <rect x="60" y="0" width="60" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <rect x="120" y="0" width="60" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <rect x="180" y="0" width="22" height="100" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <text x="30" y="14" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">BR1</text>
+      <text x="90" y="14" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">BR2</text>
+      <text x="150" y="14" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">BR3</text>
+      <!-- spine -->
+      <rect x="0" y="32" width="180" height="14" fill="#E8DFC4" stroke="#B08A3E" stroke-width="0.7"/>
+      <text x="90" y="42" text-anchor="middle" font-size="8" font-weight="700" fill="#B08A3E">GLASS SPINE / COURT</text>
+      <!-- public row (bottom) -->
+      <rect x="0" y="56" width="90" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <rect x="90" y="56" width="90" height="22" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <text x="45" y="70" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">LIVING</text>
+      <text x="135" y="70" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">DINING / KIT</text>
+      <!-- verandah -->
+      <rect x="0" y="80" width="180" height="10" fill="#C9B07A" stroke="#8B6F3A" stroke-width="0.6"/>
+      <text x="90" y="88" text-anchor="middle" font-size="7" font-weight="700" fill="#2A2A2A" letter-spacing="1">VERANDAH</text>
+    </g>
+    <!-- driveway -->
+    <rect x="180" y="320" width="40" height="100" fill="#D9CDA8"/>
+    <rect x="180" y="416" width="40" height="8" fill="#B08A3E"/>
+    <text x="200" y="446" text-anchor="middle" fill="#FBF8F1" font-size="10" font-weight="700" letter-spacing="2">GATE</text>
+    <text x="200" y="30" text-anchor="middle" fill="#FBF8F1" font-size="13" font-weight="700" letter-spacing="3">3BHK · 3500 SQ.FT</text>
+    <g fill="#3F7257" stroke="#16291F" stroke-width="0.4" opacity="0.85">
+      <circle cx="70" cy="80" r="6"/><circle cx="100" cy="120" r="5"/>
+      <circle cx="330" cy="80" r="6"/><circle cx="300" cy="120" r="5"/>
+      <circle cx="70" cy="350" r="6"/><circle cx="100" cy="380" r="5"/>
+      <circle cx="330" cy="350" r="6"/><circle cx="300" cy="380" r="5"/>
+      <circle cx="60" cy="220" r="5"/><circle cx="340" cy="220" r="5"/>
+      <circle cx="60" cy="290" r="5"/><circle cx="340" cy="290" r="5"/>
+    </g>
+  </svg>`,
+
+  "4bhk": `<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="t4plant" patternUnits="userSpaceOnUse" width="14" height="14">
+        <rect width="14" height="14" fill="#2E5944"/>
+        <circle cx="4" cy="4" r="1.5" fill="#3F7257"/>
+        <circle cx="10" cy="10" r="1.5" fill="#3F7257"/>
+      </pattern>
+    </defs>
+    <rect width="400" height="460" fill="#1F3A2E"/>
+    <rect x="40" y="40" width="320" height="380" fill="url(#t4plant)" stroke="#B08A3E" stroke-width="1" rx="4"/>
+    <!-- three-wing pavilion around courtyard -->
+    <g transform="translate(100,150)">
+      <!-- North bedroom wing -->
+      <rect x="20" y="0" width="160" height="20" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <line x1="60" y1="0" x2="60" y2="20" stroke="#1F3A2E" stroke-width="1"/>
+      <line x1="100" y1="0" x2="100" y2="20" stroke="#1F3A2E" stroke-width="1"/>
+      <line x1="140" y1="0" x2="140" y2="20" stroke="#1F3A2E" stroke-width="1"/>
+      <text x="40" y="13" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">BR4</text>
+      <text x="80" y="13" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">BR3</text>
+      <text x="120" y="13" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">BR2</text>
+      <text x="160" y="13" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">MSTR</text>
+      <!-- West wing -->
+      <rect x="0" y="30" width="20" height="90" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <g transform="translate(10,75) rotate(-90)"><text text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">MASTER WING</text></g>
+      <!-- East wing -->
+      <rect x="180" y="30" width="20" height="90" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <g transform="translate(190,75) rotate(-90)"><text text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">LIVING WING</text></g>
+      <!-- Center courtyard with pool -->
+      <rect x="30" y="30" width="140" height="90" fill="#E8DFC4" stroke="#B08A3E" stroke-width="1"/>
+      <rect x="60" y="55" width="80" height="40" fill="#7FA9C9" stroke="#1F3A2E" stroke-width="0.6"/>
+      <text x="100" y="79" text-anchor="middle" font-size="9" fill="#FBF8F1" font-weight="700">POOL</text>
+      <!-- South wing: dining + kitchen -->
+      <rect x="20" y="130" width="160" height="20" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.2"/>
+      <line x1="80" y1="130" x2="80" y2="150" stroke="#1F3A2E" stroke-width="1"/>
+      <line x1="140" y1="130" x2="140" y2="150" stroke="#1F3A2E" stroke-width="1"/>
+      <text x="50" y="143" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">DINING</text>
+      <text x="110" y="143" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">KITCHEN</text>
+      <text x="160" y="143" text-anchor="middle" font-size="7" font-weight="700" fill="#1F3A2E">DIRTY</text>
+      <!-- Wellness deck -->
+      <rect x="20" y="156" width="160" height="10" fill="#C9B07A" stroke="#8B6F3A" stroke-width="0.6"/>
+      <text x="100" y="164" text-anchor="middle" font-size="7" font-weight="700" fill="#2A2A2A" letter-spacing="1">WELLNESS DECK · OUTDOOR DINING</text>
+    </g>
+    <!-- driveway / forecourt -->
+    <rect x="170" y="335" width="60" height="40" fill="#D9CDA8"/>
+    <rect x="180" y="375" width="40" height="48" fill="#D9CDA8"/>
+    <rect x="180" y="416" width="40" height="8" fill="#B08A3E"/>
+    <text x="200" y="446" text-anchor="middle" fill="#FBF8F1" font-size="10" font-weight="700" letter-spacing="2">GATE</text>
+    <text x="200" y="30" text-anchor="middle" fill="#FBF8F1" font-size="13" font-weight="700" letter-spacing="3">4BHK · 4500 SQ.FT</text>
+    <g fill="#3F7257" stroke="#16291F" stroke-width="0.4" opacity="0.85">
+      <circle cx="65" cy="70" r="6"/><circle cx="335" cy="70" r="6"/>
+      <circle cx="55" cy="200" r="5"/><circle cx="345" cy="200" r="5"/>
+      <circle cx="55" cy="320" r="5"/><circle cx="345" cy="320" r="5"/>
+      <circle cx="80" cy="385" r="5"/><circle cx="320" cy="385" r="5"/>
+    </g>
+  </svg>`,
+
+  "custom": `<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="tcplant" patternUnits="userSpaceOnUse" width="14" height="14">
+        <rect width="14" height="14" fill="#2E5944"/>
+        <circle cx="4" cy="4" r="1.5" fill="#3F7257"/>
+        <circle cx="10" cy="10" r="1.5" fill="#3F7257"/>
+      </pattern>
+    </defs>
+    <rect width="400" height="460" fill="#1F3A2E"/>
+    <rect x="40" y="40" width="320" height="380" fill="url(#tcplant)" stroke="#B08A3E" stroke-width="1" rx="4"/>
+    <!-- 5 ghost placement outlines -->
+    <g fill="none" stroke="#B08A3E" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.75">
+      <rect x="110" y="80" width="180" height="80"/>
+      <rect x="60" y="180" width="140" height="100"/>
+      <rect x="110" y="300" width="180" height="80"/>
+      <rect x="200" y="180" width="140" height="100"/>
+    </g>
+    <!-- solid hero centre -->
+    <g transform="translate(120,200)">
+      <rect x="0" y="0" width="160" height="80" fill="#FBF8F1" stroke="#1F3A2E" stroke-width="1.6"/>
+      <rect x="50" y="20" width="60" height="40" fill="#E8DFC4" stroke="#B08A3E" stroke-width="0.8"/>
+      <text x="80" y="14" text-anchor="middle" font-size="8" font-weight="700" fill="#1F3A2E">MODULAR ECO HOME</text>
+      <text x="80" y="44" text-anchor="middle" font-size="7" font-weight="700" fill="#B08A3E">COURT</text>
+      <text x="80" y="74" text-anchor="middle" font-size="7" fill="#2A2A2A" font-style="italic">centre placement · hero</text>
+    </g>
+    <!-- driveway -->
+    <rect x="180" y="320" width="40" height="100" fill="#D9CDA8"/>
+    <rect x="180" y="416" width="40" height="8" fill="#B08A3E"/>
+    <text x="200" y="446" text-anchor="middle" fill="#FBF8F1" font-size="10" font-weight="700" letter-spacing="2">GATE</text>
+    <text x="200" y="30" text-anchor="middle" fill="#FBF8F1" font-size="13" font-weight="700" letter-spacing="3">CUSTOMISABLE · 1 ACRE</text>
+    <g fill="#3F7257" stroke="#16291F" stroke-width="0.4" opacity="0.85">
+      <circle cx="65" cy="70" r="6"/><circle cx="335" cy="70" r="6"/>
+      <circle cx="55" cy="160" r="5"/><circle cx="345" cy="160" r="5"/>
+      <circle cx="55" cy="350" r="5"/><circle cx="345" cy="350" r="5"/>
+      <circle cx="80" cy="385" r="5"/><circle cx="320" cy="385" r="5"/>
+    </g>
+  </svg>`
+};
+
+// ============================================================================
+// Render
+// ============================================================================
+function cardEl(model){
+  const tag = model.bedroomType === "Customisable" ? "CUSTOMISABLE" : model.builtUpArea;
+  const ecoChips = model.ecoFeatures.map(f => `<span class="rv-chip">${f}</span>`).join("");
+  const plantChips = model.plantationOptions.slice(0, 6).map(f => `<span class="rv-chip">${f}</span>`).join("");
+  const highlights = model.investmentHighlights.map(h => `<div class="rv-highlight">${h}</div>`).join("");
+
+  const article = document.createElement("article");
+  article.className = "rv-card";
+  article.innerHTML = `
+    <div class="rv-card-media">
+      <div class="rv-card-tag">${tag}</div>
+      ${thumbnails[model.id] || ""}
+    </div>
+    <div class="rv-card-body">
+      <div class="rv-card-header">
+        <h3 class="rv-card-title">${model.title}</h3>
+        <div class="rv-card-asset">${model.assetType}</div>
+      </div>
+
+      <div class="rv-badges">
+        <span class="rv-badge solid">${model.bedroomType}</span>
+        <span class="rv-badge">${model.builtUpArea}</span>
+        <span class="rv-badge">${model.estateSize}</span>
+        <span class="rv-badge">Ground-Level Only</span>
+      </div>
+
+      <p class="rv-desc">${model.description}</p>
+
+      <div>
+        <div class="rv-section-label">Plantation Options</div>
+        <div class="rv-chips">${plantChips}</div>
+      </div>
+
+      <div>
+        <div class="rv-section-label">Eco Features</div>
+        <div class="rv-chips">${ecoChips}</div>
+      </div>
+
+      <div>
+        <div class="rv-section-label">Investment Highlights</div>
+        <div class="rv-highlights">${highlights}</div>
+      </div>
+
+      <div class="rv-cta-block">
+        <button class="rv-btn rv-btn-primary" data-action="view" data-id="${model.id}">${model.ctaLabel}</button>
+        <button class="rv-btn rv-btn-secondary" data-action="download" data-id="${model.id}">${model.secondaryCtaLabel}</button>
+      </div>
+    </div>
+  `;
+  return article;
+}
+
+const mount = document.getElementById("rv-cards-mount");
+estateModels.forEach(m => mount.appendChild(cardEl(m)));
+
+mount.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-action]");
+  if (!btn) return;
+  const id = btn.dataset.id;
+  const action = btn.dataset.action;
+  const model = estateModels.find(m => m.id === id);
+  if (action === "view") {
+    alert(`Open detail page for: ${model.title}\n\n[ wire this to your router / detail modal ]`);
+  } else if (action === "download") {
+    alert(`Trigger spec PDF download for: ${model.title}\n\n[ wire this to your /specs/${id}.pdf endpoint ]`);
+  }
+});
+</script>
+
+</body>
+</html>

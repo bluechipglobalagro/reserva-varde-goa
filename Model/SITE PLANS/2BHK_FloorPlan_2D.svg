@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000" font-family="Georgia, serif">
+<defs>
+    <!-- Plantation hatching -->
+    <pattern id="plantHatch" patternUnits="userSpaceOnUse" width="14" height="14">
+      <rect width="14" height="14" fill="#2E5944"/>
+      <circle cx="4" cy="4" r="1.6" fill="#3F7257"/>
+      <circle cx="10" cy="10" r="2" fill="#3F7257"/>
+      <circle cx="10" cy="4" r="1.2" fill="#3F7257" opacity="0.7"/>
+      <circle cx="4" cy="10" r="1.2" fill="#3F7257" opacity="0.7"/>
+    </pattern>
+    <!-- Buffer hatching -->
+    <pattern id="bufferHatch" patternUnits="userSpaceOnUse" width="22" height="22">
+      <rect width="22" height="22" fill="#10291F"/>
+      <circle cx="11" cy="11" r="6" fill="#3F7257" opacity="0.55"/>
+      <circle cx="11" cy="11" r="3.5" fill="#0a1a13" opacity="0.7"/>
+    </pattern>
+    <!-- Gravel driveway -->
+    <pattern id="drivewayPat" patternUnits="userSpaceOnUse" width="8" height="8">
+      <rect width="8" height="8" fill="#D9CDA8"/>
+      <circle cx="2" cy="2" r="0.6" fill="#A89870"/>
+      <circle cx="6" cy="6" r="0.6" fill="#A89870"/>
+    </pattern>
+    <!-- Water -->
+    <pattern id="waterPat" patternUnits="userSpaceOnUse" width="10" height="10">
+      <rect width="10" height="10" fill="#7FA9C9"/>
+      <path d="M0 5 Q 2.5 3, 5 5 T 10 5" stroke="#FBF8F1" stroke-width="0.6" fill="none" opacity="0.7"/>
+    </pattern>
+    <!-- Herbal garden -->
+    <pattern id="herbalPat" patternUnits="userSpaceOnUse" width="10" height="10">
+      <rect width="10" height="10" fill="#7A9966"/>
+      <circle cx="3" cy="3" r="1.2" fill="#5F8050"/>
+      <circle cx="7" cy="7" r="1.2" fill="#5F8050"/>
+    </pattern>
+    <!-- Lawn -->
+    <pattern id="lawnPat" patternUnits="userSpaceOnUse" width="6" height="6">
+      <rect width="6" height="6" fill="#C9D4B0"/>
+      <line x1="3" y1="0" x2="3" y2="2" stroke="#9CB387" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="1400" height="1000" fill="#F4EDDD"/>
+<rect x="20" y="20" width="1360" height="960" fill="#FBF8F1" stroke="#B08A3E" stroke-width="1" rx="6"/>
+<text x="700" y="62" text-anchor="middle" fill="#10291F" font-size="20" font-weight="700" letter-spacing="3.5">RESERVE VARDE GOA · 2BHK COMPACT MODULAR ECO ESTATE</text>
+<text x="700" y="86" text-anchor="middle" fill="#B08A3E" font-family="serif" font-size="14" font-style="italic">2,500 Sq.Ft Built-up · 1-Acre Estate · Ground-Level Container Home · U-Shape Courtyard Plan</text>
+<line x1="60" y1="102" x2="1340" y2="102" stroke="#B08A3E" stroke-width="0.6" opacity="0.5"/>
+<text x="700" y="120" text-anchor="middle" fill="#242424" font-family="sans-serif" font-size="10" letter-spacing="2.5" opacity="0.7">FLOOR PLAN · SCALE 1:100 · ALL DIMS IN MM</text>
+<rect x="275.35999999999996" y="214.08" width="145.68000000000006" height="60.0" fill="#E8DFC4" stroke="#B08A3E" stroke-width="1" stroke-dasharray="0"/>
+<rect x="330.2" y="236.88000000000002" width="36.0" height="14.399999999999999" fill="url(#waterPat)" stroke="#10291F" stroke-width="0.6"/>
+<circle cx="406.64000000000004" cy="228.48000000000002" r="8.399999999999999" fill="#3F7257" stroke="#0a1a13" stroke-width="0.5" opacity="0.85"/>
+<text x="348.2" y="268.08000000000004" text-anchor="middle" fill="#B08A3E" font-family="serif" font-size="10" font-weight="600" font-style="italic" letter-spacing="2">COURTYARD · 8 × 5 m</text>
+<rect x="200" y="180" width="146.39999999999998" height="29.28" fill="#FBF8F1" stroke="#10291F" stroke-width="1.6"/>
+<rect x="200" y="180" width="22" height="14" fill="#10291F"/>
+<text x="211" y="190" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="8" font-weight="700">C-1</text>
+<text x="273.2" y="192.64" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600">LIVING ROOM · 280 sq.ft</text>
+<text x="273.2" y="204.64" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7">+ ENTRY FOYER 100</text>
+<rect x="350.0" y="180" width="146.39999999999998" height="29.28" fill="#FBF8F1" stroke="#10291F" stroke-width="1.6"/>
+<rect x="350.0" y="180" width="22" height="14" fill="#10291F"/>
+<text x="361.0" y="190" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="8" font-weight="700">C-2</text>
+<text x="423.2" y="192.64" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600"></text>
+<text x="423.2" y="204.64" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7"></text>
+<line x1="423.2" y1="182" x2="423.2" y2="207.28" stroke="#10291F" stroke-width="0.6" stroke-dasharray="3,2"/>
+<text x="386.6" y="192.64" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600">DINING</text>
+<text x="386.6" y="204.64" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7">200 sq.ft</text>
+<text x="459.79999999999995" y="192.64" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600">OPEN KITCHEN</text>
+<text x="459.79999999999995" y="204.64" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7">200 sq.ft</text>
+<rect x="206.0" y="218.88000000000002" width="29.28" height="146.39999999999998" fill="#FBF8F1" stroke="#10291F" stroke-width="1.6"/>
+<rect x="206.0" y="218.88000000000002" width="22" height="14" fill="#10291F"/>
+<text x="217.0" y="228.88000000000002" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="8" font-weight="700">C-3</text>
+<g transform="translate(220.64,292.08000000000004) rotate(-90)"><text x="0" y="-2" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600">MASTER BEDROOM</text><text x="0" y="10" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7">300 sq.ft</text></g><rect x="238.88" y="218.88000000000002" width="29.28" height="146.39999999999998" fill="#FBF8F1" stroke="#10291F" stroke-width="1.6"/>
+<rect x="238.88" y="218.88000000000002" width="22" height="14" fill="#10291F"/>
+<text x="249.88" y="228.88000000000002" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="8" font-weight="700">C-4</text>
+<g transform="translate(253.51999999999998,292.08000000000004) rotate(-90)"><text x="0" y="-2" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600"></text><text x="0" y="10" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7"></text></g><line x1="240.88" y1="255.48000000000002" x2="266.15999999999997" y2="255.48000000000002" stroke="#10291F" stroke-width="0.6" stroke-dasharray="3,2"/>
+<line x1="240.88" y1="299.40000000000003" x2="266.15999999999997" y2="299.40000000000003" stroke="#10291F" stroke-width="0.6" stroke-dasharray="3,2"/>
+<g transform="translate(253.51999999999998,237.18) rotate(-90)"><text x="0" y="3" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">M.WR · 70</text></g>
+<g transform="translate(253.51999999999998,277.44) rotate(-90)"><text x="0" y="3" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">M.BATH · 140</text></g>
+<g transform="translate(253.51999999999998,333.072) rotate(-90)"><text x="0" y="3" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">M.LOUNGE · 110</text></g>
+<rect x="461.12" y="218.88000000000002" width="29.28" height="146.39999999999998" fill="#FBF8F1" stroke="#10291F" stroke-width="1.6"/>
+<rect x="461.12" y="218.88000000000002" width="22" height="14" fill="#10291F"/>
+<text x="472.12" y="228.88000000000002" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="8" font-weight="700">C-5</text>
+<g transform="translate(475.76,292.08000000000004) rotate(-90)"><text x="0" y="-2" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600">BEDROOM 2</text><text x="0" y="10" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7">280 sq.ft</text></g><rect x="428.24" y="218.88000000000002" width="29.28" height="146.39999999999998" fill="#FBF8F1" stroke="#10291F" stroke-width="1.6"/>
+<rect x="428.24" y="218.88000000000002" width="22" height="14" fill="#10291F"/>
+<text x="439.24" y="228.88000000000002" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="8" font-weight="700">C-6</text>
+<g transform="translate(442.88,292.08000000000004) rotate(-90)"><text x="0" y="-2" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600"></text><text x="0" y="10" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7"></text></g><line x1="430.24" y1="262.8" x2="455.52" y2="262.8" stroke="#10291F" stroke-width="0.6" stroke-dasharray="3,2"/>
+<line x1="430.24" y1="343.32" x2="455.52" y2="343.32" stroke="#10291F" stroke-width="0.6" stroke-dasharray="3,2"/>
+<g transform="translate(442.88,240.84000000000003) rotate(-90)"><text x="0" y="3" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">BR2 BATH · 110</text></g>
+<g transform="translate(442.88,299.40000000000003) rotate(-90)"><text x="0" y="3" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">STUDY · 140</text></g>
+<g transform="translate(442.88,353.568) rotate(-90)"><text x="0" y="3" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">PWD · 50</text></g>
+<rect x="514.4" y="254.88000000000002" width="29.28" height="73.19999999999999" fill="#E8DFC4" stroke="#10291F" stroke-width="1.6"/>
+<rect x="514.4" y="254.88000000000002" width="22" height="14" fill="#10291F"/>
+<text x="525.4" y="264.88" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="8" font-weight="700">C-7</text>
+<g transform="translate(529.04,291.48) rotate(-90)"><text x="0" y="-2" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600"></text><text x="0" y="10" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7"></text></g><line x1="516.4" y1="295.14000000000004" x2="541.68" y2="295.14000000000004" stroke="#10291F" stroke-width="0.6" stroke-dasharray="3,2"/>
+<g transform="translate(529.04,275.37600000000003) rotate(-90)"><text x="0" y="3" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">UTILITY · 90</text></g>
+<g transform="translate(529.04,311.976) rotate(-90)"><text x="0" y="3" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">STORE · 70</text></g>
+<line x1="273.2" y1="210.28" x2="273.2" y2="212.08" stroke="#B08A3E" stroke-width="1.2"/>
+<line x1="423.2" y1="210.28" x2="423.2" y2="212.08" stroke="#B08A3E" stroke-width="1.2"/>
+<line x1="236.28" y1="255.48000000000002" x2="273.35999999999996" y2="255.48000000000002" stroke="#B08A3E" stroke-width="1.2"/>
+<line x1="460.12" y1="255.48000000000002" x2="458.52" y2="255.48000000000002" stroke="#B08A3E" stroke-width="0.7"/>
+<line x1="491.4" y1="292.08000000000004" x2="513.4" y2="292.08000000000004" stroke="#10291F" stroke-width="0.6" stroke-dasharray="4,3" opacity="0.6"/>
+<text x="502.4" y="288.08000000000004" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7" font-style="italic">service path</text>
+<path d="M 243.92 209.28 A 16 16 0 0 1 259.91999999999996 225.28" fill="none" stroke="#10291F" stroke-width="0.9"/>
+<line x1="243.92" y1="209.28" x2="259.91999999999996" y2="209.28" stroke="#10291F" stroke-width="1.2"/>
+<text x="251.92" y="233.28" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="7" font-weight="700">D-01</text>
+<line x1="280.52" y1="209.28" x2="309.32" y2="209.28" stroke="#B08A3E" stroke-width="2.4"/>
+<line x1="282.52" y1="211.28" x2="307.32" y2="211.28" stroke="#B08A3E" stroke-width="1.4" opacity="0.7"/>
+<text x="294.91999999999996" y="221.28" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="7" font-weight="700">SD-01</text>
+<line x1="371.96" y1="209.28" x2="400.76" y2="209.28" stroke="#B08A3E" stroke-width="2.4"/>
+<line x1="373.96" y1="211.28" x2="398.76" y2="211.28" stroke="#B08A3E" stroke-width="1.4" opacity="0.7"/>
+<text x="386.35999999999996" y="221.28" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="7" font-weight="700">SD-02</text>
+<line x1="210.392" y1="218.88000000000002" x2="230.888" y2="218.88000000000002" stroke="#D4B66A" stroke-width="3"/>
+<text x="220.64" y="214.88000000000002" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="6.5">W-04</text>
+<line x1="465.512" y1="218.88000000000002" x2="486.008" y2="218.88000000000002" stroke="#D4B66A" stroke-width="3"/>
+<text x="475.76" y="214.88000000000002" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="6.5">W-07</text>
+<rect x="201.2" y="370.08" width="294.0" height="36.0" fill="#C9B07A" stroke="#8B6F3A" stroke-width="1" opacity="0.85"/>
+<line x1="201.2" y1="370.08" x2="201.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="216.2" y1="370.08" x2="216.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="231.2" y1="370.08" x2="231.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="246.2" y1="370.08" x2="246.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="261.2" y1="370.08" x2="261.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="276.2" y1="370.08" x2="276.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="291.2" y1="370.08" x2="291.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="306.2" y1="370.08" x2="306.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="321.2" y1="370.08" x2="321.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="336.2" y1="370.08" x2="336.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="351.2" y1="370.08" x2="351.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="366.2" y1="370.08" x2="366.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="381.2" y1="370.08" x2="381.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="396.2" y1="370.08" x2="396.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="411.2" y1="370.08" x2="411.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="426.2" y1="370.08" x2="426.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="441.2" y1="370.08" x2="441.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="456.2" y1="370.08" x2="456.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<line x1="471.2" y1="370.08" x2="471.2" y2="406.08" stroke="#8B6F3A" stroke-width="0.4" opacity="0.5"/>
+<text x="348.2" y="391.08" text-anchor="middle" fill="#10291F" font-family="serif" font-size="11" font-weight="600" letter-spacing="2">FOREST-FACING DECK · 200 sq.ft</text>
+<text x="348.2" y="405.08" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="8" font-style="italic">covered pergola + IPE timber deck</text>
+<rect x="392.29999999999995" y="412.08" width="72.0" height="30.0" fill="url(#waterPat)" stroke="#10291F" stroke-width="1.2" stroke-dasharray="4,3"/>
+<text x="428.29999999999995" y="430.08" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600">PLUNGE POOL · 6 × 2.5 m</text>
+<text x="428.29999999999995" y="454.08" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7" font-style="italic">(optional upgrade)</text>
+<rect x="207.2" y="412.08" width="60.0" height="30.0" fill="#C9B07A" stroke="#8B6F3A" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.7"/>
+<text x="237.2" y="430.08" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">OUTDOOR DINING</text>
+<rect x="273.2" y="188.784" width="30.0" height="9.600000000000001" fill="none" stroke="#6B6B6B" stroke-width="0.6" rx="2"/><rect x="275.2" y="190.784" width="26.0" height="3.3600000000000003" fill="#6B6B6B" opacity="0.15"/><rect x="287.84" y="196.104" width="14.399999999999999" height="7.199999999999999" fill="none" stroke="#6B6B6B" stroke-width="0.5" rx="1.5"/><rect x="364.64" y="188.784" width="24.0" height="12.0" fill="none" stroke="#6B6B6B" stroke-width="0.6"/><rect x="366.44" y="181.784" width="6" height="4" fill="none" stroke="#6B6B6B" stroke-width="0.4"/><rect x="373.64" y="181.784" width="6" height="4" fill="none" stroke="#6B6B6B" stroke-width="0.4"/><rect x="380.84" y="181.784" width="6" height="4" fill="none" stroke="#6B6B6B" stroke-width="0.4"/><rect x="366.44" y="203.784" width="6" height="4" fill="none" stroke="#6B6B6B" stroke-width="0.4"/><rect x="373.64" y="203.784" width="6" height="4" fill="none" stroke="#6B6B6B" stroke-width="0.4"/><rect x="380.84" y="203.784" width="6" height="4" fill="none" stroke="#6B6B6B" stroke-width="0.4"/><rect x="430.52" y="197.568" width="21.6" height="7.199999999999999" fill="#6B6B6B" stroke="#10291F" stroke-width="0.6" opacity="0.3"/>
+<rect x="210.392" y="240.84000000000003" width="24.0" height="21.6" fill="none" stroke="#6B6B6B" stroke-width="0.6" rx="1"/><rect x="212.392" y="242.84000000000003" width="7.600000000000001" height="3.888" fill="none" stroke="#6B6B6B" stroke-width="0.4"/><rect x="223.59199999999998" y="242.84000000000003" width="7.600000000000001" height="3.888" fill="none" stroke="#6B6B6B" stroke-width="0.4"/><rect x="465.512" y="240.84000000000003" width="24.0" height="18.0" fill="none" stroke="#6B6B6B" stroke-width="0.6" rx="1"/><rect x="467.512" y="242.84000000000003" width="7.600000000000001" height="3.2399999999999998" fill="none" stroke="#6B6B6B" stroke-width="0.4"/><line x1="200" y1="156" x2="346.4" y2="156" stroke="#10291F" stroke-width="0.6"/>
+<line x1="200" y1="152" x2="200" y2="160" stroke="#10291F" stroke-width="0.6"/>
+<line x1="346.4" y1="152" x2="346.4" y2="160" stroke="#10291F" stroke-width="0.6"/>
+<text x="273.2" y="150" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600">12,200 mm (40 ft)</text>
+<line x1="350.0" y1="156" x2="496.4" y2="156" stroke="#10291F" stroke-width="0.6"/>
+<line x1="350.0" y1="152" x2="350.0" y2="160" stroke="#10291F" stroke-width="0.6"/>
+<line x1="496.4" y1="152" x2="496.4" y2="160" stroke="#10291F" stroke-width="0.6"/>
+<text x="423.2" y="150" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600">12,200 mm (40 ft)</text>
+<line x1="206.0" y1="130" x2="490.4" y2="130" stroke="#10291F" stroke-width="0.6"/>
+<line x1="206.0" y1="126" x2="206.0" y2="134" stroke="#10291F" stroke-width="0.6"/>
+<line x1="490.4" y1="126" x2="490.4" y2="134" stroke="#10291F" stroke-width="0.6"/>
+<text x="348.2" y="124" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600">overall ~ 18,000 mm</text>
+<line x1="176.0" y1="180" x2="176.0" y2="365.28" stroke="#10291F" stroke-width="0.6"/>
+<line x1="172.0" y1="180" x2="180.0" y2="180" stroke="#10291F" stroke-width="0.6"/>
+<line x1="172.0" y1="365.28" x2="180.0" y2="365.28" stroke="#10291F" stroke-width="0.6"/>
+<g transform="translate(168.0,272.64) rotate(-90)"><text x="0" y="0" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600">overall ~ 16,000 mm</text></g>
+<line x1="156.0" y1="218.88000000000002" x2="156.0" y2="365.28" stroke="#10291F" stroke-width="0.6"/>
+<line x1="152.0" y1="218.88000000000002" x2="160.0" y2="218.88000000000002" stroke="#10291F" stroke-width="0.6"/>
+<line x1="152.0" y1="365.28" x2="160.0" y2="365.28" stroke="#10291F" stroke-width="0.6"/>
+<g transform="translate(148.0,292.08) rotate(-90)"><text x="0" y="0" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="600">12,200 mm (40 ft)</text></g>
+<rect x="1090" y="700" width="260" height="220" fill="#FBF8F1" stroke="#B08A3E" stroke-width="1" rx="4"/>
+<text x="1104" y="722" fill="#10291F" font-family="serif" font-size="13" font-weight="700" letter-spacing="2">LEGEND</text>
+<line x1="1104" y1="730" x2="1336" y2="730" stroke="#B08A3E" stroke-width="0.6"/>
+<rect x="1104" y="742" width="18" height="12" fill="#FBF8F1" stroke="#10291F" stroke-width="0.6"/>
+<text x="1130" y="751" fill="#242424" font-family="sans-serif" font-size="9">40 ft HC container (320 sq.ft)</text>
+<rect x="1104" y="764" width="18" height="12" fill="#E8DFC4" stroke="#10291F" stroke-width="0.6"/>
+<text x="1130" y="773" fill="#242424" font-family="sans-serif" font-size="9">20 ft service module (160 sq.ft)</text>
+<rect x="1104" y="786" width="18" height="12" fill="#E8DFC4" stroke="#B08A3E" stroke-width="0.6"/>
+<text x="1130" y="795" fill="#242424" font-family="sans-serif" font-size="9">Open-to-sky courtyard</text>
+<rect x="1104" y="808" width="18" height="12" fill="#C9B07A" stroke="#8B6F3A" stroke-width="0.6"/>
+<text x="1130" y="817" fill="#242424" font-family="sans-serif" font-size="9">Covered deck / verandah</text>
+<rect x="1104" y="830" width="18" height="12" fill="url(#waterPat)" stroke="#10291F" stroke-width="0.6"/>
+<text x="1130" y="839" fill="#242424" font-family="sans-serif" font-size="9">Water (channel / pool)</text>
+<rect x="1104" y="852" width="18" height="12" fill="#B08A3E" stroke="#B08A3E" stroke-width="0.6"/>
+<text x="1130" y="861" fill="#242424" font-family="sans-serif" font-size="9">Sliding glass door</text>
+<rect x="1104" y="874" width="18" height="12" fill="#D4B66A" stroke="#D4B66A" stroke-width="0.6"/>
+<text x="1130" y="883" fill="#242424" font-family="sans-serif" font-size="9">Window opening</text>
+<g transform="translate(1330,200) scale(1.0)">
+    <circle cx="0" cy="0" r="22" fill="#FBF8F1" stroke="#10291F" stroke-width="1.2"/>
+    <polygon points="0,-18 6,8 0,3 -6,8" fill="#10291F"/>
+    <polygon points="0,-18 0,3 -6,8" fill="#B08A3E"/>
+    <text x="0" y="-26" text-anchor="middle" fill="#10291F" font-family="serif" font-size="11" font-weight="700">N</text>
+  </g><g transform="translate(80,950)"><rect x="0" y="0" width="30" height="6" fill="#10291F" stroke="#10291F" stroke-width="0.6"/><rect x="30" y="0" width="30" height="6" fill="#FBF8F1" stroke="#10291F" stroke-width="0.6"/><rect x="60" y="0" width="30" height="6" fill="#10291F" stroke="#10291F" stroke-width="0.6"/><rect x="90" y="0" width="30" height="6" fill="#FBF8F1" stroke="#10291F" stroke-width="0.6"/><text x="0" y="22" fill="#242424" font-family="sans-serif" font-size="9">0</text><text x="30" y="22" fill="#242424" font-family="sans-serif" font-size="9">1m</text><text x="60" y="22" fill="#242424" font-family="sans-serif" font-size="9">2m</text><text x="120" y="22" fill="#242424" font-family="sans-serif" font-size="9">4m</text></g><g transform="translate(1080,870)">
+    <rect x="0" y="0" width="280" height="90" fill="#FBF8F1" stroke="#B08A3E" stroke-width="1.4" rx="3"/>
+    <text x="16" y="22" fill="#10291F" font-family="serif" font-size="13" font-weight="700" letter-spacing="2.5">RESERVE VARDE GOA</text>
+    <line x1="16" y1="30" x2="264" y2="30" stroke="#B08A3E" stroke-width="0.8"/>
+    <text x="16" y="48" fill="#10291F" font-family="serif" font-size="12" font-weight="600">2BHK Floor Plan · U-Shape Courtyard</text>
+    <text x="16" y="65" fill="#242424" font-family="sans-serif" font-size="9" letter-spacing="1.5">CAD Brief v1.0 · Drawing 04/26</text>
+    <text x="16" y="82" fill="#B08A3E" font-family="sans-serif" font-size="8" letter-spacing="1.5" font-weight="600">Scale 1:100 (drawn at ~ 1:200 for screen)</text>
+  </g></svg>

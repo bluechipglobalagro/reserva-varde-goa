@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserve Varde · 2BHK Floor Plan · CAD Drawing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:     #ffffff;
+    --board:     #1a1a1a;
+    --shadow:    rgba(0,0,0,0.35);
+    --ink:       #111;
+    --muted:     #6b6b6b;
+    --gold:      #B08A3E;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', -apple-system, sans-serif;
+    background: var(--board);
+    color: var(--paper);
+    min-height: 100vh;
+    padding: 32px 24px 80px;
+  }
+
+  /* ===== top brand strip ===== */
+  .topbar {
+    max-width: 1700px;
+    margin: 0 auto 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    color: rgba(255,255,255,0.85);
+  }
+  .topbar-left {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.3em;
+    font-weight: 500;
+  }
+  .topbar-right {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: right;
+  }
+  .topbar-right div { margin-bottom: 3px; }
+
+  /* ===== A1 paper frame ===== */
+  .paper-wrap {
+    max-width: 1700px;
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow:
+      0 60px 100px -30px var(--shadow),
+      0 30px 50px -20px var(--shadow);
+    padding: 0;
+    position: relative;
+  }
+  .paper-wrap::before {
+    /* fine corner crop marks */
+    content: '';
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+  }
+  .paper-wrap svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    color: var(--ink);
+  }
+
+  /* ===== caption ===== */
+  .caption {
+    max-width: 1700px;
+    margin: 32px auto 0;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.78rem;
+    line-height: 1.7;
+    font-style: italic;
+    text-align: center;
+    padding: 0 12px;
+  }
+  .caption strong {
+    color: rgba(255,255,255,0.9);
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== controls (no-print) ===== */
+  .controls {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+  }
+  .ctrl-btn {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+  }
+  .ctrl-btn:hover {
+    background: var(--gold);
+    color: #111;
+    border-color: var(--gold);
+  }
+
+  /* ===== print ===== */
+  @media print {
+    body { background: white; padding: 0; }
+    .topbar, .caption, .controls { display: none; }
+    .paper-wrap { box-shadow: none; }
+    .paper-wrap svg { width: 100%; height: 100vh; }
+    @page { size: A1 landscape; margin: 10mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <a href="SITE PLANS/2BHK_FloorPlan_CAD.svg" class="ctrl-btn" download>Download SVG</a>
+  <button class="ctrl-btn" onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<div class="topbar">
+  <div class="topbar-left">RESERVE VARDE</div>
+  <div class="topbar-right">
+    <div>2BHK Compact Modular Eco Estate</div>
+    <div>Concept Floor Plan · RV-2BHK-FP-01 · v1.0</div>
+  </div>
+</div>
+
+<div class="paper-wrap">
+  <object data="SITE PLANS/2BHK_FloorPlan_CAD.svg" type="image/svg+xml" style="display:block; width:100%; height:auto;">
+    <img src="SITE PLANS/2BHK_FloorPlan_CAD.svg" alt="2BHK CAD floor plan" style="display:block; width:100%;">
+  </object>
+</div>
+
+<p class="caption">
+  <strong>Reserve Varde · 2BHK Compact Modular Eco Estate · 2500 sq.ft Ground-Level Container Home</strong><br>
+  U-shape courtyard floor plan · 6 × 40 ft HC containers (C-1 to C-6) + 1 × 20 ft service module (C-7) · concept-stage drawing for architectural discussion only ·<br>
+  final design, dimensions, structural details, MEP, environmental compliance, and construction feasibility to be verified by licensed architects and engineers.
+</p>
+
+</body>
+</html>

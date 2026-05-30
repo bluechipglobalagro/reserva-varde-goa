@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000" font-family="Georgia, serif">
+<defs>
+    <!-- Plantation hatching -->
+    <pattern id="plantHatch" patternUnits="userSpaceOnUse" width="14" height="14">
+      <rect width="14" height="14" fill="#2E5944"/>
+      <circle cx="4" cy="4" r="1.6" fill="#3F7257"/>
+      <circle cx="10" cy="10" r="2" fill="#3F7257"/>
+      <circle cx="10" cy="4" r="1.2" fill="#3F7257" opacity="0.7"/>
+      <circle cx="4" cy="10" r="1.2" fill="#3F7257" opacity="0.7"/>
+    </pattern>
+    <!-- Buffer hatching -->
+    <pattern id="bufferHatch" patternUnits="userSpaceOnUse" width="22" height="22">
+      <rect width="22" height="22" fill="#10291F"/>
+      <circle cx="11" cy="11" r="6" fill="#3F7257" opacity="0.55"/>
+      <circle cx="11" cy="11" r="3.5" fill="#0a1a13" opacity="0.7"/>
+    </pattern>
+    <!-- Gravel driveway -->
+    <pattern id="drivewayPat" patternUnits="userSpaceOnUse" width="8" height="8">
+      <rect width="8" height="8" fill="#D9CDA8"/>
+      <circle cx="2" cy="2" r="0.6" fill="#A89870"/>
+      <circle cx="6" cy="6" r="0.6" fill="#A89870"/>
+    </pattern>
+    <!-- Water -->
+    <pattern id="waterPat" patternUnits="userSpaceOnUse" width="10" height="10">
+      <rect width="10" height="10" fill="#7FA9C9"/>
+      <path d="M0 5 Q 2.5 3, 5 5 T 10 5" stroke="#FBF8F1" stroke-width="0.6" fill="none" opacity="0.7"/>
+    </pattern>
+    <!-- Herbal garden -->
+    <pattern id="herbalPat" patternUnits="userSpaceOnUse" width="10" height="10">
+      <rect width="10" height="10" fill="#7A9966"/>
+      <circle cx="3" cy="3" r="1.2" fill="#5F8050"/>
+      <circle cx="7" cy="7" r="1.2" fill="#5F8050"/>
+    </pattern>
+    <!-- Lawn -->
+    <pattern id="lawnPat" patternUnits="userSpaceOnUse" width="6" height="6">
+      <rect width="6" height="6" fill="#C9D4B0"/>
+      <line x1="3" y1="0" x2="3" y2="2" stroke="#9CB387" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="1400" height="1000" fill="#F4EDDD"/>
+<rect x="20" y="20" width="1360" height="960" fill="#FBF8F1" stroke="#B08A3E" stroke-width="1" rx="6"/>
+<text x="700" y="62" text-anchor="middle" fill="#10291F" font-size="20" font-weight="700" letter-spacing="3.5">RESERVE VARDE GOA · 2BHK 1-ACRE SITE PLAN</text>
+<text x="700" y="86" text-anchor="middle" fill="#B08A3E" font-family="serif" font-size="14" font-style="italic">Central Placement · 2500 Sq.Ft U-Shape Container Home · Curated Plantation Estate</text>
+<line x1="60" y1="102" x2="1340" y2="102" stroke="#B08A3E" stroke-width="0.6" opacity="0.5"/>
+<text x="700" y="120" text-anchor="middle" fill="#242424" font-family="sans-serif" font-size="10" letter-spacing="2.5" opacity="0.7">SITE PLAN · 1 ACRE = 208 × 208 FT · SCALE 1:200</text>
+<rect x="320.0" y="140" width="760" height="760" fill="url(#bufferHatch)" stroke="#10291F" stroke-width="2.5"/>
+<rect x="363.84615384615387" y="183.84615384615384" width="672.3076923076923" height="672.3076923076923" fill="url(#plantHatch)" stroke="#0a1a13" stroke-width="1"/>
+<text x="1020.1538461538462" y="205.84615384615384" text-anchor="end" fill="#FBF8F1" font-family="serif" font-size="13" font-weight="700" letter-spacing="2.5">PLANTATION ZONE · 26,000 SQ.FT (60%)</text>
+<text x="1020.1538461538462" y="223.84615384615384" text-anchor="end" fill="#C2A878" font-family="sans-serif" font-size="9" font-style="italic">cashew · mango · coconut · spice · herbal · food forest</text>
+<rect x="590.3846153846154" y="398.6538461538462" width="219.23076923076923" height="54.8076923076923" fill="#FBF8F1" stroke="#10291F" stroke-width="1.6"/>
+<rect x="590.3846153846154" y="453.4615384615385" width="54.8076923076923" height="127.88461538461539" fill="#FBF8F1" stroke="#10291F" stroke-width="1.6"/>
+<rect x="754.8076923076923" y="453.4615384615385" width="54.8076923076923" height="127.88461538461539" fill="#FBF8F1" stroke="#10291F" stroke-width="1.6"/>
+<rect x="645.1923076923076" y="453.4615384615385" width="109.61538461538463" height="123.88461538461539" fill="#E8DFC4" stroke="#B08A3E" stroke-width="0.6"/>
+<rect x="672.5961538461538" y="503.0153846153847" width="54.807692307692314" height="24.77692307692308" fill="url(#waterPat)" stroke="#10291F" stroke-width="0.4"/>
+<circle cx="738.3653846153845" cy="484.4326923076924" r="6" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4"/>
+<text x="700.0" y="429.0576923076923" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="700">LIVING + DINING + KITCHEN</text>
+<g transform="translate(617.7884615384615,517.4038461538462) rotate(-90)"><text x="0" y="3" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">MASTER WING</text></g>
+<g transform="translate(782.2115384615383,517.4038461538462) rotate(-90)"><text x="0" y="3" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">BR2 WING</text></g>
+<text x="700.0" y="388.6538461538462" text-anchor="middle" fill="#10291F" font-family="serif" font-size="11" font-weight="700" letter-spacing="2.5">2BHK U-SHAPE COURTYARD HOME · 2,500 SQ.FT</text>
+<rect x="640.1923076923076" y="587.3461538461538" width="119.61538461538463" height="30" fill="#C9B07A" stroke="#8B6F3A" stroke-width="0.8"/>
+<text x="699.9999999999999" y="606.3461538461538" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="600">FOREST DECK · 200 sq.ft</text>
+<rect x="705.9807692307692" y="625.3461538461538" width="50" height="20" fill="url(#waterPat)" stroke="#10291F" stroke-width="0.8" stroke-dasharray="3,2"/>
+<text x="730.9807692307692" y="638.3461538461538" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="7" font-weight="600">PLUNGE POOL</text>
+<rect x="648.1923076923076" y="625.3461538461538" width="40" height="20" fill="#C9B07A" stroke="#8B6F3A" stroke-width="0.5" stroke-dasharray="2,2" opacity="0.7"/>
+<text x="668.1923076923076" y="638.3461538461538" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="7" font-weight="600">OUT.DINING</text>
+<rect x="824.6153846153845" y="453.4615384615385" width="80" height="60" fill="url(#herbalPat)" stroke="#0a1a13" stroke-width="0.6"/>
+<text x="864.6153846153845" y="483.4615384615385" text-anchor="middle" fill="#FBF8F1" font-family="sans-serif" font-size="8" font-weight="700">HERBAL</text>
+<text x="864.6153846153845" y="495.4615384615385" text-anchor="middle" fill="#FBF8F1" font-family="sans-serif" font-size="8" font-weight="700">GARDEN</text>
+<rect x="500.38461538461536" y="453.4615384615385" width="75" height="60" fill="url(#lawnPat)" stroke="#3F7257" stroke-width="0.5"/>
+<text x="537.8846153846154" y="483.4615384615385" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="8" font-weight="700">YOGA LAWN</text>
+<text x="537.8846153846154" y="495.4615384615385" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="7">+ firepit</text>
+<rect x="682.0" y="695.3461538461538" width="36" height="204.6538461538462" fill="url(#drivewayPat)" stroke="#E8DFC4" stroke-width="0.5"/>
+<rect x="645.0" y="635.3461538461538" width="110" height="60" fill="#D9CDA8" stroke="#8B6F3A" stroke-width="0.6"/>
+<text x="700.0" y="668.3461538461538" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="9" font-weight="700">ARRIVAL COURT</text>
+<text x="700.0" y="681.3461538461538" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="8">2-car parking + EV</text>
+<rect x="670.0" y="892" width="60" height="14" fill="#B08A3E" stroke="#10291F" stroke-width="1.4"/>
+<text x="700.0" y="922" text-anchor="middle" fill="#10291F" font-family="serif" font-size="12" font-weight="700" letter-spacing="2">GATE · SOUTH ENTRY</text>
+<circle cx="986.1538461538462" cy="198.84615384615384" r="14" fill="#7FA9C9" stroke="#10291F" stroke-width="1"/>
+<text x="986.1538461538462" y="201.84615384615384" text-anchor="middle" fill="#FBF8F1" font-family="sans-serif" font-size="8" font-weight="700">RWH</text>
+<text x="986.1538461538462" y="223.84615384615384" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="7" font-weight="600">15,000 L</text>
+<rect x="949.1538461538462" y="186.84615384615384" width="14" height="14" fill="none" stroke="#10291F" stroke-width="1" stroke-dasharray="2,2"/>
+<text x="956.1538461538462" y="210.84615384615384" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="7" font-weight="600">recharge</text>
+<rect x="972.1538461538462" y="512.0" width="28" height="16" fill="#E8DFC4" stroke="#10291F" stroke-width="1"/>
+<text x="986.1538461538462" y="523.0" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="7" font-weight="700">BIO-SEPTIC</text>
+<rect x="970.1538461538462" y="552.0" width="32" height="16" fill="#3F7257" stroke="#10291F" stroke-width="1"/>
+<text x="986.1538461538462" y="563.0" text-anchor="middle" fill="#FBF8F1" font-family="sans-serif" font-size="7" font-weight="700">REED BED</text>
+<rect x="972.1538461538462" y="818.1538461538461" width="28" height="16" fill="#B08A3E" opacity="0.7" stroke="#10291F" stroke-width="0.8"/>
+<text x="986.1538461538462" y="829.1538461538461" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="7" font-weight="700">COMPOST</text>
+<rect x="380.84615384615387" y="817.1538461538461" width="36" height="18" fill="#E8DFC4" stroke="#10291F" stroke-width="1"/>
+<text x="398.84615384615387" y="830.1538461538461" text-anchor="middle" fill="#10291F" font-family="sans-serif" font-size="7" font-weight="700">SOLAR + INVERTER</text>
+<rect x="939.6153846153845" y="378.6538461538462" width="100" height="110" fill="none" stroke="#B08A3E" stroke-width="1.4" stroke-dasharray="6,4"/>
+<text x="989.6153846153845" y="427.6538461538462" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="8" font-weight="700" font-style="italic">FUTURE</text>
+<text x="989.6153846153845" y="439.6538461538462" text-anchor="middle" fill="#B08A3E" font-family="sans-serif" font-size="8" font-weight="700" font-style="italic">EXPANSION</text>
+<text x="989.6153846153845" y="453.6538461538462" text-anchor="middle" fill="#6B6B6B" font-family="sans-serif" font-size="7">(BR3 / spa / pool)</text>
+<rect x="395.84615384615387" y="215.84615384615384" width="608.3076923076923" height="608.3076923076923" fill="none" stroke="#C2A878" stroke-width="2.2" stroke-dasharray="3,4" opacity="0.7"/>
+<circle cx="785.3721012095965" cy="229.16043165941758" r="4.8250879551073576" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="530.519805820356" cy="664.7931434419645" r="6.030098462268734" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="940.1345660715822" cy="267.07946982539636" r="5.265765459055811" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="412.09122051746465" cy="347.7198676489756" r="5.516065864310088" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="410.0943322064273" cy="335.5959768819786" r="5.94965331333857" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="727.5180142770465" cy="348.8236424187651" r="5.767797051627726" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="889.4666488581154" cy="217.82539438748967" r="6.417457755498424" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="489.0474475770601" cy="799.9550811358445" r="5.009783635337881" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="450.6351471773829" cy="273.06633535341336" r="6.5424830990423795" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="763.5122468984964" cy="708.0570042510819" r="6.189195360081454" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="901.6970098041414" cy="592.5705560630306" r="6.585120700932332" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="421.90477645377473" cy="353.3900210912548" r="4.868163890806321" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="442.70339510092884" cy="356.38580426413847" r="4.303004288229188" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="522.1289203800802" cy="377.3187279623802" r="6.809963763137482" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="498.6356645889886" cy="660.2961008988292" r="4.490207481285785" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="626.1896397223751" cy="819.7389131590229" r="5.919999279562278" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="909.9308680546833" cy="688.9968689160083" r="4.687144215892313" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="413.5013801135493" cy="407.00048173463784" r="4.803222627927108" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="523.0325719190122" cy="791.1970250851564" r="6.6291028794180065" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="636.0946101879144" cy="773.830678025748" r="5.376555557762196" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="556.0343173326537" cy="364.85807394185446" r="5.684104402489453" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="554.7248618340434" cy="571.792652475337" r="6.69346865080743" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="638.4021554551971" cy="348.1379417609212" r="6.9926128194853305" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="705.8330228972814" cy="269.5106862233384" r="4.1413491262742035" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="460.9851598147113" cy="598.036191688969" r="6.376238093088892" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="652.3379489019603" cy="252.7446569976599" r="5.14485785951961" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="1003.7789374393208" cy="537.8269374607023" r="6.913235132840855" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="920.908186906662" cy="220.8760718972957" r="6.162165458080584" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<circle cx="557.2252701555569" cy="606.311993591944" r="4.334656520787629" fill="#3F7257" stroke="#0a1a13" stroke-width="0.4" opacity="0.85"/>
+<rect x="1085" y="700" width="270" height="240" fill="#FBF8F1" stroke="#B08A3E" stroke-width="1" rx="4"/>
+<text x="1099" y="722" fill="#10291F" font-family="serif" font-size="13" font-weight="700" letter-spacing="2">LEGEND</text>
+<line x1="1099" y1="730" x2="1341" y2="730" stroke="#B08A3E" stroke-width="0.6"/>
+<rect x="1099" y="742" width="18" height="12" fill="url(#plantHatch)" stroke="#0a1a13" stroke-width="0.6"/>
+<text x="1125" y="751" fill="#242424" font-family="sans-serif" font-size="9">Plantation zone (60%)</text>
+<rect x="1099" y="764" width="18" height="12" fill="url(#bufferHatch)" stroke="#10291F" stroke-width="0.6"/>
+<text x="1125" y="773" fill="#242424" font-family="sans-serif" font-size="9">Native landscape buffer</text>
+<rect x="1099" y="786" width="18" height="12" fill="#FBF8F1" stroke="#10291F" stroke-width="0.6"/>
+<text x="1125" y="795" fill="#242424" font-family="sans-serif" font-size="9">U-shape container home</text>
+<rect x="1099" y="808" width="18" height="12" fill="#E8DFC4" stroke="#B08A3E" stroke-width="0.6"/>
+<text x="1125" y="817" fill="#242424" font-family="sans-serif" font-size="9">Central courtyard</text>
+<rect x="1099" y="830" width="18" height="12" fill="#C9B07A" stroke="#8B6F3A" stroke-width="0.6"/>
+<text x="1125" y="839" fill="#242424" font-family="sans-serif" font-size="9">Forest deck / outdoor dining</text>
+<rect x="1099" y="852" width="18" height="12" fill="url(#waterPat)" stroke="#10291F" stroke-width="0.6"/>
+<text x="1125" y="861" fill="#242424" font-family="sans-serif" font-size="9">Water (RWH / pool / channel)</text>
+<rect x="1099" y="874" width="18" height="12" fill="url(#herbalPat)" stroke="#0a1a13" stroke-width="0.6"/>
+<text x="1125" y="883" fill="#242424" font-family="sans-serif" font-size="9">Herbal garden</text>
+<rect x="1099" y="896" width="18" height="12" fill="url(#lawnPat)" stroke="#3F7257" stroke-width="0.6"/>
+<text x="1125" y="905" fill="#242424" font-family="sans-serif" font-size="9">Yoga / lawn</text>
+<rect x="1099" y="918" width="18" height="12" fill="url(#drivewayPat)" stroke="#8B6F3A" stroke-width="0.6"/>
+<text x="1125" y="927" fill="#242424" font-family="sans-serif" font-size="9">Driveway / arrival court</text>
+<g transform="translate(1330,200) scale(1.0)">
+    <circle cx="0" cy="0" r="22" fill="#FBF8F1" stroke="#10291F" stroke-width="1.2"/>
+    <polygon points="0,-18 6,8 0,3 -6,8" fill="#10291F"/>
+    <polygon points="0,-18 0,3 -6,8" fill="#B08A3E"/>
+    <text x="0" y="-26" text-anchor="middle" fill="#10291F" font-family="serif" font-size="11" font-weight="700">N</text>
+  </g><g transform="translate(80,950)"><rect x="0" y="0" width="91" height="6" fill="#10291F" stroke="#10291F" stroke-width="0.6"/><rect x="91" y="0" width="91" height="6" fill="#FBF8F1" stroke="#10291F" stroke-width="0.6"/><rect x="182" y="0" width="91" height="6" fill="#10291F" stroke="#10291F" stroke-width="0.6"/><rect x="273" y="0" width="91" height="6" fill="#FBF8F1" stroke="#10291F" stroke-width="0.6"/><text x="0" y="22" fill="#242424" font-family="sans-serif" font-size="9">0</text><text x="91" y="22" fill="#242424" font-family="sans-serif" font-size="9">25 ft</text><text x="182" y="22" fill="#242424" font-family="sans-serif" font-size="9">50 ft</text><text x="364" y="22" fill="#242424" font-family="sans-serif" font-size="9">100 ft</text></g><g transform="translate(1080,870)">
+    <rect x="0" y="0" width="280" height="90" fill="#FBF8F1" stroke="#B08A3E" stroke-width="1.4" rx="3"/>
+    <text x="16" y="22" fill="#10291F" font-family="serif" font-size="13" font-weight="700" letter-spacing="2.5">RESERVE VARDE GOA</text>
+    <line x1="16" y1="30" x2="264" y2="30" stroke="#B08A3E" stroke-width="0.8"/>
+    <text x="16" y="48" fill="#10291F" font-family="serif" font-size="12" font-weight="600">2BHK · 1-Acre Site Plan</text>
+    <text x="16" y="65" fill="#242424" font-family="sans-serif" font-size="9" letter-spacing="1.5">CAD Brief v1.0 · Drawing 02/26</text>
+    <text x="16" y="82" fill="#B08A3E" font-family="sans-serif" font-size="8" letter-spacing="1.5" font-weight="600">Scale 1:200 · Central Placement</text>
+  </g></svg>
